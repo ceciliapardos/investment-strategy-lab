@@ -16,7 +16,7 @@ Ningún punto se marca ✅ sin una evidencia en la carpeta. Revisado el 2026-11-
 | Requisito | Evidencia | Archivo | Estado |
 |---|---|---|---|
 | Proyecto funcionando | Fases 0–5 aprobadas; Fase 7 y 8.1 completadas técnicamente; regresión V0.11 en verde (backend 295 + 54, Vitest 93, Playwright 45). La Fase 6 (AI Analyst) se descartó (D80): ya no requiere validación | [[Fases del proyecto]], [[Versiones]] V0.11 | 🟡 Fases 7 y 8.1 pendientes de validación humana |
-| Repositorio público en github.com/lgarvia | `.gitignore` revisado y `README.md` del producto final (Fase 8.1); **no hay repositorio git** | `README.md`, `.gitignore` | ⬜ |
+| Repositorio público en github.com/lgarvia | Publicado en https://github.com/ceciliapardos/investment-strategy-lab, rama `main`, con código, tests, documentación y resultados reproducibles; secretos y temporales excluidos | `README.md`, `.gitignore` | 🟡 Publicado en la cuenta del equipo. El enunciado lo sitúa «al lado de» los repositorios de github.com/lgarvia: confirmad con el profesor si basta con enviarle el enlace o hay que transferirlo o hacer un *fork* allí |
 | Qué se publica (capturas, `entrega_provisional/`, nombres del equipo) | Decisión pendiente | [[Decisiones]] D70 | ⬜ |
 | Bitácora de 2–4 páginas | Hay una bitácora provisional de la Fase 4 (12/11/2026), anterior a las Fases 5–8 | `entrega_provisional/` | ⬜ La versión final está por escribir (fuera del alcance de la Fase 8) |
 | Bitácora: qué queríamos hacer y qué hicimos | Cronología completa | [[Idea del Proyecto]], [[Bitácora]] | 🟡 Material listo; falta redactar |
@@ -39,7 +39,7 @@ Ningún punto se marca ✅ sin una evidencia en la carpeta. Revisado el 2026-11-
 |---|---|---|---|
 | 1. Úsala | Antigravity y Claude Code como método; LM Studio + Qwen3 8B como experimento descartado | [[Idea del Proyecto]] «Herramientas utilizadas» | ✅ |
 | 2. Decláralo | Sección «Desarrollo asistido por IA» del `README.md` (Antigravity, Claude Code, Obsidian, LM Studio + Qwen3 8B como experimento descartado) y documentación en Obsidian | `README.md`, [[Idea del Proyecto]], [[Bitácora]] §9 | ✅ |
-| 3. Guarda el rastro (hilos, prompts, versiones) | Versiones y decisiones fechadas; prompts del analista conservados en `Histórico/AI Strategy Analyst/`; transcripciones de Claude Code solo en local; registro de Antigravity en `../Proyecto Coste Invisible/` | [[Versiones]], [[Decisiones]], [[Bitácora]] | 🟡 Sin git; transcripciones y rastro de Antigravity fuera del repositorio |
+| 3. Guarda el rastro (hilos, prompts, versiones) | Versiones y decisiones fechadas; prompts del analista conservados en `Histórico/AI Strategy Analyst/`; transcripciones de Claude Code solo en local; registro de Antigravity en `../Proyecto Coste Invisible/`; historial en Git desde la publicación | [[Versiones]], [[Decisiones]], [[Bitácora]], repositorio público | 🟡 Las transcripciones y el rastro de Antigravity siguen fuera del repositorio |
 | 4. Lo que firmas, lo defiendes | Requiere que el equipo domine cada caso y cada fuente | — | ⬜ Tarea humana |
 
 ## 4. Criterios de evaluación
