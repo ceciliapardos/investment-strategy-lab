@@ -1,0 +1,4 @@
+﻿estrategia;inicio;fin;observaciones;aportado_total;n_aportaciones;valor_final;rent_total_twr;cagr;volatilidad;sharpe_rf0;max_caida;max_caida_pico;max_caida_valle
+BASE 70/30 · mensual 300 €;2016-11-18;2026-11-18;2541;46000.0;240;84540.67;1.423652;0.092578;0.115123;0.8208;-0.256079;2020-02-19;2020-03-23
+BASE 70/30 · sin aportaciones;2016-11-18;2026-11-18;2541;10000.0;0;24885.2;1.48852;0.095468;0.11789;0.8265;-0.259904;2020-02-19;2020-03-23
+BENCHMARK S&P 500 (Total Return);2016-11-18;2026-11-18;2509;;;;2.820126;0.143446;0.193932;0.7919;-0.331651;2020-02-19;2020-03-23

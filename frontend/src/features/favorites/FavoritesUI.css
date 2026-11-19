@@ -1,0 +1,47 @@
+/* «Mi lista» (favoritos de Explore Markets) */
+.fav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+.fav-btn:hover { border-color: var(--color-accent-subtle); color: var(--color-text-primary); }
+.fav-btn.is-active { color: #B45309; border-color: #FBD9A5; background: #FFFBEB; }
+
+.fav-list { display: flex; flex-direction: column; gap: var(--space-3); }
+.fav-list__head { display: flex; align-items: center; justify-content: space-between; }
+.fav-list__title { display: inline-flex; align-items: center; gap: 8px; font-size: var(--font-size-base); font-weight: 800; color: var(--color-text-primary); }
+.fav-list__title svg { color: #B45309; }
+.fav-list__count { font-size: var(--font-size-xs); font-weight: 700; color: var(--color-text-muted); }
+.fav-list__empty { margin: 0; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+.fav-list__items { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-2); }
+
+.fav-item { display: flex; align-items: stretch; border: 1px solid var(--color-border-soft); border-radius: 12px; background: #fff; overflow: hidden; }
+.fav-item__open {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-family);
+  text-align: left;
+}
+.fav-item__open:hover { background: var(--color-bg-sunken); }
+.fav-item__ticker { font-weight: 800; font-size: var(--font-size-sm); color: var(--color-text-primary); }
+.fav-item__name { font-size: var(--font-size-xs); color: var(--color-text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fav-item__remove { border: none; border-left: 1px solid var(--color-border-soft); background: none; padding: 0 10px; cursor: pointer; color: var(--color-text-muted); }
+.fav-item__remove:hover { color: var(--color-red); background: var(--color-bg-sunken); }

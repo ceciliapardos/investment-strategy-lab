@@ -1,0 +1,341 @@
+{
+ "kind": "educational_simulation",
+ "assumptions": {
+  "capital": 10000.0,
+  "years": 10,
+  "annual_return_pct": 5.0,
+  "recurring_pct": 0.0,
+  "market": "EUROZONE",
+  "market_label": "Zona euro (EUR)",
+  "asset_type": "ETF",
+  "broker": "myinvestor",
+  "broker_name": "MyInvestor",
+  "fx_rates": {}
+ },
+ "profiles": [
+  {
+   "id": "buy_hold",
+   "name": "Comprar y mantener",
+   "turnover": 0.0,
+   "orders_per_year": 0,
+   "description": "Solo la compra inicial; no se vende ni se recompra nada después.",
+   "final_value": 16269.4,
+   "no_cost_final": 16288.95,
+   "difference": 19.55,
+   "paid_trading": 12.0,
+   "paid_recurring": 0.0,
+   "paid_total": 12.0,
+   "series": [
+    {
+     "year": 0,
+     "value": 9988.0,
+     "no_cost": 10000.0,
+     "paid": 12.0
+    },
+    {
+     "year": 1,
+     "value": 10487.4,
+     "no_cost": 10500.0,
+     "paid": 12.0
+    },
+    {
+     "year": 2,
+     "value": 11011.77,
+     "no_cost": 11025.0,
+     "paid": 12.0
+    },
+    {
+     "year": 3,
+     "value": 11562.36,
+     "no_cost": 11576.25,
+     "paid": 12.0
+    },
+    {
+     "year": 4,
+     "value": 12140.48,
+     "no_cost": 12155.06,
+     "paid": 12.0
+    },
+    {
+     "year": 5,
+     "value": 12747.5,
+     "no_cost": 12762.82,
+     "paid": 12.0
+    },
+    {
+     "year": 6,
+     "value": 13384.88,
+     "no_cost": 13400.96,
+     "paid": 12.0
+    },
+    {
+     "year": 7,
+     "value": 14054.12,
+     "no_cost": 14071.0,
+     "paid": 12.0
+    },
+    {
+     "year": 8,
+     "value": 14756.82,
+     "no_cost": 14774.55,
+     "paid": 12.0
+    },
+    {
+     "year": 9,
+     "value": 15494.67,
+     "no_cost": 15513.28,
+     "paid": 12.0
+    },
+    {
+     "year": 10,
+     "value": 16269.4,
+     "no_cost": 16288.95,
+     "paid": 12.0
+    }
+   ]
+  },
+  {
+   "id": "low",
+   "name": "Rotación baja",
+   "turnover": 0.2,
+   "orders_per_year": 4,
+   "description": "Se renueva el 20 % de la cartera al año, en 4 órdenes (2 ventas y 2 compras).",
+   "final_value": 16191.47,
+   "no_cost_final": 16288.95,
+   "difference": 97.47,
+   "paid_trading": 75.17,
+   "paid_recurring": 0.0,
+   "paid_total": 75.17,
+   "series": [
+    {
+     "year": 0,
+     "value": 9988.0,
+     "no_cost": 10000.0,
+     "paid": 12.0
+    },
+    {
+     "year": 1,
+     "value": 10482.37,
+     "no_cost": 10500.0,
+     "paid": 17.03
+    },
+    {
+     "year": 2,
+     "value": 11001.2,
+     "no_cost": 11025.0,
+     "paid": 22.32
+    },
+    {
+     "year": 3,
+     "value": 11545.72,
+     "no_cost": 11576.25,
+     "paid": 27.86
+    },
+    {
+     "year": 4,
+     "value": 12117.18,
+     "no_cost": 12155.06,
+     "paid": 33.68
+    },
+    {
+     "year": 5,
+     "value": 12716.94,
+     "no_cost": 12762.82,
+     "paid": 39.79
+    },
+    {
+     "year": 6,
+     "value": 13346.37,
+     "no_cost": 13400.96,
+     "paid": 46.2
+    },
+    {
+     "year": 7,
+     "value": 14006.97,
+     "no_cost": 14071.0,
+     "paid": 52.92
+    },
+    {
+     "year": 8,
+     "value": 14700.25,
+     "no_cost": 14774.55,
+     "paid": 59.98
+    },
+    {
+     "year": 9,
+     "value": 15427.86,
+     "no_cost": 15513.28,
+     "paid": 67.39
+    },
+    {
+     "year": 10,
+     "value": 16191.47,
+     "no_cost": 16288.95,
+     "paid": 75.17
+    }
+   ]
+  },
+  {
+   "id": "medium",
+   "name": "Rotación media",
+   "turnover": 0.5,
+   "orders_per_year": 12,
+   "description": "Se renueva el 50 % de la cartera al año, en 12 órdenes (6 ventas y 6 compras).",
+   "final_value": 16075.22,
+   "no_cost_final": 16288.95,
+   "difference": 213.73,
+   "paid_trading": 169.36,
+   "paid_recurring": 0.0,
+   "paid_total": 169.36,
+   "series": [
+    {
+     "year": 0,
+     "value": 9988.0,
+     "no_cost": 10000.0,
+     "paid": 12.0
+    },
+    {
+     "year": 1,
+     "value": 10474.82,
+     "no_cost": 10500.0,
+     "paid": 24.58
+    },
+    {
+     "year": 2,
+     "value": 10985.36,
+     "no_cost": 11025.0,
+     "paid": 37.78
+    },
+    {
+     "year": 3,
+     "value": 11520.78,
+     "no_cost": 11576.25,
+     "paid": 51.62
+    },
+    {
+     "year": 4,
+     "value": 12082.31,
+     "no_cost": 12155.06,
+     "paid": 66.14
+    },
+    {
+     "year": 5,
+     "value": 12671.2,
+     "no_cost": 12762.82,
+     "paid": 81.36
+    },
+    {
+     "year": 6,
+     "value": 13288.79,
+     "no_cost": 13400.96,
+     "paid": 97.33
+    },
+    {
+     "year": 7,
+     "value": 13936.49,
+     "no_cost": 14071.0,
+     "paid": 114.07
+    },
+    {
+     "year": 8,
+     "value": 14615.75,
+     "no_cost": 14774.55,
+     "paid": 131.63
+    },
+    {
+     "year": 9,
+     "value": 15328.12,
+     "no_cost": 15513.28,
+     "paid": 150.05
+    },
+    {
+     "year": 10,
+     "value": 16075.22,
+     "no_cost": 16288.95,
+     "paid": 169.36
+    }
+   ]
+  },
+  {
+   "id": "high",
+   "name": "Rotación alta",
+   "turnover": 1.0,
+   "orders_per_year": 24,
+   "description": "Se renueva toda la cartera una vez al año, en 24 órdenes (una venta y una compra al mes).",
+   "final_value": 15883.12,
+   "no_cost_final": 16288.95,
+   "difference": 405.82,
+   "paid_trading": 324.88,
+   "paid_recurring": 0.0,
+   "paid_total": 324.88,
+   "series": [
+    {
+     "year": 0,
+     "value": 9988.0,
+     "no_cost": 10000.0,
+     "paid": 12.0
+    },
+    {
+     "year": 1,
+     "value": 10462.23,
+     "no_cost": 10500.0,
+     "paid": 37.17
+    },
+    {
+     "year": 2,
+     "value": 10958.98,
+     "no_cost": 11025.0,
+     "paid": 63.53
+    },
+    {
+     "year": 3,
+     "value": 11479.31,
+     "no_cost": 11576.25,
+     "paid": 91.15
+    },
+    {
+     "year": 4,
+     "value": 12024.35,
+     "no_cost": 12155.06,
+     "paid": 120.08
+    },
+    {
+     "year": 5,
+     "value": 12595.26,
+     "no_cost": 12762.82,
+     "paid": 150.38
+    },
+    {
+     "year": 6,
+     "value": 13193.29,
+     "no_cost": 13400.96,
+     "paid": 182.12
+    },
+    {
+     "year": 7,
+     "value": 13819.7,
+     "no_cost": 14071.0,
+     "paid": 215.37
+    },
+    {
+     "year": 8,
+     "value": 14475.86,
+     "no_cost": 14774.55,
+     "paid": 250.19
+    },
+    {
+     "year": 9,
+     "value": 15163.18,
+     "no_cost": 15513.28,
+     "paid": 286.67
+    },
+    {
+     "year": 10,
+     "value": 15883.12,
+     "no_cost": 16288.95,
+     "paid": 324.88
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+# Dependencias del backend. Versiones = las instaladas y probadas el 2026-11-11
+# (Python 3.11.5). Instalar con:  python -m pip install -r requirements.txt
+fastapi==0.156.8
+uvicorn==0.53.0
+yfinance==1.7.0
+pandas==3.0.6
+numpy==2.4.6
+requests==2.34.2

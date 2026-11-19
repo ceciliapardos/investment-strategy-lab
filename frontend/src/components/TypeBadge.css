@@ -1,0 +1,19 @@
+.type-badge {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.type-badge--md { font-size: var(--font-size-xs); padding: 3px 10px; }
+.type-badge--sm { font-size: 11px; padding: 1px 8px; }
+
+.type-badge--stock  { background: #E3F7EF; color: #08795A; border-color: #C3EDDC; }
+.type-badge--etf    { background: #EEF0FF; color: #3441C9; border-color: #DADFFF; }
+.type-badge--index  { background: #F3EEFF; color: #6A3FD6; border-color: #E3D8FF; }
+.type-badge--crypto { background: #FFF3E0; color: #B25E00; border-color: #FFE0B3; }
+.type-badge--future { background: #E8F4FD; color: #0B6AA8; border-color: #CBE6F9; }
+.type-badge--fund   { background: #FDEEF6; color: #B0306F; border-color: #F9D3E6; }

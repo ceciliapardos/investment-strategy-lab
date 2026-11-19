@@ -1,0 +1,5 @@
+﻿estrategia;escenario;id;completo;no_cubierto;aportado_total;n_aportaciones;compras_iniciales;compras_periodicas;valor_bruto;twr_bruta;coste_compras;coste_divisa;custodia;mantenimiento;costes_durante;valor_neto;impacto;impacto_pct_aportado;costes_pct_valor_final_bruto;salida_estimada;valor_neto_tras_salida;notas
+BASE 70/30 · mensual 300 €;Sin costes de intermediación;none;True;;46000.0;240;2;240;84540.67;1.423652;0.0;0.0;0.0;0.0;0.0;84540.67;0.0;0.0;0.0;0.0;84540.67;
+BASE 70/30 · mensual 300 €;ING · Broker Naranja;ing;True;;46000.0;240;2;240;84540.67;1.423652;772.0;0.0;0.0;0.0;772.0;83395.2;1145.47;0.024901;0.009132;89.4;83305.81;
+BASE 70/30 · sin aportaciones;Sin costes de intermediación;none;True;;10000.0;0;2;0;24885.2;1.48852;0.0;0.0;0.0;0.0;0.0;24885.2;0.0;0.0;0.0;0.0;24885.2;
+BASE 70/30 · sin aportaciones;ING · Broker Naranja;ing;True;;10000.0;0;2;0;24885.2;1.48852;16.0;0.0;382.68;0.0;398.68;24465.33;419.87;0.041987;0.016021;25.88;24439.45;

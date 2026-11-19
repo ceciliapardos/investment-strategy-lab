@@ -1,0 +1,45 @@
+.dialog__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(11, 19, 48, 0.45);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  animation: dialog-fade 150ms ease;
+}
+
+.dialog {
+  width: min(440px, 100%);
+  background: var(--color-bg-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  animation: dialog-pop 180ms ease;
+}
+
+.dialog__title { font-size: var(--font-size-lg); font-weight: 800; letter-spacing: -0.01em; }
+.dialog__body { font-size: var(--font-size-sm); color: var(--color-text-secondary); line-height: 1.6; }
+.dialog__actions { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-2); }
+
+.btn-danger {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: #fff;
+  background: var(--color-red);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4);
+  cursor: pointer;
+}
+
+.btn-danger:hover { filter: brightness(1.05); }
+
+@keyframes dialog-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes dialog-pop { from { transform: translateY(8px) scale(0.98); opacity: 0; } to { transform: none; opacity: 1; } }

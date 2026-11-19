@@ -1,0 +1,125 @@
+.asset-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  box-shadow: var(--shadow-md);
+}
+
+.asset-card__head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.asset-card__avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--gradient-brand);
+  color: #fff;
+  font-weight: 800;
+  font-size: var(--font-size-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.02em;
+  box-shadow: 0 8px 18px -8px rgba(75, 91, 246, 0.7);
+}
+
+.asset-card__id { min-width: 0; }
+
+.asset-card__title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.asset-card__ticker {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.asset-card__name {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.asset-card__price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.asset-card__price-value {
+  font-size: var(--font-size-3xl);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.asset-card__currency {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.asset-card__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.asset-card__facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-3);
+}
+
+.asset-card__fact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-sunken);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+}
+
+.asset-card__fact-value {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+.asset-card__fact-value--muted {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+}
+
+.asset-card__hint {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.asset-card__note { margin: 0; }
+
+@media (max-width: 640px) {
+  .asset-card__head { grid-template-columns: auto minmax(0, 1fr); }
+  .asset-card__price {
+    grid-column: 1 / -1;
+    align-items: flex-start;
+  }
+}

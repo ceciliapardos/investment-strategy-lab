@@ -1,0 +1,62 @@
+# --- Secretos y configuración local (nunca al repositorio) ---
+.env
+.env.*
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# --- Node / frontend ---
+node_modules/
+dist/
+.vite/
+*.local
+
+# --- Tests y capturas temporales ---
+frontend/e2e/.results/
+test-results/
+playwright-report/
+coverage/
+.coverage
+
+# --- Logs, temporales y cachés ---
+*.log
+logs/
+*.tmp
+*.temp
+.cache/
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+*.swp
+*.bak
+
+# --- Modelos de IA locales (el producto ya no usa ninguno; se excluyen por si acaso) ---
+*.gguf
+*.safetensors
+*.bin
+models/
+.lmstudio/
+
+# --- Entrega provisional del 12/11 (superada por la bitácora final; decisión del equipo) ---
+entrega_provisional/
+
+# --- Obsidian: estado personal de la ventana ---
+.obsidian/workspace*.json
+.obsidian/cache
+
+# --- Editores y asistentes ---
+.vscode/
+.idea/
+.claude/
+
+# --- Entorno local de Python (instalaciones con --user, cachés de pip) ---
+pip-wheel-metadata/
+.pip-cache/

@@ -1,0 +1,2256 @@
+{
+ "status": "ok",
+ "message": null,
+ "base_currency": "EUR",
+ "method": {
+  "rebalancing": "buy_and_hold",
+  "prices": "adjusted_close",
+  "alignment": "common_dates",
+  "ter": "already_in_prices",
+  "custody_last_quarter": "charged_prorated",
+  "contributions": false
+ },
+ "period": "CUSTOM",
+ "requested": {
+  "start": "2016-11-18",
+  "end": "2026-11-18"
+ },
+ "common": {
+  "start": "2009-09-25",
+  "end": "2026-11-19"
+ },
+ "effective": {
+  "start": "2016-11-18",
+  "end": "2026-11-18",
+  "observations": 2540,
+  "days": 3652
+ },
+ "notices": [],
+ "fx": [],
+ "dataset_version": "2026-11-12b",
+ "scenarios": [
+  {
+   "id": "none",
+   "name": "Sin costes de intermediación",
+   "kind": "none"
+  },
+  {
+   "id": "santander_online",
+   "name": "Santander · Tarifa online",
+   "kind": "broker",
+   "type": "Banco",
+   "category": "bank",
+   "entity": "Santander",
+   "profile": "Tarifa online (nueva cuenta de valores)",
+   "country": "ES",
+   "plan": "Órdenes por web o app con una nueva cuenta de valores. La custodia es la del folleto de tarifas MÁXIMAS: puede no ser la que se aplique a cada cliente",
+   "instruments": [
+    "Stock",
+    "ETF"
+   ],
+   "source": {
+    "publisher": "Banco Santander, S.A.",
+    "document": "Página oficial «Tarifas» de Bolsa e inversión (compraventa) y «Folleto informativo de tarifas máximas en operaciones y servicios del mercado de valores», en vigor desde 10-02-2025 (custodia)",
+    "url": "https://www.bancosantander.es/particulares/ahorro-inversion/bolsa-inversion/tarifas/",
+    "extra_urls": [
+     "https://wcm.bancosantander.es/wce/documentos-cms/do-folleto_de_tarifas_maximas_en_operaciones_y_servicios.pdf"
+    ],
+    "document_date": "2025-02-10",
+    "consulted": "2026-11-12"
+   },
+   "notes": [
+    "Compraventa nacional: 3 € hasta 2.000 €; 6 € de 2.000,01 € a 15.000 €; 0,25 % por encima de 15.000,01 €.",
+    "Compraventa internacional: 20 € hasta 15.000 €; 0,35 % por encima.",
+    "Custodia (tarifa MÁXIMA del folleto): 0,25 % anual (mín. 24 €) por clase de valor nacional y 1,00 % anual (mín. 60 €) internacional, sobre la media de saldos efectivos diarios y prorrateada por días. El folleto indica que se cargarán los impuestos correspondientes."
+   ],
+   "not_modeled": [
+    "Impuestos sobre la custodia (el folleto no indica el tipo)",
+    "Cambio de divisa: la tarifa no publica un porcentaje",
+    "Tasas y cánones de mercado repercutidos",
+    "Promociones temporales y condiciones negociadas"
+   ],
+   "has_custody": true,
+   "has_fx": false
+  },
+  {
+   "id": "caixabank_std",
+   "name": "CaixaBank · Tarifa estándar",
+   "kind": "broker",
+   "type": "Banco",
+   "category": "bank",
+   "entity": "CaixaBank",
+   "profile": "Ocean Bróker · tarifa estándar (sin pack)",
+   "country": "ES",
+   "plan": "Tarifa estándar de renta variable sin pack de bolsa contratado",
+   "instruments": [
+    "Stock",
+    "ETF"
+   ],
+   "source": {
+    "publisher": "CaixaBank, S.A.",
+    "document": "Página oficial «Tarifas» de Bolsa y mercados (NRI: 50182-2026/09542)",
+    "url": "https://www.caixabank.es/particular/bolsa-mercados/tarifas.html",
+    "document_date": null,
+    "consulted": "2026-11-12"
+   },
+   "notes": [
+    "Compraventa nacional: 0,65 % (mínimo 10 €).",
+    "Compraventa internacional: 36 € fijos por debajo de 15.000 €; 0,25 % desde 15.000 €.",
+    "Custodia: 0,10 % semestral sobre el importe NOMINAL (mín. 6 €) nacional y 0,40 % semestral (mín. 15 €) internacional. Como el valor nominal no está disponible, la app aplica solo el mínimo por clase de valor y semestre (estimación por defecto)."
+   ],
+   "not_modeled": [
+    "Packs de bolsa (Iniciación, Avanzado, Experto) y custodia gratuita con 12 operaciones al semestre",
+    "Cambio de divisa: la página no publica un porcentaje",
+    "Valores que cotizan en SEND (0,65 %)",
+    "IVA: la página indica que los precios lo incluyen"
+   ],
+   "has_custody": true,
+   "has_fx": false
+  },
+  {
+   "id": "bankinter_std",
+   "name": "Bankinter · Tarifa estándar",
+   "kind": "broker",
+   "type": "Banco",
+   "category": "bank",
+   "entity": "Bankinter",
+   "profile": "Bróker · tarifa sin Servicio Bróker Cero",
+   "country": "ES",
+   "plan": "Compraventa por internet sin Servicio Bróker Cero; ETF no promocionados («Resto de ETPs»)",
+   "instruments": [
+    "Stock",
+    "ETF"
+   ],
+   "source": {
+    "publisher": "Bankinter, S.A.",
+    "document": "Páginas oficiales «Tarifas y comisiones de acciones» y «Tarifas y comisiones de ETPs» del Bróker Bankinter",
+    "url": "https://www.bankinter.com/broker/tarifas-comisiones/acciones",
+    "extra_urls": [
+     "https://www.bankinter.com/broker/tarifas-comisiones/etfs"
+    ],
+    "document_date": null,
+    "consulted": "2026-11-12"
+   },
+   "notes": [
+    "Compraventa nacional (acciones y ETF no promocionados): 3,95 € hasta 2.000 €; 8 € hasta 60.000 €; 0,07 % por encima (máximo 200 €).",
+    "Compraventa internacional, principales mercados: 20 € hasta 40.000 € (40.000 $, 30.000 £ o 425.000 SEK); 0,20 % a partir de ese importe.",
+    "Cambio de divisa: diferencial de ±1 % sobre el cambio fijado por Bankinter.",
+    "Custodia: 0,04 % trimestral (nacional) y 0,05 % trimestral (internacional) sobre la media del valor efectivo de cada clase de valor, mínimo 6 €, prorrateada por días. ETF con compra periódica activa: sin importe mínimo."
+   ],
+   "not_modeled": [
+    "Servicio Bróker Cero (0 € en compraventa nacional de acciones) y ETF promocionados con compra a 0 €",
+    "Mercados internacionales fuera de los principales (otras tarifas): se marcan como datos incompletos",
+    "Cánones de bolsa, canon BME y gastos de correo",
+    "Impuesto sobre transacciones financieras"
+   ],
+   "has_custody": true,
+   "has_fx": true
+  },
+  {
+   "id": "ing",
+   "name": "ING · Broker Naranja",
+   "kind": "broker",
+   "type": "Banco",
+   "category": "bank",
+   "entity": "ING",
+   "profile": "Broker Naranja · Tarifa Base",
+   "country": "ES",
+   "plan": "Tarifa Base (clientes con menos de 15 operaciones en el trimestre natural anterior)",
+   "instruments": [
+    "Stock",
+    "ETF"
+   ],
+   "source": {
+    "publisher": "ING Bank N.V., Sucursal en España",
+    "document": "Tarifas Aplicables Broker NARANJA (LT A BRN OL 10/26)",
+    "url": "https://www.ing.es/sobre-ing/pdf/TarifasApliBroker.pdf",
+    "document_date": "2026-10-22",
+    "consulted": "2026-11-12"
+   },
+   "notes": [
+    "Comisión por compra y por venta: fijo + 0,10 % del importe; para operaciones de menos de 50.000 € / $ / £ la comisión no supera 20 € / $ / £.",
+    "Cambio de divisa (Tarifa Base): +0,50 % en compras de divisa y −0,50 % en ventas.",
+    "Custodia: 0 € si hay al menos una operación en el trimestre natural; si no, 4 € por clase de valor + IVA, prorrateado por días; máximo 49,59 € + IVA por cuenta."
+   ],
+   "not_modeled": [
+    "Tarifa Reducida (15 o más operaciones en el trimestre anterior)",
+    "Tasas y cánones de mercado y de liquidación repercutidos",
+    "Gastos de comunicación, traspasos y operaciones corporativas"
+   ],
+   "has_custody": true,
+   "has_fx": true
+  },
+  {
+   "id": "bbva_etf",
+   "name": "BBVA · Tarifa ETF",
+   "kind": "broker",
+   "type": "Banco",
+   "category": "bank",
+   "entity": "BBVA",
+   "profile": "Tarifa ETF (0,15 %)",
+   "country": "ES",
+   "plan": "Compraventa de la selección de ETF de BBVA con tarifa del 0,15 %. Las acciones tienen otra tarifa (perfiles de BBVA Trader) que no se ha podido verificar: no se incluyen",
+   "instruments": [
+    "ETF"
+   ],
+   "source": {
+    "publisher": "Banco Bilbao Vizcaya Argentaria, S.A.",
+    "document": "Página oficial «Inversión y trading con acciones, ETF y más»",
+    "url": "https://www.bbva.es/personas/productos/bolsa/inversion-y-trading-en-acciones.html",
+    "document_date": null,
+    "consulted": "2026-11-12"
+   },
+   "notes": [
+    "ETF: 0,15 % por operación, sin comisión mínima ni comisión de custodia.",
+    "Solo para la selección de ETF de las principales gestoras que ofrece BBVA: no se comprueba si cada ETF está en esa selección."
+   ],
+   "not_modeled": [
+    "Acciones (perfiles de BBVA Trader según número de órdenes): el folleto oficial no se pudo consultar",
+    "Tipo de cambio dinámico de BBVA Trader: sin porcentaje publicado",
+    "Cánones y tasas de mercado"
+   ],
+   "has_custody": false,
+   "has_fx": false
+  },
+  {
+   "id": "bbva_joven",
+   "name": "BBVA · Tarifa joven (<30)",
+   "kind": "broker",
+   "type": "Banco",
+   "category": "bank",
+   "entity": "BBVA",
+   "profile": "Tarifa joven (menores de 30 años)",
+   "country": "ES",
+   "plan": "Solo para clientes menores de 30 años con BBVA Trader Bolsa (desde el 13/04/2026)",
+   "instruments": [
+    "Stock",
+    "ETF"
+   ],
+   "source": {
+    "publisher": "BBVA (nota oficial en bbva.com)",
+    "document": "«Los jóvenes podrán invertir en bolsa a través de BBVA con una de las tarifas más competitivas del mercado» (28/04/2026)",
+    "url": "https://www.bbva.com/es/es/salud-financiera/los-jovenes-podran-invertir-en-bolsa-a-traves-de-bbva-con-una-de-las-tarifas-mas-competitivas-del-mercado/",
+    "document_date": "2026-04-28",
+    "consulted": "2026-11-12"
+   },
+   "notes": [
+    "0,99 € por operación en acciones y ETF de mercados nacionales e internacionales.",
+    "Sin comisión de custodia."
+   ],
+   "not_modeled": [
+    "Cambio de divisa: la nota no publica un porcentaje",
+    "Requisito de edad: no aplica a clientes de 30 años o más",
+    "Cánones y tasas de mercado"
+   ],
+   "has_custody": false,
+   "has_fx": false
+  },
+  {
+   "id": "myinvestor",
+   "name": "MyInvestor",
+   "kind": "broker",
+   "type": "Banco digital",
+   "category": "digital",
+   "entity": "MyInvestor",
+   "profile": "Tarifa estándar (sin Premium)",
+   "country": "ES",
+   "plan": "Tarifa estándar (sin plan Premium)",
+   "instruments": [
+    "Stock",
+    "ETF"
+   ],
+   "source": {
+    "publisher": "MyInvestor Banco, S.A.",
+    "document": "Página oficial «Acciones y ETF» (bróker)",
+    "url": "https://myinvestor.es/inversion/broker/",
+    "document_date": null,
+    "consulted": "2026-11-12"
+   },
+   "notes": [
+    "Acciones: 0,12 % por operación, mínimo 3 €, máximo 25 €.",
+    "ETF: 0,12 % por operación, mínimo 1 €, máximo 25 € (sin mínimo con Premium, no modelado).",
+    "Cambio de divisa: 0,30 %.",
+    "Mantenimiento, depositaría, custodia, inactividad y cobro de dividendos: 0 €."
+   ],
+   "not_modeled": [
+    "Plan Premium",
+    "Cánones de bolsa y «SEC fee» estadounidense, que la página indica como costes adicionales no cobrados por MyInvestor"
+   ],
+   "has_custody": false,
+   "has_fx": true
+  },
+  {
+   "id": "traderepublic",
+   "name": "Trade Republic",
+   "kind": "broker",
+   "type": "Bróker digital",
+   "category": "digital",
+   "entity": "Trade Republic",
+   "profile": "Órdenes individuales y planes de inversión",
+   "country": "DE (sucursal en España)",
+   "plan": "Órdenes individuales (1 € de liquidación) y planes de inversión (ejecución sin cargo)",
+   "instruments": [
+    "Stock",
+    "ETF"
+   ],
+   "source": {
+    "publisher": "Trade Republic Bank GmbH, Sucursal en España",
+    "document": "Web oficial (es-es), apartado «Fijación de precios»; la lista completa de precios está en la app",
+    "url": "https://traderepublic.com/es-es",
+    "extra_urls": [
+     "https://assets.traderepublic.com/documents/ES/FURTHER_INFORMATION_PRICE_LIST_20230426144247.pdf"
+    ],
+    "document_date": null,
+    "consulted": "2026-11-12"
+   },
+   "notes": [
+    "Comisión de orden: sin cargo. Comisión de liquidación de operaciones: 1,00 € (2,00 € si se elige la bolsa con Precio Directo; no modelado).",
+    "Ejecución de planes de inversión para acciones y ETF: sin cargo (se aplica a las aportaciones periódicas).",
+    "La web no publica comisión de cambio de divisa: no se modela ninguna."
+   ],
+   "not_modeled": [
+    "Diferencial de precio (spread) y costes de terceros",
+    "Bolsa con Precio Directo (2,00 €)",
+    "La lista completa de precios solo está en la app"
+   ],
+   "has_custody": false,
+   "has_fx": false
+  },
+  {
+   "id": "revolut_standard",
+   "name": "Revolut · Plan Estándar",
+   "kind": "broker",
+   "type": "Banco digital",
+   "category": "digital",
+   "entity": "Revolut",
+   "profile": "Plan Estándar (gratuito)",
+   "country": "LT (opera en España)",
+   "plan": "Plan Estándar: sin órdenes gratuitas al mes",
+   "instruments": [
+    "Stock",
+    "ETF"
+   ],
+   "source": {
+    "publisher": "Revolut (Revolut Securities Europe UAB)",
+    "document": "Ayuda oficial «Las comisiones de trading de Revolut» y «Comisiones y límites de cambio de divisas» (Revolut España)",
+    "url": "https://help.revolut.com/es-ES/help/wealth/stocks/trading-stocks/trading-fees/what-fees-will-i-be-charged-for-my-trading/",
+    "extra_urls": [
+     "https://help.revolut.com/es-ES/help/wealth/exchanging-money/how-much-does-it-cost-to-make-an-exchange/will-i-be-charged-for-exchanging-foreign-currencies/",
+     "https://www.revolut.com/es-ES/our-pricing-plans/"
+    ],
+    "document_date": null,
+    "consulted": "2026-11-12"
+   },
+   "notes": [
+    "Órdenes sin comisión al mes: 0 en el plan Estándar; cada orden cuesta 1 €.",
+    "Compras periódicas de ETP seleccionados con planes de inversión: sin comisión (se aplica a las aportaciones periódicas a ETF).",
+    "Cambio de divisa: sin comisión hasta 1.000 € al mes; 1 % sobre lo que lo supere.",
+    "Sin comisión de custodia."
+   ],
+   "not_modeled": [
+    "Recargo de fin de semana en el cambio de divisa (las operaciones simuladas son en días de mercado)",
+    "Comisiones regulatorias (p. ej. impuesto sobre transacciones financieras)",
+    "Qué ETF concretos están en la selección de planes de inversión"
+   ],
+   "has_custody": false,
+   "has_fx": true
+  },
+  {
+   "id": "revolut_premium",
+   "name": "Revolut · Plan Premium",
+   "kind": "broker",
+   "type": "Banco digital",
+   "category": "digital",
+   "entity": "Revolut",
+   "profile": "Plan Premium (9,99 €/mes)",
+   "country": "LT (opera en España)",
+   "plan": "Plan Premium: 5 órdenes sin comisión al mes y cambio de divisa sin comisión adicional. La cuota del plan se incluye como mantenimiento",
+   "instruments": [
+    "Stock",
+    "ETF"
+   ],
+   "source": {
+    "publisher": "Revolut (Revolut Securities Europe UAB)",
+    "document": "Ayuda oficial «Las comisiones de trading de Revolut», «Comisiones y límites de cambio de divisas» y página «Ver planes de Revolut»",
+    "url": "https://help.revolut.com/es-ES/help/wealth/stocks/trading-stocks/trading-fees/what-fees-will-i-be-charged-for-my-trading/",
+    "extra_urls": [
+     "https://www.revolut.com/es-ES/our-pricing-plans/"
+    ],
+    "document_date": null,
+    "consulted": "2026-11-12"
+   },
+   "notes": [
+    "5 órdenes sin comisión al mes; a partir de ahí, 1 € por orden.",
+    "Compras periódicas de ETP seleccionados con planes de inversión: sin comisión.",
+    "Cambio de divisa: sin comisiones adicionales en Premium.",
+    "Cuota del plan: 9,99 €/mes. Incluye otros servicios bancarios, pero aquí se cuenta entera como coste de mantenimiento."
+   ],
+   "not_modeled": [
+    "Otras ventajas del plan Premium ajenas a la inversión",
+    "Comisiones regulatorias",
+    "La asignación se reinicia con el ciclo de facturación; se aproxima por mes natural"
+   ],
+   "has_custody": false,
+   "has_fx": false
+  }
+ ],
+ "strategies": [
+  {
+   "id": "A_global",
+   "name": "A · Global 100 % RV",
+   "initial_capital": 10000.0,
+   "contributions_total": 0.0,
+   "total_contributed": 10000.0,
+   "n_contributions": 0,
+   "planned_contributions": [],
+   "gross_final": 31433.16,
+   "gross_gain": 21433.16,
+   "gross_twr": 2.143316,
+   "assets": [
+    {
+     "ticker": "IWDA.AS",
+     "name": "iShares Core MSCI World UCITS ETF USD (Acc)",
+     "type": "ETF",
+     "currency": "EUR",
+     "market": "EUROZONE",
+     "weight": 100.0,
+     "allocation": 10000.0
+    }
+   ],
+   "costs": {
+    "none": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 1,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 0.0,
+      "buy_initial": 0.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 0.0
+     },
+     "during_pct_contributed": 0.0,
+     "during_pct_final": 0.0,
+     "net_final": 31433.16,
+     "net_gain": 21433.16,
+     "impact": 0.0,
+     "impact_pct_contributed": 0.0,
+     "exit": {
+      "sell": 0.0,
+      "fx": 0.0,
+      "total": 0.0
+     },
+     "net_after_exit": 31433.16,
+     "net_after_exit_gain": 21433.16,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 0.0,
+       "fx_buy": 0.0,
+       "sell": 0.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "santander_online": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 1,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 20.0,
+      "buy_initial": 20.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 1783.29,
+      "maintenance": 0.0,
+      "total": 1803.29
+     },
+     "during_pct_contributed": 0.180329,
+     "during_pct_final": 0.057369,
+     "net_final": 29587.0,
+     "net_gain": 19587.0,
+     "impact": 1846.16,
+     "impact_pct_contributed": 0.184616,
+     "exit": {
+      "sell": 109.8,
+      "fx": 0.0,
+      "total": 109.8
+     },
+     "net_after_exit": 29477.21,
+     "net_after_exit_gain": 19477.21,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 20.0,
+       "fx_buy": 0.0,
+       "sell": 109.8,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": [
+      "Custodia calculada con la tarifa MÁXIMA publicada: la aplicada a cada cliente puede ser menor."
+     ]
+    },
+    "caixabank_std": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 1,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 36.0,
+      "buy_initial": 36.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 300.08,
+      "maintenance": 0.0,
+      "total": 336.08
+     },
+     "during_pct_contributed": 0.033608,
+     "during_pct_final": 0.010692,
+     "net_final": 31019.92,
+     "net_gain": 21019.92,
+     "impact": 413.24,
+     "impact_pct_contributed": 0.041324,
+     "exit": {
+      "sell": 78.3,
+      "fx": 0.0,
+      "total": 78.3
+     },
+     "net_after_exit": 30941.62,
+     "net_after_exit_gain": 20941.62,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 36.0,
+       "fx_buy": 0.0,
+       "sell": 78.3,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": [
+      "Custodia estimada solo con el mínimo por clase de valor: la tarifa se calcula sobre el valor nominal, que no está disponible."
+     ]
+    },
+    "bankinter_std": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 1,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 20.0,
+      "buy_initial": 20.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 360.77,
+      "maintenance": 0.0,
+      "total": 380.77
+     },
+     "during_pct_contributed": 0.038077,
+     "during_pct_final": 0.012114,
+     "net_final": 31009.52,
+     "net_gain": 21009.52,
+     "impact": 423.64,
+     "impact_pct_contributed": 0.042364,
+     "exit": {
+      "sell": 20.0,
+      "fx": 0.0,
+      "total": 20.0
+     },
+     "net_after_exit": 30989.52,
+     "net_after_exit_gain": 20989.52,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 20.0,
+       "fx_buy": 0.0,
+       "sell": 20.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "ing": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 1,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 13.0,
+      "buy_initial": 13.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 191.34,
+      "maintenance": 0.0,
+      "total": 204.34
+     },
+     "during_pct_contributed": 0.020434,
+     "during_pct_final": 0.006501,
+     "net_final": 31200.96,
+     "net_gain": 21200.96,
+     "impact": 232.2,
+     "impact_pct_contributed": 0.02322,
+     "exit": {
+      "sell": 20.0,
+      "fx": 0.0,
+      "total": 20.0
+     },
+     "net_after_exit": 31180.96,
+     "net_after_exit_gain": 21180.96,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 13.0,
+       "fx_buy": 0.0,
+       "sell": 20,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "bbva_etf": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 1,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 15.0,
+      "buy_initial": 15.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 15.0
+     },
+     "during_pct_contributed": 0.0015,
+     "during_pct_final": 0.000477,
+     "net_final": 31386.01,
+     "net_gain": 21386.01,
+     "impact": 47.15,
+     "impact_pct_contributed": 0.004715,
+     "exit": {
+      "sell": 47.08,
+      "fx": 0.0,
+      "total": 47.08
+     },
+     "net_after_exit": 31338.93,
+     "net_after_exit_gain": 21338.93,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 15.0,
+       "fx_buy": 0.0,
+       "sell": 47.08,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "bbva_joven": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 1,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 0.99,
+      "buy_initial": 0.99,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 0.99
+     },
+     "during_pct_contributed": 9.9e-05,
+     "during_pct_final": 3.1e-05,
+     "net_final": 31430.05,
+     "net_gain": 21430.05,
+     "impact": 3.11,
+     "impact_pct_contributed": 0.000311,
+     "exit": {
+      "sell": 0.99,
+      "fx": 0.0,
+      "total": 0.99
+     },
+     "net_after_exit": 31429.06,
+     "net_after_exit_gain": 21429.06,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 0.99,
+       "fx_buy": 0.0,
+       "sell": 0.99,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "myinvestor": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 1,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 12.0,
+      "buy_initial": 12.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 12.0
+     },
+     "during_pct_contributed": 0.0012,
+     "during_pct_final": 0.000382,
+     "net_final": 31395.44,
+     "net_gain": 21395.44,
+     "impact": 37.72,
+     "impact_pct_contributed": 0.003772,
+     "exit": {
+      "sell": 25.0,
+      "fx": 0.0,
+      "total": 25.0
+     },
+     "net_after_exit": 31370.44,
+     "net_after_exit_gain": 21370.44,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 12.0,
+       "fx_buy": 0.0,
+       "sell": 25,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "traderepublic": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 1,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 1.0,
+      "buy_initial": 1.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 1.0
+     },
+     "during_pct_contributed": 0.0001,
+     "during_pct_final": 3.2e-05,
+     "net_final": 31430.02,
+     "net_gain": 21430.02,
+     "impact": 3.14,
+     "impact_pct_contributed": 0.000314,
+     "exit": {
+      "sell": 1.0,
+      "fx": 0.0,
+      "total": 1.0
+     },
+     "net_after_exit": 31429.02,
+     "net_after_exit_gain": 21429.02,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 1.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "revolut_standard": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 1,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 1.0,
+      "buy_initial": 1.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 1.0
+     },
+     "during_pct_contributed": 0.0001,
+     "during_pct_final": 3.2e-05,
+     "net_final": 31430.02,
+     "net_gain": 21430.02,
+     "impact": 3.14,
+     "impact_pct_contributed": 0.000314,
+     "exit": {
+      "sell": 1.0,
+      "fx": 0.0,
+      "total": 1.0
+     },
+     "net_after_exit": 31429.02,
+     "net_after_exit_gain": 21429.02,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 1.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "revolut_premium": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 1,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 0.0,
+      "buy_initial": 0.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 1199.13,
+      "total": 1199.13
+     },
+     "during_pct_contributed": 0.119913,
+     "during_pct_final": 0.038148,
+     "net_final": 30234.04,
+     "net_gain": 20234.04,
+     "impact": 1199.13,
+     "impact_pct_contributed": 0.119913,
+     "exit": {
+      "sell": 1.0,
+      "fx": 0.0,
+      "total": 1.0
+     },
+     "net_after_exit": 30233.04,
+     "net_after_exit_gain": 20233.04,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 0.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    }
+   }
+  },
+  {
+   "id": "B_mixta",
+   "name": "B · Mixta 60/40",
+   "initial_capital": 10000.0,
+   "contributions_total": 0.0,
+   "total_contributed": 10000.0,
+   "n_contributions": 0,
+   "planned_contributions": [],
+   "gross_final": 22702.55,
+   "gross_gain": 12702.55,
+   "gross_twr": 1.270255,
+   "assets": [
+    {
+     "ticker": "IWDA.AS",
+     "name": "iShares Core MSCI World UCITS ETF USD (Acc)",
+     "type": "ETF",
+     "currency": "EUR",
+     "market": "EUROZONE",
+     "weight": 60.0,
+     "allocation": 6000.0
+    },
+    {
+     "ticker": "EUNH.DE",
+     "name": "iShares Core € Govt Bond UCITS ETF EUR (Dist)",
+     "type": "ETF",
+     "currency": "EUR",
+     "market": "EUROZONE",
+     "weight": 40.0,
+     "allocation": 4000.0
+    }
+   ],
+   "costs": {
+    "none": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 2,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 0.0,
+      "buy_initial": 0.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 0.0
+     },
+     "during_pct_contributed": 0.0,
+     "during_pct_final": 0.0,
+     "net_final": 22702.55,
+     "net_gain": 12702.55,
+     "impact": 0.0,
+     "impact_pct_contributed": 0.0,
+     "exit": {
+      "sell": 0.0,
+      "fx": 0.0,
+      "total": 0.0
+     },
+     "net_after_exit": 22702.55,
+     "net_after_exit_gain": 12702.55,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 0.0,
+       "fx_buy": 0.0,
+       "sell": 0.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "EUNH.DE",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 0.0,
+       "fx_buy": 0.0,
+       "sell": 0.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "santander_online": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 2,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 40.0,
+      "buy_initial": 40.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 1668.69,
+      "maintenance": 0.0,
+      "total": 1708.69
+     },
+     "during_pct_contributed": 0.170869,
+     "during_pct_final": 0.075264,
+     "net_final": 20951.78,
+     "net_gain": 10951.78,
+     "impact": 1750.77,
+     "impact_pct_contributed": 0.175077,
+     "exit": {
+      "sell": 85.79,
+      "fx": 0.0,
+      "total": 85.79
+     },
+     "net_after_exit": 20865.99,
+     "net_after_exit_gain": 10865.99,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 20.0,
+       "fx_buy": 0.0,
+       "sell": 65.79,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "EUNH.DE",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 20.0,
+       "fx_buy": 0.0,
+       "sell": 20.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": [
+      "Custodia calculada con la tarifa MÁXIMA publicada: la aplicada a cada cliente puede ser menor."
+     ]
+    },
+    "caixabank_std": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 2,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 72.0,
+      "buy_initial": 72.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 600.16,
+      "maintenance": 0.0,
+      "total": 672.16
+     },
+     "during_pct_contributed": 0.067216,
+     "during_pct_final": 0.029607,
+     "net_final": 21954.64,
+     "net_gain": 11954.64,
+     "impact": 747.91,
+     "impact_pct_contributed": 0.074791,
+     "exit": {
+      "sell": 82.87,
+      "fx": 0.0,
+      "total": 82.87
+     },
+     "net_after_exit": 21871.77,
+     "net_after_exit_gain": 11871.77,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 36.0,
+       "fx_buy": 0.0,
+       "sell": 46.87,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "EUNH.DE",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 36.0,
+       "fx_buy": 0.0,
+       "sell": 36.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": [
+      "Custodia estimada solo con el mínimo por clase de valor: la tarifa se calcula sobre el valor nominal, que no está disponible."
+     ]
+    },
+    "bankinter_std": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 2,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 40.0,
+      "buy_initial": 40.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 500.98,
+      "maintenance": 0.0,
+      "total": 540.98
+     },
+     "during_pct_contributed": 0.054098,
+     "during_pct_final": 0.023829,
+     "net_final": 22119.48,
+     "net_gain": 12119.48,
+     "impact": 583.06,
+     "impact_pct_contributed": 0.058306,
+     "exit": {
+      "sell": 40.0,
+      "fx": 0.0,
+      "total": 40.0
+     },
+     "net_after_exit": 22079.48,
+     "net_after_exit_gain": 12079.48,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 20.0,
+       "fx_buy": 0.0,
+       "sell": 20.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "EUNH.DE",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 20.0,
+       "fx_buy": 0.0,
+       "sell": 20.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "ing": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 2,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 16.0,
+      "buy_initial": 16.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 382.68,
+      "maintenance": 0.0,
+      "total": 398.68
+     },
+     "during_pct_contributed": 0.039868,
+     "during_pct_final": 0.017561,
+     "net_final": 22284.86,
+     "net_gain": 12284.86,
+     "impact": 417.69,
+     "impact_pct_contributed": 0.041769,
+     "exit": {
+      "sell": 26.84,
+      "fx": 0.0,
+      "total": 26.84
+     },
+     "net_after_exit": 22258.02,
+     "net_after_exit_gain": 12258.02,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 9.0,
+       "fx_buy": 0.0,
+       "sell": 20,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "EUNH.DE",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 7.0,
+       "fx_buy": 0.0,
+       "sell": 6.84,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "bbva_etf": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 2,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 15.0,
+      "buy_initial": 15.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 15.0
+     },
+     "during_pct_contributed": 0.0015,
+     "during_pct_final": 0.000661,
+     "net_final": 22668.49,
+     "net_gain": 12668.49,
+     "impact": 34.05,
+     "impact_pct_contributed": 0.003405,
+     "exit": {
+      "sell": 34.0,
+      "fx": 0.0,
+      "total": 34.0
+     },
+     "net_after_exit": 22634.49,
+     "net_after_exit_gain": 12634.49,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 9.0,
+       "fx_buy": 0.0,
+       "sell": 28.25,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "EUNH.DE",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 6.0,
+       "fx_buy": 0.0,
+       "sell": 5.76,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "bbva_joven": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 2,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 1.98,
+      "buy_initial": 1.98,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 1.98
+     },
+     "during_pct_contributed": 0.000198,
+     "during_pct_final": 8.7e-05,
+     "net_final": 22698.48,
+     "net_gain": 12698.48,
+     "impact": 4.06,
+     "impact_pct_contributed": 0.000406,
+     "exit": {
+      "sell": 1.98,
+      "fx": 0.0,
+      "total": 1.98
+     },
+     "net_after_exit": 22696.5,
+     "net_after_exit_gain": 12696.5,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 0.99,
+       "fx_buy": 0.0,
+       "sell": 0.99,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "EUNH.DE",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 0.99,
+       "fx_buy": 0.0,
+       "sell": 0.99,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "myinvestor": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 2,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 12.0,
+      "buy_initial": 12.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 12.0
+     },
+     "during_pct_contributed": 0.0012,
+     "during_pct_final": 0.000529,
+     "net_final": 22675.3,
+     "net_gain": 12675.3,
+     "impact": 27.24,
+     "impact_pct_contributed": 0.002724,
+     "exit": {
+      "sell": 27.21,
+      "fx": 0.0,
+      "total": 27.21
+     },
+     "net_after_exit": 22648.09,
+     "net_after_exit_gain": 12648.09,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 7.2,
+       "fx_buy": 0.0,
+       "sell": 22.6,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "EUNH.DE",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 4.8,
+       "fx_buy": 0.0,
+       "sell": 4.61,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "traderepublic": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 2,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 2.0,
+      "buy_initial": 2.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 2.0
+     },
+     "during_pct_contributed": 0.0002,
+     "during_pct_final": 8.8e-05,
+     "net_final": 22698.44,
+     "net_gain": 12698.44,
+     "impact": 4.1,
+     "impact_pct_contributed": 0.00041,
+     "exit": {
+      "sell": 2.0,
+      "fx": 0.0,
+      "total": 2.0
+     },
+     "net_after_exit": 22696.44,
+     "net_after_exit_gain": 12696.44,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 1.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "EUNH.DE",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 1.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "revolut_standard": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 2,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 2.0,
+      "buy_initial": 2.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 2.0
+     },
+     "during_pct_contributed": 0.0002,
+     "during_pct_final": 8.8e-05,
+     "net_final": 22698.44,
+     "net_gain": 12698.44,
+     "impact": 4.1,
+     "impact_pct_contributed": 0.00041,
+     "exit": {
+      "sell": 2.0,
+      "fx": 0.0,
+      "total": 2.0
+     },
+     "net_after_exit": 22696.44,
+     "net_after_exit_gain": 12696.44,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 1.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "EUNH.DE",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 1.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "revolut_premium": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 2,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 0.0,
+      "buy_initial": 0.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 1199.13,
+      "total": 1199.13
+     },
+     "during_pct_contributed": 0.119913,
+     "during_pct_final": 0.052819,
+     "net_final": 21503.42,
+     "net_gain": 11503.42,
+     "impact": 1199.13,
+     "impact_pct_contributed": 0.119913,
+     "exit": {
+      "sell": 2.0,
+      "fx": 0.0,
+      "total": 2.0
+     },
+     "net_after_exit": 21501.42,
+     "net_after_exit_gain": 11501.42,
+     "positions": [
+      {
+       "ticker": "IWDA.AS",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 0.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "EUNH.DE",
+       "market": "EUROZONE",
+       "trades": 1,
+       "buy": 0.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    }
+   }
+  },
+  {
+   "id": "C_espana",
+   "name": "C · Concentrada España",
+   "initial_capital": 10000.0,
+   "contributions_total": 0.0,
+   "total_contributed": 10000.0,
+   "n_contributions": 0,
+   "planned_contributions": [],
+   "gross_final": 41673.03,
+   "gross_gain": 31673.03,
+   "gross_twr": 3.167303,
+   "assets": [
+    {
+     "ticker": "SAN.MC",
+     "name": "Banco Santander, S.A.",
+     "type": "Stock",
+     "currency": "EUR",
+     "market": "ES",
+     "weight": 33.34,
+     "allocation": 3334.0
+    },
+    {
+     "ticker": "ITX.MC",
+     "name": "Industria de Diseño Textil, S.A.",
+     "type": "Stock",
+     "currency": "EUR",
+     "market": "ES",
+     "weight": 33.33,
+     "allocation": 3333.0
+    },
+    {
+     "ticker": "IBE.MC",
+     "name": "Iberdrola, S.A.",
+     "type": "Stock",
+     "currency": "EUR",
+     "market": "ES",
+     "weight": 33.33,
+     "allocation": 3333.0
+    }
+   ],
+   "costs": {
+    "none": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 3,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 0.0,
+      "buy_initial": 0.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 0.0
+     },
+     "during_pct_contributed": 0.0,
+     "during_pct_final": 0.0,
+     "net_final": 41673.03,
+     "net_gain": 31673.03,
+     "impact": 0.0,
+     "impact_pct_contributed": 0.0,
+     "exit": {
+      "sell": 0.0,
+      "fx": 0.0,
+      "total": 0.0
+     },
+     "net_after_exit": 41673.03,
+     "net_after_exit_gain": 31673.03,
+     "positions": [
+      {
+       "ticker": "SAN.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 0.0,
+       "fx_buy": 0.0,
+       "sell": 0.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "ITX.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 0.0,
+       "fx_buy": 0.0,
+       "sell": 0.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "IBE.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 0.0,
+       "fx_buy": 0.0,
+       "sell": 0.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "santander_online": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 3,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 18.0,
+      "buy_initial": 18.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 757.6,
+      "maintenance": 0.0,
+      "total": 775.6
+     },
+     "during_pct_contributed": 0.07756,
+     "during_pct_final": 0.018612,
+     "net_final": 40840.42,
+     "net_gain": 30840.42,
+     "impact": 832.62,
+     "impact_pct_contributed": 0.083262,
+     "exit": {
+      "sell": 63.63,
+      "fx": 0.0,
+      "total": 63.63
+     },
+     "net_after_exit": 40776.79,
+     "net_after_exit_gain": 30776.79,
+     "positions": [
+      {
+       "ticker": "SAN.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 6.0,
+       "fx_buy": 0.0,
+       "sell": 6.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "ITX.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 6.0,
+       "fx_buy": 0.0,
+       "sell": 6.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "IBE.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 6.0,
+       "fx_buy": 0.0,
+       "sell": 51.63,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": [
+      "Custodia calculada con la tarifa MÁXIMA publicada: la aplicada a cada cliente puede ser menor."
+     ]
+    },
+    "caixabank_std": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 3,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 65.0,
+      "buy_initial": 65.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 360.1,
+      "maintenance": 0.0,
+      "total": 425.1
+     },
+     "during_pct_contributed": 0.04251,
+     "during_pct_final": 0.010201,
+     "net_final": 41042.06,
+     "net_gain": 31042.06,
+     "impact": 630.97,
+     "impact_pct_contributed": 0.063097,
+     "exit": {
+      "sell": 269.11,
+      "fx": 0.0,
+      "total": 269.11
+     },
+     "net_after_exit": 40772.94,
+     "net_after_exit_gain": 30772.94,
+     "positions": [
+      {
+       "ticker": "SAN.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 21.67,
+       "fx_buy": 0.0,
+       "sell": 79.78,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "ITX.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 21.66,
+       "fx_buy": 0.0,
+       "sell": 55.73,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "IBE.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 21.66,
+       "fx_buy": 0.0,
+       "sell": 133.61,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": [
+      "Custodia estimada solo con el mínimo por clase de valor: la tarifa se calcula sobre el valor nominal, que no está disponible."
+     ]
+    },
+    "bankinter_std": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 3,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 24.0,
+      "buy_initial": 24.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 724.82,
+      "maintenance": 0.0,
+      "total": 748.82
+     },
+     "during_pct_contributed": 0.074882,
+     "during_pct_final": 0.017969,
+     "net_final": 40848.19,
+     "net_gain": 30848.19,
+     "impact": 824.84,
+     "impact_pct_contributed": 0.082484,
+     "exit": {
+      "sell": 24.0,
+      "fx": 0.0,
+      "total": 24.0
+     },
+     "net_after_exit": 40824.19,
+     "net_after_exit_gain": 30824.19,
+     "positions": [
+      {
+       "ticker": "SAN.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 8.0,
+       "fx_buy": 0.0,
+       "sell": 8.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "ITX.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 8.0,
+       "fx_buy": 0.0,
+       "sell": 8.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "IBE.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 8.0,
+       "fx_buy": 0.0,
+       "sell": 8.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "ing": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 3,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 19.0,
+      "buy_initial": 19.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 574.01,
+      "maintenance": 0.0,
+      "total": 593.01
+     },
+     "during_pct_contributed": 0.059301,
+     "during_pct_final": 0.01423,
+     "net_final": 41019.84,
+     "net_gain": 31019.84,
+     "impact": 653.19,
+     "impact_pct_contributed": 0.065319,
+     "exit": {
+      "sell": 46.94,
+      "fx": 0.0,
+      "total": 46.94
+     },
+     "net_after_exit": 40972.89,
+     "net_after_exit_gain": 30972.89,
+     "positions": [
+      {
+       "ticker": "SAN.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 6.33,
+       "fx_buy": 0.0,
+       "sell": 15.33,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "ITX.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 6.33,
+       "fx_buy": 0.0,
+       "sell": 11.61,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "IBE.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 6.33,
+       "fx_buy": 0.0,
+       "sell": 20,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "bbva_etf": {
+     "complete": false,
+     "uncovered": [
+      {
+       "ticker": "SAN.MC",
+       "reason": "tipo de activo no incluido en esta tarifa"
+      },
+      {
+       "ticker": "ITX.MC",
+       "reason": "tipo de activo no incluido en esta tarifa"
+      },
+      {
+       "ticker": "IBE.MC",
+       "reason": "tipo de activo no incluido en esta tarifa"
+      }
+     ],
+     "trades": {
+      "initial": 3,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 0.0,
+      "buy_initial": 0.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 0.0
+     },
+     "during_pct_contributed": 0.0,
+     "during_pct_final": 0.0,
+     "net_final": 41673.03,
+     "net_gain": 31673.03,
+     "impact": 0.0,
+     "impact_pct_contributed": 0.0,
+     "exit": {
+      "sell": 0.0,
+      "fx": 0.0,
+      "total": 0.0
+     },
+     "net_after_exit": 41673.03,
+     "net_after_exit_gain": 31673.03,
+     "positions": [
+      {
+       "ticker": "SAN.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 0.0,
+       "fx_buy": 0.0,
+       "sell": 0.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "ITX.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 0.0,
+       "fx_buy": 0.0,
+       "sell": 0.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "IBE.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 0.0,
+       "fx_buy": 0.0,
+       "sell": 0.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "bbva_joven": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 3,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 2.97,
+      "buy_initial": 2.97,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 2.97
+     },
+     "during_pct_contributed": 0.000297,
+     "during_pct_final": 7.1e-05,
+     "net_final": 41660.65,
+     "net_gain": 31660.65,
+     "impact": 12.38,
+     "impact_pct_contributed": 0.001238,
+     "exit": {
+      "sell": 2.97,
+      "fx": 0.0,
+      "total": 2.97
+     },
+     "net_after_exit": 41657.68,
+     "net_after_exit_gain": 31657.68,
+     "positions": [
+      {
+       "ticker": "SAN.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 0.99,
+       "fx_buy": 0.0,
+       "sell": 0.99,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "ITX.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 0.99,
+       "fx_buy": 0.0,
+       "sell": 0.99,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "IBE.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 0.99,
+       "fx_buy": 0.0,
+       "sell": 0.99,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "myinvestor": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 3,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 12.0,
+      "buy_initial": 12.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 12.0
+     },
+     "during_pct_contributed": 0.0012,
+     "during_pct_final": 0.000288,
+     "net_final": 41623.02,
+     "net_gain": 31623.02,
+     "impact": 50.01,
+     "impact_pct_contributed": 0.005001,
+     "exit": {
+      "sell": 49.95,
+      "fx": 0.0,
+      "total": 49.95
+     },
+     "net_after_exit": 41573.08,
+     "net_after_exit_gain": 31573.08,
+     "positions": [
+      {
+       "ticker": "SAN.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 4.0,
+       "fx_buy": 0.0,
+       "sell": 14.81,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "ITX.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 4.0,
+       "fx_buy": 0.0,
+       "sell": 10.34,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "IBE.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 4.0,
+       "fx_buy": 0.0,
+       "sell": 24.8,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "traderepublic": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 3,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 3.0,
+      "buy_initial": 3.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 3.0
+     },
+     "during_pct_contributed": 0.0003,
+     "during_pct_final": 7.2e-05,
+     "net_final": 41660.53,
+     "net_gain": 31660.53,
+     "impact": 12.5,
+     "impact_pct_contributed": 0.00125,
+     "exit": {
+      "sell": 3.0,
+      "fx": 0.0,
+      "total": 3.0
+     },
+     "net_after_exit": 41657.53,
+     "net_after_exit_gain": 31657.53,
+     "positions": [
+      {
+       "ticker": "SAN.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 1.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "ITX.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 1.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "IBE.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 1.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "revolut_standard": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 3,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 3.0,
+      "buy_initial": 3.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 0.0,
+      "total": 3.0
+     },
+     "during_pct_contributed": 0.0003,
+     "during_pct_final": 7.2e-05,
+     "net_final": 41660.53,
+     "net_gain": 31660.53,
+     "impact": 12.5,
+     "impact_pct_contributed": 0.00125,
+     "exit": {
+      "sell": 3.0,
+      "fx": 0.0,
+      "total": 3.0
+     },
+     "net_after_exit": 41657.53,
+     "net_after_exit_gain": 31657.53,
+     "positions": [
+      {
+       "ticker": "SAN.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 1.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "ITX.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 1.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "IBE.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 1.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    },
+    "revolut_premium": {
+     "complete": true,
+     "uncovered": [],
+     "trades": {
+      "initial": 3,
+      "periodic": 0
+     },
+     "during": {
+      "buy": 0.0,
+      "buy_initial": 0.0,
+      "buy_periodic": 0.0,
+      "fx": 0.0,
+      "custody": 0.0,
+      "maintenance": 1199.13,
+      "total": 1199.13
+     },
+     "during_pct_contributed": 0.119913,
+     "during_pct_final": 0.028775,
+     "net_final": 40473.91,
+     "net_gain": 30473.91,
+     "impact": 1199.13,
+     "impact_pct_contributed": 0.119913,
+     "exit": {
+      "sell": 3.0,
+      "fx": 0.0,
+      "total": 3.0
+     },
+     "net_after_exit": 40470.91,
+     "net_after_exit_gain": 30470.91,
+     "positions": [
+      {
+       "ticker": "SAN.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 0.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "ITX.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 0.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      },
+      {
+       "ticker": "IBE.MC",
+       "market": "ES",
+       "trades": 1,
+       "buy": 0.0,
+       "fx_buy": 0.0,
+       "sell": 1.0,
+       "fx_sell": 0.0
+      }
+     ],
+     "notes": []
+    }
+   }
+  }
+ ],
+ "product_costs": [
+  {
+   "ticker": "EUNH.DE",
+   "name": "iShares Core € Govt Bond UCITS ETF EUR (Dist)",
+   "type": "ETF",
+   "ter_status": "available",
+   "ter": 0.0009,
+   "source": "yahoo_fund_operations",
+   "reason": null
+  },
+  {
+   "ticker": "IBE.MC",
+   "name": "Iberdrola, S.A.",
+   "type": "Stock",
+   "ter_status": "not_applicable",
+   "ter": null,
+   "source": null,
+   "reason": "Una acción no es un fondo: no tiene comisión de gestión. Los costes dependen del intermediario."
+  },
+  {
+   "ticker": "ITX.MC",
+   "name": "Industria de Diseño Textil, S.A.",
+   "type": "Stock",
+   "ter_status": "not_applicable",
+   "ter": null,
+   "source": null,
+   "reason": "Una acción no es un fondo: no tiene comisión de gestión. Los costes dependen del intermediario."
+  },
+  {
+   "ticker": "IWDA.AS",
+   "name": "iShares Core MSCI World UCITS ETF USD (Acc)",
+   "type": "ETF",
+   "ter_status": "available",
+   "ter": 0.002,
+   "source": "yahoo_fund_operations",
+   "reason": null
+  },
+  {
+   "ticker": "SAN.MC",
+   "name": "Banco Santander, S.A.",
+   "type": "Stock",
+   "ter_status": "not_applicable",
+   "ter": null,
+   "source": null,
+   "reason": "Una acción no es un fondo: no tiene comisión de gestión. Los costes dependen del intermediario."
+  }
+ ]
+}

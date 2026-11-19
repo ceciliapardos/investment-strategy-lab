@@ -1,0 +1,7066 @@
+{
+ "status": "ok",
+ "message": null,
+ "base_currency": "EUR",
+ "method": {
+  "rebalancing": "buy_and_hold",
+  "prices": "adjusted_close",
+  "alignment": "common_dates",
+  "costs": "not_included",
+  "periods_per_year": 252,
+  "returns": "time_weighted",
+  "contributions": true
+ },
+ "period": "CUSTOM",
+ "requested": {
+  "start": "2021-11-18",
+  "end": "2026-11-18"
+ },
+ "common": {
+  "start": "2009-09-25",
+  "end": "2026-11-19"
+ },
+ "effective": {
+  "start": "2021-11-18",
+  "end": "2026-11-18",
+  "observations": 1274,
+  "days": 1826
+ },
+ "notices": [],
+ "fx": [],
+ "assets": [
+  {
+   "ticker": "EUNH.DE",
+   "name": "iShares Core € Govt Bond UCITS ETF EUR (Dist)",
+   "type": "ETF",
+   "currency": "EUR",
+   "fx_pair": null,
+   "first_date": "2009-04-17",
+   "last_date": "2026-11-19",
+   "local_first_date": "2009-04-17"
+  },
+  {
+   "ticker": "IWDA.AS",
+   "name": "iShares Core MSCI World UCITS ETF USD (Acc)",
+   "type": "ETF",
+   "currency": "EUR",
+   "fx_pair": null,
+   "first_date": "2009-09-25",
+   "last_date": "2026-11-19",
+   "local_first_date": "2009-09-25"
+  }
+ ],
+ "strategies": [
+  {
+   "id": "base_mensual",
+   "name": "BASE 70/30 · mensual 300 €",
+   "initial_capital": 10000.0,
+   "final_value": 37301.05,
+   "contributions": {
+    "planned": [
+     {
+      "ticker": "IWDA.AS",
+      "amount": 210.0,
+      "frequency": "monthly"
+     },
+     {
+      "ticker": "EUNH.DE",
+      "amount": 90.0,
+      "frequency": "monthly"
+     }
+    ],
+    "count": 120,
+    "total": 18000.0,
+    "total_contributed": 28000.0,
+    "gain": 9301.05,
+    "first_date": "2021-12-20",
+    "by_asset": {
+     "EUNH.DE": {
+      "count": 60,
+      "amount": 5400.0
+     },
+     "IWDA.AS": {
+      "count": 60,
+      "amount": 12600.0
+     }
+    }
+   },
+   "n_assets": 2,
+   "largest_weight": {
+    "ticker": "IWDA.AS",
+    "weight": 70.0
+   },
+   "metrics": {
+    "total_return": 0.382605,
+    "cagr": 0.066949,
+    "cagr_reason": null,
+    "volatility": 0.107514,
+    "volatility_reason": null,
+    "sharpe": 0.6504,
+    "sharpe_reason": null,
+    "sharpe_risk_free": 0.0,
+    "max_drawdown": {
+     "value": -0.167441,
+     "peak_date": "2025-02-10",
+     "trough_date": "2025-04-09"
+    }
+   },
+   "composition": [
+    {
+     "ticker": "IWDA.AS",
+     "name": "iShares Core MSCI World UCITS ETF USD (Acc)",
+     "type": "ETF",
+     "currency": "EUR",
+     "initial_weight": 70.0,
+     "final_weight": 78.586,
+     "return_eur": 0.621173
+    },
+    {
+     "ticker": "EUNH.DE",
+     "name": "iShares Core € Govt Bond UCITS ETF EUR (Dist)",
+     "type": "ETF",
+     "currency": "EUR",
+     "initial_weight": 30.0,
+     "final_weight": 21.414,
+     "return_eur": -0.136515
+    }
+   ]
+  },
+  {
+   "id": "base_sin_aport",
+   "name": "BASE 70/30 · sin aportaciones",
+   "initial_capital": 10000.0,
+   "final_value": 13938.67,
+   "contributions": {
+    "planned": [],
+    "count": 0,
+    "total": 0.0,
+    "total_contributed": 10000.0,
+    "gain": 3938.67,
+    "first_date": null,
+    "by_asset": {}
+   },
+   "n_assets": 2,
+   "largest_weight": {
+    "ticker": "IWDA.AS",
+    "weight": 70.0
+   },
+   "metrics": {
+    "total_return": 0.393867,
+    "cagr": 0.068681,
+    "cagr_reason": null,
+    "volatility": 0.108873,
+    "volatility_reason": null,
+    "sharpe": 0.6584,
+    "sharpe_reason": null,
+    "sharpe_risk_free": 0.0,
+    "max_drawdown": {
+     "value": -0.170981,
+     "peak_date": "2025-02-10",
+     "trough_date": "2025-04-09"
+    }
+   },
+   "composition": [
+    {
+     "ticker": "IWDA.AS",
+     "name": "iShares Core MSCI World UCITS ETF USD (Acc)",
+     "type": "ETF",
+     "currency": "EUR",
+     "initial_weight": 70.0,
+     "final_weight": 81.4153,
+     "return_eur": 0.621173
+    },
+    {
+     "ticker": "EUNH.DE",
+     "name": "iShares Core € Govt Bond UCITS ETF EUR (Dist)",
+     "type": "ETF",
+     "currency": "EUR",
+     "initial_weight": 30.0,
+     "final_weight": 18.5847,
+     "return_eur": -0.136515
+    }
+   ]
+  }
+ ],
+ "benchmark": {
+  "id": "sp500tr",
+  "ticker": "^SP500TR",
+  "name": "S&P 500 (Total Return)",
+  "kind": "index",
+  "kind_label": "Índice directo",
+  "description": "Índice S&P 500 con dividendos reinvertidos (Total Return), en dólares, convertido a euros con el mismo tipo de cambio diario que las estrategias.",
+  "status": "ok",
+  "message": null,
+  "currency": "USD",
+  "effective": {
+   "start": "2021-11-18",
+   "end": "2026-11-18",
+   "observations": 1254
+  },
+  "metrics": {
+   "total_return": 0.72098,
+   "cagr": 0.114709,
+   "cagr_reason": null,
+   "volatility": 0.187911,
+   "volatility_reason": null,
+   "sharpe": 0.6751,
+   "sharpe_reason": null,
+   "sharpe_risk_free": 0.0,
+   "max_drawdown": {
+    "value": -0.223201,
+    "peak_date": "2025-02-11",
+    "trough_date": "2025-04-08"
+   }
+  }
+ },
+ "series": [
+  {
+   "date": "2021-11-18",
+   "values": {
+    "base_mensual": 100.0,
+    "base_sin_aport": 100.0
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 10000.0,
+    "base_sin_aport": 10000.0
+   },
+   "benchmark": 100.0
+  },
+  {
+   "date": "2021-11-23",
+   "values": {
+    "base_mensual": 99.524,
+    "base_sin_aport": 99.524
+   },
+   "dd": {
+    "base_mensual": -0.011138,
+    "base_sin_aport": -0.011138
+   },
+   "eur": {
+    "base_mensual": 9952.4,
+    "base_sin_aport": 9952.4
+   },
+   "benchmark": 100.4196
+  },
+  {
+   "date": "2021-11-26",
+   "values": {
+    "base_mensual": 98.0907,
+    "base_sin_aport": 98.0907
+   },
+   "dd": {
+    "base_mensual": -0.025379,
+    "base_sin_aport": -0.025379
+   },
+   "eur": {
+    "base_mensual": 9809.07,
+    "base_sin_aport": 9809.07
+   },
+   "benchmark": 98.6545
+  },
+  {
+   "date": "2021-12-01",
+   "values": {
+    "base_mensual": 98.7559,
+    "base_sin_aport": 98.7559
+   },
+   "dd": {
+    "base_mensual": -0.018769,
+    "base_sin_aport": -0.018769
+   },
+   "eur": {
+    "base_mensual": 9875.59,
+    "base_sin_aport": 9875.59
+   },
+   "benchmark": 95.898
+  },
+  {
+   "date": "2021-12-06",
+   "values": {
+    "base_mensual": 98.3167,
+    "base_sin_aport": 98.3167
+   },
+   "dd": {
+    "base_mensual": -0.023134,
+    "base_sin_aport": -0.023134
+   },
+   "eur": {
+    "base_mensual": 9831.67,
+    "base_sin_aport": 9831.67
+   },
+   "benchmark": 97.8115
+  },
+  {
+   "date": "2021-12-09",
+   "values": {
+    "base_mensual": 99.7087,
+    "base_sin_aport": 99.7087
+   },
+   "dd": {
+    "base_mensual": -0.009303,
+    "base_sin_aport": -0.009303
+   },
+   "eur": {
+    "base_mensual": 9970.87,
+    "base_sin_aport": 9970.87
+   },
+   "benchmark": 99.0837
+  },
+  {
+   "date": "2021-12-14",
+   "values": {
+    "base_mensual": 98.5995,
+    "base_sin_aport": 98.5995
+   },
+   "dd": {
+    "base_mensual": -0.020323,
+    "base_sin_aport": -0.020323
+   },
+   "eur": {
+    "base_mensual": 9859.95,
+    "base_sin_aport": 9859.95
+   },
+   "benchmark": 98.9177
+  },
+  {
+   "date": "2021-12-17",
+   "values": {
+    "base_mensual": 99.0703,
+    "base_sin_aport": 99.0703
+   },
+   "dd": {
+    "base_mensual": -0.015645,
+    "base_sin_aport": -0.015645
+   },
+   "eur": {
+    "base_mensual": 9907.03,
+    "base_sin_aport": 9907.03
+   },
+   "benchmark": 98.2181
+  },
+  {
+   "date": "2021-12-22",
+   "values": {
+    "base_mensual": 99.0682,
+    "base_sin_aport": 99.0674
+   },
+   "dd": {
+    "base_mensual": -0.015667,
+    "base_sin_aport": -0.015675
+   },
+   "eur": {
+    "base_mensual": 10211.67,
+    "base_sin_aport": 9906.74
+   },
+   "benchmark": 100.2626
+  },
+  {
+   "date": "2021-12-28",
+   "values": {
+    "base_mensual": 100.6152,
+    "base_sin_aport": 100.6136
+   },
+   "dd": {
+    "base_mensual": -0.000296,
+    "base_sin_aport": -0.000311
+   },
+   "eur": {
+    "base_mensual": 10371.13,
+    "base_sin_aport": 10061.36
+   },
+   "benchmark": 101.8019
+  },
+  {
+   "date": "2022-01-03",
+   "values": {
+    "base_mensual": 100.1729,
+    "base_sin_aport": 100.1712
+   },
+   "dd": {
+    "base_mensual": -0.004691,
+    "base_sin_aport": -0.004708
+   },
+   "eur": {
+    "base_mensual": 10325.54,
+    "base_sin_aport": 10017.12
+   },
+   "benchmark": 101.6446
+  },
+  {
+   "date": "2022-01-06",
+   "values": {
+    "base_mensual": 99.1514,
+    "base_sin_aport": 99.15
+   },
+   "dd": {
+    "base_mensual": -0.01484,
+    "base_sin_aport": -0.014854
+   },
+   "eur": {
+    "base_mensual": 10220.25,
+    "base_sin_aport": 9915.0
+   },
+   "benchmark": 100.0636
+  },
+  {
+   "date": "2022-01-11",
+   "values": {
+    "base_mensual": 98.4772,
+    "base_sin_aport": 98.476
+   },
+   "dd": {
+    "base_mensual": -0.021539,
+    "base_sin_aport": -0.021551
+   },
+   "eur": {
+    "base_mensual": 10150.76,
+    "base_sin_aport": 9847.6
+   },
+   "benchmark": 100.2945
+  },
+  {
+   "date": "2022-01-14",
+   "values": {
+    "base_mensual": 97.7295,
+    "base_sin_aport": 97.7286
+   },
+   "dd": {
+    "base_mensual": -0.028968,
+    "base_sin_aport": -0.028977
+   },
+   "eur": {
+    "base_mensual": 10073.68,
+    "base_sin_aport": 9772.86
+   },
+   "benchmark": 98.1427
+  },
+  {
+   "date": "2022-01-19",
+   "values": {
+    "base_mensual": 97.1576,
+    "base_sin_aport": 97.1569
+   },
+   "dd": {
+    "base_mensual": -0.03465,
+    "base_sin_aport": -0.034658
+   },
+   "eur": {
+    "base_mensual": 10313.85,
+    "base_sin_aport": 9715.69
+   },
+   "benchmark": 96.4814
+  },
+  {
+   "date": "2022-01-24",
+   "values": {
+    "base_mensual": 93.5546,
+    "base_sin_aport": 93.5555
+   },
+   "dd": {
+    "base_mensual": -0.070449,
+    "base_sin_aport": -0.07044
+   },
+   "eur": {
+    "base_mensual": 9931.37,
+    "base_sin_aport": 9355.55
+   },
+   "benchmark": 93.7815
+  },
+  {
+   "date": "2022-01-27",
+   "values": {
+    "base_mensual": 95.8488,
+    "base_sin_aport": 95.8486
+   },
+   "dd": {
+    "base_mensual": -0.047655,
+    "base_sin_aport": -0.047656
+   },
+   "eur": {
+    "base_mensual": 10174.91,
+    "base_sin_aport": 9584.86
+   },
+   "benchmark": 92.8121
+  },
+  {
+   "date": "2022-02-01",
+   "values": {
+    "base_mensual": 96.7268,
+    "base_sin_aport": 96.726
+   },
+   "dd": {
+    "base_mensual": -0.038931,
+    "base_sin_aport": -0.038939
+   },
+   "eur": {
+    "base_mensual": 10268.11,
+    "base_sin_aport": 9672.6
+   },
+   "benchmark": 97.6664
+  },
+  {
+   "date": "2022-02-04",
+   "values": {
+    "base_mensual": 94.5408,
+    "base_sin_aport": 94.5403
+   },
+   "dd": {
+    "base_mensual": -0.060651,
+    "base_sin_aport": -0.060655
+   },
+   "eur": {
+    "base_mensual": 10036.06,
+    "base_sin_aport": 9454.03
+   },
+   "benchmark": 94.9569
+  },
+  {
+   "date": "2022-02-09",
+   "values": {
+    "base_mensual": 96.1039,
+    "base_sin_aport": 96.1026
+   },
+   "dd": {
+    "base_mensual": -0.04512,
+    "base_sin_aport": -0.045132
+   },
+   "eur": {
+    "base_mensual": 10201.99,
+    "base_sin_aport": 9610.26
+   },
+   "benchmark": 96.9231
+  },
+  {
+   "date": "2022-02-14",
+   "values": {
+    "base_mensual": 94.3473,
+    "base_sin_aport": 94.3464
+   },
+   "dd": {
+    "base_mensual": -0.062573,
+    "base_sin_aport": -0.062582
+   },
+   "eur": {
+    "base_mensual": 10015.51,
+    "base_sin_aport": 9434.64
+   },
+   "benchmark": 93.4858
+  },
+  {
+   "date": "2022-02-17",
+   "values": {
+    "base_mensual": 94.4845,
+    "base_sin_aport": 94.4838
+   },
+   "dd": {
+    "base_mensual": -0.06121,
+    "base_sin_aport": -0.061217
+   },
+   "eur": {
+    "base_mensual": 10030.08,
+    "base_sin_aport": 9448.38
+   },
+   "benchmark": 92.9821
+  },
+  {
+   "date": "2022-02-22",
+   "values": {
+    "base_mensual": 93.0487,
+    "base_sin_aport": 93.0486
+   },
+   "dd": {
+    "base_mensual": -0.075476,
+    "base_sin_aport": -0.075477
+   },
+   "eur": {
+    "base_mensual": 10175.54,
+    "base_sin_aport": 9304.86
+   },
+   "benchmark": 91.9245
+  },
+  {
+   "date": "2022-02-25",
+   "values": {
+    "base_mensual": 93.8847,
+    "base_sin_aport": 93.8842
+   },
+   "dd": {
+    "base_mensual": -0.067169,
+    "base_sin_aport": -0.067175
+   },
+   "eur": {
+    "base_mensual": 10266.97,
+    "base_sin_aport": 9388.42
+   },
+   "benchmark": 94.6443
+  },
+  {
+   "date": "2022-03-02",
+   "values": {
+    "base_mensual": 95.0104,
+    "base_sin_aport": 95.0101
+   },
+   "dd": {
+    "base_mensual": -0.055985,
+    "base_sin_aport": -0.055988
+   },
+   "eur": {
+    "base_mensual": 10390.07,
+    "base_sin_aport": 9501.01
+   },
+   "benchmark": 95.194
+  },
+  {
+   "date": "2022-03-07",
+   "values": {
+    "base_mensual": 94.0083,
+    "base_sin_aport": 94.0088
+   },
+   "dd": {
+    "base_mensual": -0.065941,
+    "base_sin_aport": -0.065937
+   },
+   "eur": {
+    "base_mensual": 10280.48,
+    "base_sin_aport": 9400.88
+   },
+   "benchmark": 93.3539
+  },
+  {
+   "date": "2022-03-10",
+   "values": {
+    "base_mensual": 92.4695,
+    "base_sin_aport": 92.4696
+   },
+   "dd": {
+    "base_mensual": -0.081231,
+    "base_sin_aport": -0.08123
+   },
+   "eur": {
+    "base_mensual": 10112.2,
+    "base_sin_aport": 9246.96
+   },
+   "benchmark": 92.9741
+  },
+  {
+   "date": "2022-03-15",
+   "values": {
+    "base_mensual": 92.9172,
+    "base_sin_aport": 92.9169
+   },
+   "dd": {
+    "base_mensual": -0.076783,
+    "base_sin_aport": -0.076786
+   },
+   "eur": {
+    "base_mensual": 10161.16,
+    "base_sin_aport": 9291.69
+   },
+   "benchmark": 94.1769
+  },
+  {
+   "date": "2022-03-18",
+   "values": {
+    "base_mensual": 95.4858,
+    "base_sin_aport": 95.484
+   },
+   "dd": {
+    "base_mensual": -0.051261,
+    "base_sin_aport": -0.051279
+   },
+   "eur": {
+    "base_mensual": 10742.06,
+    "base_sin_aport": 9548.4
+   },
+   "benchmark": 97.2309
+  },
+  {
+   "date": "2022-03-23",
+   "values": {
+    "base_mensual": 96.3031,
+    "base_sin_aport": 96.3005
+   },
+   "dd": {
+    "base_mensual": -0.04314,
+    "base_sin_aport": -0.043167
+   },
+   "eur": {
+    "base_mensual": 10834.0,
+    "base_sin_aport": 9630.05
+   },
+   "benchmark": 97.7058
+  },
+  {
+   "date": "2022-03-28",
+   "values": {
+    "base_mensual": 96.6826,
+    "base_sin_aport": 96.6795
+   },
+   "dd": {
+    "base_mensual": -0.03937,
+    "base_sin_aport": -0.0394
+   },
+   "eur": {
+    "base_mensual": 10876.69,
+    "base_sin_aport": 9667.95
+   },
+   "benchmark": 100.7676
+  },
+  {
+   "date": "2022-03-31",
+   "values": {
+    "base_mensual": 96.8744,
+    "base_sin_aport": 96.8714
+   },
+   "dd": {
+    "base_mensual": -0.037464,
+    "base_sin_aport": -0.037494
+   },
+   "eur": {
+    "base_mensual": 10898.28,
+    "base_sin_aport": 9687.14
+   },
+   "benchmark": 98.1826
+  },
+  {
+   "date": "2022-04-05",
+   "values": {
+    "base_mensual": 97.3357,
+    "base_sin_aport": 97.3319
+   },
+   "dd": {
+    "base_mensual": -0.032881,
+    "base_sin_aport": -0.032918
+   },
+   "eur": {
+    "base_mensual": 10950.17,
+    "base_sin_aport": 9733.19
+   },
+   "benchmark": 99.7464
+  },
+  {
+   "date": "2022-04-08",
+   "values": {
+    "base_mensual": 96.542,
+    "base_sin_aport": 96.5383
+   },
+   "dd": {
+    "base_mensual": -0.040767,
+    "base_sin_aport": -0.040803
+   },
+   "eur": {
+    "base_mensual": 10860.88,
+    "base_sin_aport": 9653.83
+   },
+   "benchmark": 99.96
+  },
+  {
+   "date": "2022-04-13",
+   "values": {
+    "base_mensual": 95.4901,
+    "base_sin_aport": 95.4868
+   },
+   "dd": {
+    "base_mensual": -0.051219,
+    "base_sin_aport": -0.051252
+   },
+   "eur": {
+    "base_mensual": 10742.54,
+    "base_sin_aport": 9548.68
+   },
+   "benchmark": 99.4075
+  },
+  {
+   "date": "2022-04-20",
+   "values": {
+    "base_mensual": 95.9381,
+    "base_sin_aport": 95.9343
+   },
+   "dd": {
+    "base_mensual": -0.046767,
+    "base_sin_aport": -0.046805
+   },
+   "eur": {
+    "base_mensual": 11093.69,
+    "base_sin_aport": 9593.43
+   },
+   "benchmark": 99.9904
+  },
+  {
+   "date": "2022-04-25",
+   "values": {
+    "base_mensual": 93.0719,
+    "base_sin_aport": 93.0677
+   },
+   "dd": {
+    "base_mensual": -0.075245,
+    "base_sin_aport": -0.075287
+   },
+   "eur": {
+    "base_mensual": 10762.26,
+    "base_sin_aport": 9306.77
+   },
+   "benchmark": 96.1911
+  },
+  {
+   "date": "2022-04-28",
+   "values": {
+    "base_mensual": 93.9325,
+    "base_sin_aport": 93.9285
+   },
+   "dd": {
+    "base_mensual": -0.066694,
+    "base_sin_aport": -0.066734
+   },
+   "eur": {
+    "base_mensual": 10861.77,
+    "base_sin_aport": 9392.85
+   },
+   "benchmark": 98.3336
+  },
+  {
+   "date": "2022-05-03",
+   "values": {
+    "base_mensual": 93.4458,
+    "base_sin_aport": 93.4418
+   },
+   "dd": {
+    "base_mensual": -0.071531,
+    "base_sin_aport": -0.071571
+   },
+   "eur": {
+    "base_mensual": 10805.48,
+    "base_sin_aport": 9344.18
+   },
+   "benchmark": 96.1916
+  },
+  {
+   "date": "2022-05-06",
+   "values": {
+    "base_mensual": 91.4485,
+    "base_sin_aport": 91.4444
+   },
+   "dd": {
+    "base_mensual": -0.091376,
+    "base_sin_aport": -0.091416
+   },
+   "eur": {
+    "base_mensual": 10574.53,
+    "base_sin_aport": 9144.44
+   },
+   "benchmark": 94.7396
+  },
+  {
+   "date": "2022-05-11",
+   "values": {
+    "base_mensual": 90.4831,
+    "base_sin_aport": 90.4787
+   },
+   "dd": {
+    "base_mensual": -0.100968,
+    "base_sin_aport": -0.101011
+   },
+   "eur": {
+    "base_mensual": 10462.9,
+    "base_sin_aport": 9047.87
+   },
+   "benchmark": 90.4852
+  },
+  {
+   "date": "2022-05-16",
+   "values": {
+    "base_mensual": 91.3217,
+    "base_sin_aport": 91.3174
+   },
+   "dd": {
+    "base_mensual": -0.092635,
+    "base_sin_aport": -0.092678
+   },
+   "eur": {
+    "base_mensual": 10559.88,
+    "base_sin_aport": 9131.74
+   },
+   "benchmark": 93.381
+  },
+  {
+   "date": "2022-05-19",
+   "values": {
+    "base_mensual": 89.4407,
+    "base_sin_aport": 89.436
+   },
+   "dd": {
+    "base_mensual": -0.111325,
+    "base_sin_aport": -0.111372
+   },
+   "eur": {
+    "base_mensual": 10638.79,
+    "base_sin_aport": 8943.6
+   },
+   "benchmark": 90.2933
+  },
+  {
+   "date": "2022-05-24",
+   "values": {
+    "base_mensual": 88.3682,
+    "base_sin_aport": 88.3633
+   },
+   "dd": {
+    "base_mensual": -0.121981,
+    "base_sin_aport": -0.122029
+   },
+   "eur": {
+    "base_mensual": 10511.23,
+    "base_sin_aport": 8836.33
+   },
+   "benchmark": 89.4609
+  },
+  {
+   "date": "2022-05-27",
+   "values": {
+    "base_mensual": 91.7195,
+    "base_sin_aport": 91.7155
+   },
+   "dd": {
+    "base_mensual": -0.088683,
+    "base_sin_aport": -0.088722
+   },
+   "eur": {
+    "base_mensual": 10909.85,
+    "base_sin_aport": 9171.55
+   },
+   "benchmark": 93.9542
+  },
+  {
+   "date": "2022-06-01",
+   "values": {
+    "base_mensual": 90.986,
+    "base_sin_aport": 90.9824
+   },
+   "dd": {
+    "base_mensual": -0.09597,
+    "base_sin_aport": -0.096007
+   },
+   "eur": {
+    "base_mensual": 10822.61,
+    "base_sin_aport": 9098.24
+   },
+   "benchmark": 92.6738
+  },
+  {
+   "date": "2022-06-06",
+   "values": {
+    "base_mensual": 91.2007,
+    "base_sin_aport": 91.1975
+   },
+   "dd": {
+    "base_mensual": -0.093837,
+    "base_sin_aport": -0.093869
+   },
+   "eur": {
+    "base_mensual": 10848.15,
+    "base_sin_aport": 9119.75
+   },
+   "benchmark": 93.2236
+  },
+  {
+   "date": "2022-06-09",
+   "values": {
+    "base_mensual": 90.2249,
+    "base_sin_aport": 90.2216
+   },
+   "dd": {
+    "base_mensual": -0.103533,
+    "base_sin_aport": -0.103566
+   },
+   "eur": {
+    "base_mensual": 10732.07,
+    "base_sin_aport": 9022.16
+   },
+   "benchmark": 90.9661
+  },
+  {
+   "date": "2022-06-14",
+   "values": {
+    "base_mensual": 85.5402,
+    "base_sin_aport": 85.5364
+   },
+   "dd": {
+    "base_mensual": -0.15008,
+    "base_sin_aport": -0.150117
+   },
+   "eur": {
+    "base_mensual": 10174.84,
+    "base_sin_aport": 8553.64
+   },
+   "benchmark": 87.0638
+  },
+  {
+   "date": "2022-06-17",
+   "values": {
+    "base_mensual": 84.6674,
+    "base_sin_aport": 84.6629
+   },
+   "dd": {
+    "base_mensual": -0.158752,
+    "base_sin_aport": -0.158797
+   },
+   "eur": {
+    "base_mensual": 10071.02,
+    "base_sin_aport": 8466.29
+   },
+   "benchmark": 84.5943
+  },
+  {
+   "date": "2022-06-22",
+   "values": {
+    "base_mensual": 85.5832,
+    "base_sin_aport": 85.5789
+   },
+   "dd": {
+    "base_mensual": -0.149652,
+    "base_sin_aport": -0.149695
+   },
+   "eur": {
+    "base_mensual": 10482.72,
+    "base_sin_aport": 8557.89
+   },
+   "benchmark": 86.6751
+  },
+  {
+   "date": "2022-06-27",
+   "values": {
+    "base_mensual": 87.4722,
+    "base_sin_aport": 87.4684
+   },
+   "dd": {
+    "base_mensual": -0.130884,
+    "base_sin_aport": -0.130922
+   },
+   "eur": {
+    "base_mensual": 10714.09,
+    "base_sin_aport": 8746.84
+   },
+   "benchmark": 89.6308
+  },
+  {
+   "date": "2022-06-30",
+   "values": {
+    "base_mensual": 86.6062,
+    "base_sin_aport": 86.6017
+   },
+   "dd": {
+    "base_mensual": -0.139488,
+    "base_sin_aport": -0.139533
+   },
+   "eur": {
+    "base_mensual": 10608.03,
+    "base_sin_aport": 8660.17
+   },
+   "benchmark": 88.014
+  },
+  {
+   "date": "2022-07-05",
+   "values": {
+    "base_mensual": 87.3181,
+    "base_sin_aport": 87.3135
+   },
+   "dd": {
+    "base_mensual": -0.132415,
+    "base_sin_aport": -0.13246
+   },
+   "eur": {
+    "base_mensual": 10695.22,
+    "base_sin_aport": 8731.35
+   },
+   "benchmark": 89.2154
+  },
+  {
+   "date": "2022-07-08",
+   "values": {
+    "base_mensual": 90.1429,
+    "base_sin_aport": 90.1395
+   },
+   "dd": {
+    "base_mensual": -0.104348,
+    "base_sin_aport": -0.104381
+   },
+   "eur": {
+    "base_mensual": 11041.22,
+    "base_sin_aport": 9013.95
+   },
+   "benchmark": 93.1696
+  },
+  {
+   "date": "2022-07-13",
+   "values": {
+    "base_mensual": 89.2953,
+    "base_sin_aport": 89.2911
+   },
+   "dd": {
+    "base_mensual": -0.11277,
+    "base_sin_aport": -0.112812
+   },
+   "eur": {
+    "base_mensual": 10937.39,
+    "base_sin_aport": 8929.11
+   },
+   "benchmark": 92.0806
+  },
+  {
+   "date": "2022-07-18",
+   "values": {
+    "base_mensual": 89.9827,
+    "base_sin_aport": 89.9789
+   },
+   "dd": {
+    "base_mensual": -0.10594,
+    "base_sin_aport": -0.105977
+   },
+   "eur": {
+    "base_mensual": 11321.59,
+    "base_sin_aport": 8997.89
+   },
+   "benchmark": 92.2158
+  },
+  {
+   "date": "2022-07-21",
+   "values": {
+    "base_mensual": 90.9972,
+    "base_sin_aport": 90.9942
+   },
+   "dd": {
+    "base_mensual": -0.09586,
+    "base_sin_aport": -0.095889
+   },
+   "eur": {
+    "base_mensual": 11449.23,
+    "base_sin_aport": 9099.42
+   },
+   "benchmark": 95.4588
+  },
+  {
+   "date": "2022-07-26",
+   "values": {
+    "base_mensual": 91.4045,
+    "base_sin_aport": 91.4007
+   },
+   "dd": {
+    "base_mensual": -0.091812,
+    "base_sin_aport": -0.091851
+   },
+   "eur": {
+    "base_mensual": 11500.49,
+    "base_sin_aport": 9140.07
+   },
+   "benchmark": 93.2152
+  },
+  {
+   "date": "2022-07-29",
+   "values": {
+    "base_mensual": 93.8718,
+    "base_sin_aport": 93.8687
+   },
+   "dd": {
+    "base_mensual": -0.067298,
+    "base_sin_aport": -0.067329
+   },
+   "eur": {
+    "base_mensual": 11810.92,
+    "base_sin_aport": 9386.87
+   },
+   "benchmark": 98.5273
+  },
+  {
+   "date": "2022-08-03",
+   "values": {
+    "base_mensual": 94.6455,
+    "base_sin_aport": 94.643
+   },
+   "dd": {
+    "base_mensual": -0.05961,
+    "base_sin_aport": -0.059635
+   },
+   "eur": {
+    "base_mensual": 11908.27,
+    "base_sin_aport": 9464.3
+   },
+   "benchmark": 99.4811
+  },
+  {
+   "date": "2022-08-08",
+   "values": {
+    "base_mensual": 94.6858,
+    "base_sin_aport": 94.6833
+   },
+   "dd": {
+    "base_mensual": -0.05921,
+    "base_sin_aport": -0.059234
+   },
+   "eur": {
+    "base_mensual": 11913.33,
+    "base_sin_aport": 9468.33
+   },
+   "benchmark": 98.9945
+  },
+  {
+   "date": "2022-08-11",
+   "values": {
+    "base_mensual": 94.8109,
+    "base_sin_aport": 94.8089
+   },
+   "dd": {
+    "base_mensual": -0.057967,
+    "base_sin_aport": -0.057987
+   },
+   "eur": {
+    "base_mensual": 11929.07,
+    "base_sin_aport": 9480.89
+   },
+   "benchmark": 99.3702
+  },
+  {
+   "date": "2022-08-16",
+   "values": {
+    "base_mensual": 96.4925,
+    "base_sin_aport": 96.4918
+   },
+   "dd": {
+    "base_mensual": -0.041258,
+    "base_sin_aport": -0.041266
+   },
+   "eur": {
+    "base_mensual": 12140.66,
+    "base_sin_aport": 9649.18
+   },
+   "benchmark": 103.0935
+  },
+  {
+   "date": "2022-08-19",
+   "values": {
+    "base_mensual": 95.4916,
+    "base_sin_aport": 95.4916
+   },
+   "dd": {
+    "base_mensual": -0.051204,
+    "base_sin_aport": -0.051203
+   },
+   "eur": {
+    "base_mensual": 12312.56,
+    "base_sin_aport": 9549.16
+   },
+   "benchmark": 102.0168
+  },
+  {
+   "date": "2022-08-24",
+   "values": {
+    "base_mensual": 94.5955,
+    "base_sin_aport": 94.5955
+   },
+   "dd": {
+    "base_mensual": -0.060107,
+    "base_sin_aport": -0.060107
+   },
+   "eur": {
+    "base_mensual": 12197.02,
+    "base_sin_aport": 9459.55
+   },
+   "benchmark": 101.1476
+  },
+  {
+   "date": "2022-08-29",
+   "values": {
+    "base_mensual": 92.4869,
+    "base_sin_aport": 92.4852
+   },
+   "dd": {
+    "base_mensual": -0.081058,
+    "base_sin_aport": -0.081075
+   },
+   "eur": {
+    "base_mensual": 11925.14,
+    "base_sin_aport": 9248.52
+   },
+   "benchmark": 98.7462
+  },
+  {
+   "date": "2022-09-01",
+   "values": {
+    "base_mensual": 90.6156,
+    "base_sin_aport": 90.6123
+   },
+   "dd": {
+    "base_mensual": -0.099651,
+    "base_sin_aport": -0.099684
+   },
+   "eur": {
+    "base_mensual": 11683.86,
+    "base_sin_aport": 9061.23
+   },
+   "benchmark": 96.2563
+  },
+  {
+   "date": "2022-09-06",
+   "values": {
+    "base_mensual": 91.0089,
+    "base_sin_aport": 91.0061
+   },
+   "dd": {
+    "base_mensual": -0.095744,
+    "base_sin_aport": -0.095771
+   },
+   "eur": {
+    "base_mensual": 11734.56,
+    "base_sin_aport": 9100.61
+   },
+   "benchmark": 95.6727
+  },
+  {
+   "date": "2022-09-09",
+   "values": {
+    "base_mensual": 92.1092,
+    "base_sin_aport": 92.1085
+   },
+   "dd": {
+    "base_mensual": -0.08481,
+    "base_sin_aport": -0.084818
+   },
+   "eur": {
+    "base_mensual": 11876.45,
+    "base_sin_aport": 9210.85
+   },
+   "benchmark": 98.998
+  },
+  {
+   "date": "2022-09-14",
+   "values": {
+    "base_mensual": 90.8854,
+    "base_sin_aport": 90.883
+   },
+   "dd": {
+    "base_mensual": -0.09697,
+    "base_sin_aport": -0.096995
+   },
+   "eur": {
+    "base_mensual": 11718.65,
+    "base_sin_aport": 9088.3
+   },
+   "benchmark": 96.3618
+  },
+  {
+   "date": "2022-09-19",
+   "values": {
+    "base_mensual": 89.2873,
+    "base_sin_aport": 89.2836
+   },
+   "dd": {
+    "base_mensual": -0.112849,
+    "base_sin_aport": -0.112886
+   },
+   "eur": {
+    "base_mensual": 11812.6,
+    "base_sin_aport": 8928.36
+   },
+   "benchmark": 94.8647
+  },
+  {
+   "date": "2022-09-22",
+   "values": {
+    "base_mensual": 88.3345,
+    "base_sin_aport": 88.3306
+   },
+   "dd": {
+    "base_mensual": -0.122316,
+    "base_sin_aport": -0.122354
+   },
+   "eur": {
+    "base_mensual": 11686.53,
+    "base_sin_aport": 8833.06
+   },
+   "benchmark": 93.2065
+  },
+  {
+   "date": "2022-09-27",
+   "values": {
+    "base_mensual": 87.1534,
+    "base_sin_aport": 87.1512
+   },
+   "dd": {
+    "base_mensual": -0.134051,
+    "base_sin_aport": -0.134073
+   },
+   "eur": {
+    "base_mensual": 11530.28,
+    "base_sin_aport": 8715.12
+   },
+   "benchmark": 92.4148
+  },
+  {
+   "date": "2022-09-30",
+   "values": {
+    "base_mensual": 86.5398,
+    "base_sin_aport": 86.5348
+   },
+   "dd": {
+    "base_mensual": -0.140147,
+    "base_sin_aport": -0.140198
+   },
+   "eur": {
+    "base_mensual": 11449.11,
+    "base_sin_aport": 8653.48
+   },
+   "benchmark": 88.9717
+  },
+  {
+   "date": "2022-10-05",
+   "values": {
+    "base_mensual": 87.7286,
+    "base_sin_aport": 87.7249
+   },
+   "dd": {
+    "base_mensual": -0.128336,
+    "base_sin_aport": -0.128373
+   },
+   "eur": {
+    "base_mensual": 11606.38,
+    "base_sin_aport": 8772.49
+   },
+   "benchmark": 92.4389
+  },
+  {
+   "date": "2022-10-10",
+   "values": {
+    "base_mensual": 86.2924,
+    "base_sin_aport": 86.2888
+   },
+   "dd": {
+    "base_mensual": -0.142606,
+    "base_sin_aport": -0.142641
+   },
+   "eur": {
+    "base_mensual": 11416.37,
+    "base_sin_aport": 8628.88
+   },
+   "benchmark": 90.5499
+  },
+  {
+   "date": "2022-10-13",
+   "values": {
+    "base_mensual": 85.7072,
+    "base_sin_aport": 85.7026
+   },
+   "dd": {
+    "base_mensual": -0.148421,
+    "base_sin_aport": -0.148467
+   },
+   "eur": {
+    "base_mensual": 11338.94,
+    "base_sin_aport": 8570.26
+   },
+   "benchmark": 92.2639
+  },
+  {
+   "date": "2022-10-18",
+   "values": {
+    "base_mensual": 86.6,
+    "base_sin_aport": 86.5973
+   },
+   "dd": {
+    "base_mensual": -0.13955,
+    "base_sin_aport": -0.139577
+   },
+   "eur": {
+    "base_mensual": 11757.06,
+    "base_sin_aport": 8659.73
+   },
+   "benchmark": 92.2136
+  },
+  {
+   "date": "2022-10-21",
+   "values": {
+    "base_mensual": 86.4947,
+    "base_sin_aport": 86.4936
+   },
+   "dd": {
+    "base_mensual": -0.140596,
+    "base_sin_aport": -0.140607
+   },
+   "eur": {
+    "base_mensual": 11742.77,
+    "base_sin_aport": 8649.36
+   },
+   "benchmark": 93.6802
+  },
+  {
+   "date": "2022-10-26",
+   "values": {
+    "base_mensual": 88.5169,
+    "base_sin_aport": 88.5157
+   },
+   "dd": {
+    "base_mensual": -0.120503,
+    "base_sin_aport": -0.120515
+   },
+   "eur": {
+    "base_mensual": 12017.31,
+    "base_sin_aport": 8851.57
+   },
+   "benchmark": 93.8515
+  },
+  {
+   "date": "2022-10-31",
+   "values": {
+    "base_mensual": 89.2809,
+    "base_sin_aport": 89.282
+   },
+   "dd": {
+    "base_mensual": -0.112913,
+    "base_sin_aport": -0.112902
+   },
+   "eur": {
+    "base_mensual": 12121.03,
+    "base_sin_aport": 8928.2
+   },
+   "benchmark": 94.9631
+  },
+  {
+   "date": "2022-11-03",
+   "values": {
+    "base_mensual": 88.1348,
+    "base_sin_aport": 88.1343
+   },
+   "dd": {
+    "base_mensual": -0.1243,
+    "base_sin_aport": -0.124305
+   },
+   "eur": {
+    "base_mensual": 11965.44,
+    "base_sin_aport": 8813.43
+   },
+   "benchmark": 92.5532
+  },
+  {
+   "date": "2022-11-08",
+   "values": {
+    "base_mensual": 88.4432,
+    "base_sin_aport": 88.4435
+   },
+   "dd": {
+    "base_mensual": -0.121236,
+    "base_sin_aport": -0.121233
+   },
+   "eur": {
+    "base_mensual": 12007.3,
+    "base_sin_aport": 8844.35
+   },
+   "benchmark": 93.3266
+  },
+  {
+   "date": "2022-11-11",
+   "values": {
+    "base_mensual": 89.2097,
+    "base_sin_aport": 89.2102
+   },
+   "dd": {
+    "base_mensual": -0.11362,
+    "base_sin_aport": -0.113615
+   },
+   "eur": {
+    "base_mensual": 12111.37,
+    "base_sin_aport": 8921.02
+   },
+   "benchmark": 95.7145
+  },
+  {
+   "date": "2022-11-16",
+   "values": {
+    "base_mensual": 89.2201,
+    "base_sin_aport": 89.2177
+   },
+   "dd": {
+    "base_mensual": -0.113517,
+    "base_sin_aport": -0.113541
+   },
+   "eur": {
+    "base_mensual": 12112.77,
+    "base_sin_aport": 8921.77
+   },
+   "benchmark": 93.4283
+  },
+  {
+   "date": "2022-11-21",
+   "values": {
+    "base_mensual": 89.7043,
+    "base_sin_aport": 89.7025
+   },
+   "dd": {
+    "base_mensual": -0.108706,
+    "base_sin_aport": -0.108724
+   },
+   "eur": {
+    "base_mensual": 12479.25,
+    "base_sin_aport": 8970.25
+   },
+   "benchmark": 93.4956
+  },
+  {
+   "date": "2022-11-24",
+   "values": {
+    "base_mensual": 90.8202,
+    "base_sin_aport": 90.8184
+   },
+   "dd": {
+    "base_mensual": -0.097618,
+    "base_sin_aport": -0.097636
+   },
+   "eur": {
+    "base_mensual": 12634.49,
+    "base_sin_aport": 9081.84
+   },
+   "benchmark": null
+  },
+  {
+   "date": "2022-11-29",
+   "values": {
+    "base_mensual": 89.7469,
+    "base_sin_aport": 89.7429
+   },
+   "dd": {
+    "base_mensual": -0.108282,
+    "base_sin_aport": -0.108322
+   },
+   "eur": {
+    "base_mensual": 12485.18,
+    "base_sin_aport": 8974.29
+   },
+   "benchmark": 93.5638
+  },
+  {
+   "date": "2022-12-02",
+   "values": {
+    "base_mensual": 90.6472,
+    "base_sin_aport": 90.6446
+   },
+   "dd": {
+    "base_mensual": -0.099337,
+    "base_sin_aport": -0.099363
+   },
+   "eur": {
+    "base_mensual": 12610.43,
+    "base_sin_aport": 9064.46
+   },
+   "benchmark": 94.6367
+  },
+  {
+   "date": "2022-12-07",
+   "values": {
+    "base_mensual": 88.9919,
+    "base_sin_aport": 88.9821
+   },
+   "dd": {
+    "base_mensual": -0.115784,
+    "base_sin_aport": -0.115881
+   },
+   "eur": {
+    "base_mensual": 12380.14,
+    "base_sin_aport": 8898.21
+   },
+   "benchmark": 91.9601
+  },
+  {
+   "date": "2022-12-12",
+   "values": {
+    "base_mensual": 88.9076,
+    "base_sin_aport": 88.9006
+   },
+   "dd": {
+    "base_mensual": -0.116622,
+    "base_sin_aport": -0.116691
+   },
+   "eur": {
+    "base_mensual": 12368.42,
+    "base_sin_aport": 8890.06
+   },
+   "benchmark": 92.83
+  },
+  {
+   "date": "2022-12-15",
+   "values": {
+    "base_mensual": 87.0509,
+    "base_sin_aport": 87.0428
+   },
+   "dd": {
+    "base_mensual": -0.135069,
+    "base_sin_aport": -0.13515
+   },
+   "eur": {
+    "base_mensual": 12110.13,
+    "base_sin_aport": 8704.28
+   },
+   "benchmark": 89.3435
+  },
+  {
+   "date": "2022-12-20",
+   "values": {
+    "base_mensual": 85.6696,
+    "base_sin_aport": 85.6618
+   },
+   "dd": {
+    "base_mensual": -0.148794,
+    "base_sin_aport": -0.148871
+   },
+   "eur": {
+    "base_mensual": 12216.49,
+    "base_sin_aport": 8566.18
+   },
+   "benchmark": 88.1692
+  },
+  {
+   "date": "2022-12-23",
+   "values": {
+    "base_mensual": 85.8928,
+    "base_sin_aport": 85.887
+   },
+   "dd": {
+    "base_mensual": -0.146576,
+    "base_sin_aport": -0.146635
+   },
+   "eur": {
+    "base_mensual": 12248.32,
+    "base_sin_aport": 8588.7
+   },
+   "benchmark": 88.8134
+  },
+  {
+   "date": "2022-12-29",
+   "values": {
+    "base_mensual": 85.881,
+    "base_sin_aport": 85.8768
+   },
+   "dd": {
+    "base_mensual": -0.146694,
+    "base_sin_aport": -0.146736
+   },
+   "eur": {
+    "base_mensual": 12246.63,
+    "base_sin_aport": 8587.68
+   },
+   "benchmark": 88.7191
+  },
+  {
+   "date": "2023-01-03",
+   "values": {
+    "base_mensual": 86.1837,
+    "base_sin_aport": 86.1791
+   },
+   "dd": {
+    "base_mensual": -0.143686,
+    "base_sin_aport": -0.143732
+   },
+   "eur": {
+    "base_mensual": 12289.81,
+    "base_sin_aport": 8617.91
+   },
+   "benchmark": 87.7481
+  },
+  {
+   "date": "2023-01-06",
+   "values": {
+    "base_mensual": 87.2701,
+    "base_sin_aport": 87.2657
+   },
+   "dd": {
+    "base_mensual": -0.132891,
+    "base_sin_aport": -0.132936
+   },
+   "eur": {
+    "base_mensual": 12444.73,
+    "base_sin_aport": 8726.57
+   },
+   "benchmark": 90.7175
+  },
+  {
+   "date": "2023-01-11",
+   "values": {
+    "base_mensual": 87.6244,
+    "base_sin_aport": 87.62
+   },
+   "dd": {
+    "base_mensual": -0.129371,
+    "base_sin_aport": -0.129415
+   },
+   "eur": {
+    "base_mensual": 12495.25,
+    "base_sin_aport": 8762.0
+   },
+   "benchmark": 90.6065
+  },
+  {
+   "date": "2023-01-16",
+   "values": {
+    "base_mensual": 88.3963,
+    "base_sin_aport": 88.3938
+   },
+   "dd": {
+    "base_mensual": -0.121702,
+    "base_sin_aport": -0.121727
+   },
+   "eur": {
+    "base_mensual": 12605.32,
+    "base_sin_aport": 8839.38
+   },
+   "benchmark": null
+  },
+  {
+   "date": "2023-01-19",
+   "values": {
+    "base_mensual": 87.5852,
+    "base_sin_aport": 87.5755
+   },
+   "dd": {
+    "base_mensual": -0.129761,
+    "base_sin_aport": -0.129858
+   },
+   "eur": {
+    "base_mensual": 12786.3,
+    "base_sin_aport": 8757.55
+   },
+   "benchmark": 88.5311
+  },
+  {
+   "date": "2023-01-24",
+   "values": {
+    "base_mensual": 88.6295,
+    "base_sin_aport": 88.6269
+   },
+   "dd": {
+    "base_mensual": -0.119385,
+    "base_sin_aport": -0.119411
+   },
+   "eur": {
+    "base_mensual": 12938.75,
+    "base_sin_aport": 8862.69
+   },
+   "benchmark": 90.5756
+  },
+  {
+   "date": "2023-01-27",
+   "values": {
+    "base_mensual": 89.2661,
+    "base_sin_aport": 89.2689
+   },
+   "dd": {
+    "base_mensual": -0.113059,
+    "base_sin_aport": -0.113032
+   },
+   "eur": {
+    "base_mensual": 13031.7,
+    "base_sin_aport": 8926.89
+   },
+   "benchmark": 91.6238
+  },
+  {
+   "date": "2023-02-01",
+   "values": {
+    "base_mensual": 88.7402,
+    "base_sin_aport": 88.7423
+   },
+   "dd": {
+    "base_mensual": -0.118285,
+    "base_sin_aport": -0.118264
+   },
+   "eur": {
+    "base_mensual": 12954.92,
+    "base_sin_aport": 8874.23
+   },
+   "benchmark": 93.0158
+  },
+  {
+   "date": "2023-02-06",
+   "values": {
+    "base_mensual": 90.334,
+    "base_sin_aport": 90.3412
+   },
+   "dd": {
+    "base_mensual": -0.102449,
+    "base_sin_aport": -0.102377
+   },
+   "eur": {
+    "base_mensual": 13187.59,
+    "base_sin_aport": 9034.12
+   },
+   "benchmark": 93.4508
+  },
+  {
+   "date": "2023-02-09",
+   "values": {
+    "base_mensual": 90.4598,
+    "base_sin_aport": 90.4679
+   },
+   "dd": {
+    "base_mensual": -0.101199,
+    "base_sin_aport": -0.101119
+   },
+   "eur": {
+    "base_mensual": 13205.96,
+    "base_sin_aport": 9046.79
+   },
+   "benchmark": 93.447
+  },
+  {
+   "date": "2023-02-14",
+   "values": {
+    "base_mensual": 90.0618,
+    "base_sin_aport": 90.0715
+   },
+   "dd": {
+    "base_mensual": -0.105154,
+    "base_sin_aport": -0.105058
+   },
+   "eur": {
+    "base_mensual": 13147.85,
+    "base_sin_aport": 9007.15
+   },
+   "benchmark": 94.6141
+  },
+  {
+   "date": "2023-02-17",
+   "values": {
+    "base_mensual": 89.715,
+    "base_sin_aport": 89.7242
+   },
+   "dd": {
+    "base_mensual": -0.108599,
+    "base_sin_aport": -0.108508
+   },
+   "eur": {
+    "base_mensual": 13097.23,
+    "base_sin_aport": 8972.42
+   },
+   "benchmark": 93.9248
+  },
+  {
+   "date": "2023-02-22",
+   "values": {
+    "base_mensual": 88.9901,
+    "base_sin_aport": 88.9985
+   },
+   "dd": {
+    "base_mensual": -0.115802,
+    "base_sin_aport": -0.115718
+   },
+   "eur": {
+    "base_mensual": 13288.65,
+    "base_sin_aport": 8899.85
+   },
+   "benchmark": 92.0185
+  },
+  {
+   "date": "2023-02-27",
+   "values": {
+    "base_mensual": 88.9371,
+    "base_sin_aport": 88.9467
+   },
+   "dd": {
+    "base_mensual": -0.116328,
+    "base_sin_aport": -0.116234
+   },
+   "eur": {
+    "base_mensual": 13280.74,
+    "base_sin_aport": 8894.67
+   },
+   "benchmark": 92.6844
+  },
+  {
+   "date": "2023-03-02",
+   "values": {
+    "base_mensual": 88.084,
+    "base_sin_aport": 88.094
+   },
+   "dd": {
+    "base_mensual": -0.124805,
+    "base_sin_aport": -0.124706
+   },
+   "eur": {
+    "base_mensual": 13153.35,
+    "base_sin_aport": 8809.4
+   },
+   "benchmark": 91.701
+  },
+  {
+   "date": "2023-03-07",
+   "values": {
+    "base_mensual": 89.0994,
+    "base_sin_aport": 89.1126
+   },
+   "dd": {
+    "base_mensual": -0.114716,
+    "base_sin_aport": -0.114584
+   },
+   "eur": {
+    "base_mensual": 13304.97,
+    "base_sin_aport": 8911.26
+   },
+   "benchmark": 91.6637
+  },
+  {
+   "date": "2023-03-10",
+   "values": {
+    "base_mensual": 87.9323,
+    "base_sin_aport": 87.9348
+   },
+   "dd": {
+    "base_mensual": -0.126312,
+    "base_sin_aport": -0.126287
+   },
+   "eur": {
+    "base_mensual": 13130.69,
+    "base_sin_aport": 8793.48
+   },
+   "benchmark": 89.6934
+  },
+  {
+   "date": "2023-03-15",
+   "values": {
+    "base_mensual": 87.3776,
+    "base_sin_aport": 87.3676
+   },
+   "dd": {
+    "base_mensual": -0.131824,
+    "base_sin_aport": -0.131923
+   },
+   "eur": {
+    "base_mensual": 13047.85,
+    "base_sin_aport": 8736.76
+   },
+   "benchmark": 89.2199
+  },
+  {
+   "date": "2023-03-20",
+   "values": {
+    "base_mensual": 87.8311,
+    "base_sin_aport": 87.8217
+   },
+   "dd": {
+    "base_mensual": -0.127318,
+    "base_sin_aport": -0.127411
+   },
+   "eur": {
+    "base_mensual": 13415.58,
+    "base_sin_aport": 8782.17
+   },
+   "benchmark": 91.0173
+  },
+  {
+   "date": "2023-03-23",
+   "values": {
+    "base_mensual": 87.8261,
+    "base_sin_aport": 87.819
+   },
+   "dd": {
+    "base_mensual": -0.127368,
+    "base_sin_aport": -0.127438
+   },
+   "eur": {
+    "base_mensual": 13414.81,
+    "base_sin_aport": 8781.9
+   },
+   "benchmark": 89.3701
+  },
+  {
+   "date": "2023-03-28",
+   "values": {
+    "base_mensual": 87.685,
+    "base_sin_aport": 87.6798
+   },
+   "dd": {
+    "base_mensual": -0.12877,
+    "base_sin_aport": -0.128821
+   },
+   "eur": {
+    "base_mensual": 13393.26,
+    "base_sin_aport": 8767.98
+   },
+   "benchmark": 90.4097
+  },
+  {
+   "date": "2023-03-31",
+   "values": {
+    "base_mensual": 89.3333,
+    "base_sin_aport": 89.3369
+   },
+   "dd": {
+    "base_mensual": -0.112392,
+    "base_sin_aport": -0.112356
+   },
+   "eur": {
+    "base_mensual": 13645.04,
+    "base_sin_aport": 8933.69
+   },
+   "benchmark": 92.7312
+  },
+  {
+   "date": "2023-04-05",
+   "values": {
+    "base_mensual": 89.1627,
+    "base_sin_aport": 89.1621
+   },
+   "dd": {
+    "base_mensual": -0.114087,
+    "base_sin_aport": -0.114093
+   },
+   "eur": {
+    "base_mensual": 13618.97,
+    "base_sin_aport": 8916.21
+   },
+   "benchmark": 91.857
+  },
+  {
+   "date": "2023-04-12",
+   "values": {
+    "base_mensual": 89.0855,
+    "base_sin_aport": 89.09
+   },
+   "dd": {
+    "base_mensual": -0.114854,
+    "base_sin_aport": -0.114809
+   },
+   "eur": {
+    "base_mensual": 13607.19,
+    "base_sin_aport": 8909.0
+   },
+   "benchmark": 92.2741
+  },
+  {
+   "date": "2023-04-17",
+   "values": {
+    "base_mensual": 89.5717,
+    "base_sin_aport": 89.5819
+   },
+   "dd": {
+    "base_mensual": -0.110023,
+    "base_sin_aport": -0.109922
+   },
+   "eur": {
+    "base_mensual": 13681.45,
+    "base_sin_aport": 8958.19
+   },
+   "benchmark": 93.0408
+  },
+  {
+   "date": "2023-04-20",
+   "values": {
+    "base_mensual": 89.4237,
+    "base_sin_aport": 89.4321
+   },
+   "dd": {
+    "base_mensual": -0.111494,
+    "base_sin_aport": -0.11141
+   },
+   "eur": {
+    "base_mensual": 13957.89,
+    "base_sin_aport": 8943.21
+   },
+   "benchmark": 92.859
+  },
+  {
+   "date": "2023-04-25",
+   "values": {
+    "base_mensual": 89.0983,
+    "base_sin_aport": 89.1027
+   },
+   "dd": {
+    "base_mensual": -0.114727,
+    "base_sin_aport": -0.114683
+   },
+   "eur": {
+    "base_mensual": 13907.1,
+    "base_sin_aport": 8910.27
+   },
+   "benchmark": 90.6684
+  },
+  {
+   "date": "2023-04-28",
+   "values": {
+    "base_mensual": 89.4717,
+    "base_sin_aport": 89.4758
+   },
+   "dd": {
+    "base_mensual": -0.111017,
+    "base_sin_aport": -0.110976
+   },
+   "eur": {
+    "base_mensual": 13965.37,
+    "base_sin_aport": 8947.58
+   },
+   "benchmark": 93.0911
+  },
+  {
+   "date": "2023-05-04",
+   "values": {
+    "base_mensual": 88.6791,
+    "base_sin_aport": 88.6754
+   },
+   "dd": {
+    "base_mensual": -0.118892,
+    "base_sin_aport": -0.118929
+   },
+   "eur": {
+    "base_mensual": 13841.66,
+    "base_sin_aport": 8867.54
+   },
+   "benchmark": 90.3839
+  },
+  {
+   "date": "2023-05-09",
+   "values": {
+    "base_mensual": 89.6768,
+    "base_sin_aport": 89.6839
+   },
+   "dd": {
+    "base_mensual": -0.108979,
+    "base_sin_aport": -0.108909
+   },
+   "eur": {
+    "base_mensual": 13997.4,
+    "base_sin_aport": 8968.39
+   },
+   "benchmark": 92.2936
+  },
+  {
+   "date": "2023-05-12",
+   "values": {
+    "base_mensual": 90.1461,
+    "base_sin_aport": 90.1531
+   },
+   "dd": {
+    "base_mensual": -0.104316,
+    "base_sin_aport": -0.104246
+   },
+   "eur": {
+    "base_mensual": 14070.64,
+    "base_sin_aport": 9015.31
+   },
+   "benchmark": 93.1582
+  },
+  {
+   "date": "2023-05-17",
+   "values": {
+    "base_mensual": 90.2538,
+    "base_sin_aport": 90.2642
+   },
+   "dd": {
+    "base_mensual": -0.103246,
+    "base_sin_aport": -0.103142
+   },
+   "eur": {
+    "base_mensual": 14087.46,
+    "base_sin_aport": 9026.42
+   },
+   "benchmark": 94.3798
+  },
+  {
+   "date": "2023-05-22",
+   "values": {
+    "base_mensual": 91.228,
+    "base_sin_aport": 91.2475
+   },
+   "dd": {
+    "base_mensual": -0.093566,
+    "base_sin_aport": -0.093372
+   },
+   "eur": {
+    "base_mensual": 14540.19,
+    "base_sin_aport": 9124.75
+   },
+   "benchmark": 95.5561
+  },
+  {
+   "date": "2023-05-25",
+   "values": {
+    "base_mensual": 90.2625,
+    "base_sin_aport": 90.2779
+   },
+   "dd": {
+    "base_mensual": -0.103159,
+    "base_sin_aport": -0.103006
+   },
+   "eur": {
+    "base_mensual": 14386.3,
+    "base_sin_aport": 9027.79
+   },
+   "benchmark": 95.1958
+  },
+  {
+   "date": "2023-05-30",
+   "values": {
+    "base_mensual": 91.4187,
+    "base_sin_aport": 91.4342
+   },
+   "dd": {
+    "base_mensual": -0.091672,
+    "base_sin_aport": -0.091518
+   },
+   "eur": {
+    "base_mensual": 14570.58,
+    "base_sin_aport": 9143.42
+   },
+   "benchmark": 96.8999
+  },
+  {
+   "date": "2023-06-02",
+   "values": {
+    "base_mensual": 92.6763,
+    "base_sin_aport": 92.6976
+   },
+   "dd": {
+    "base_mensual": -0.079176,
+    "base_sin_aport": -0.078965
+   },
+   "eur": {
+    "base_mensual": 14771.02,
+    "base_sin_aport": 9269.76
+   },
+   "benchmark": 98.2275
+  },
+  {
+   "date": "2023-06-07",
+   "values": {
+    "base_mensual": 92.609,
+    "base_sin_aport": 92.6356
+   },
+   "dd": {
+    "base_mensual": -0.079845,
+    "base_sin_aport": -0.079581
+   },
+   "eur": {
+    "base_mensual": 14760.3,
+    "base_sin_aport": 9263.56
+   },
+   "benchmark": 98.4681
+  },
+  {
+   "date": "2023-06-12",
+   "values": {
+    "base_mensual": 92.9627,
+    "base_sin_aport": 92.9875
+   },
+   "dd": {
+    "base_mensual": -0.07633,
+    "base_sin_aport": -0.076084
+   },
+   "eur": {
+    "base_mensual": 14816.67,
+    "base_sin_aport": 9298.75
+   },
+   "benchmark": 99.6374
+  },
+  {
+   "date": "2023-06-15",
+   "values": {
+    "base_mensual": 93.1881,
+    "base_sin_aport": 93.2183
+   },
+   "dd": {
+    "base_mensual": -0.074091,
+    "base_sin_aport": -0.073791
+   },
+   "eur": {
+    "base_mensual": 14852.59,
+    "base_sin_aport": 9321.83
+   },
+   "benchmark": 100.8153
+  },
+  {
+   "date": "2023-06-20",
+   "values": {
+    "base_mensual": 92.8699,
+    "base_sin_aport": 92.8935
+   },
+   "dd": {
+    "base_mensual": -0.077253,
+    "base_sin_aport": -0.077018
+   },
+   "eur": {
+    "base_mensual": 15101.38,
+    "base_sin_aport": 9289.35
+   },
+   "benchmark": 99.2283
+  },
+  {
+   "date": "2023-06-23",
+   "values": {
+    "base_mensual": 92.4309,
+    "base_sin_aport": 92.4489
+   },
+   "dd": {
+    "base_mensual": -0.081614,
+    "base_sin_aport": -0.081435
+   },
+   "eur": {
+    "base_mensual": 15030.01,
+    "base_sin_aport": 9244.89
+   },
+   "benchmark": 98.0209
+  },
+  {
+   "date": "2023-06-28",
+   "values": {
+    "base_mensual": 92.9056,
+    "base_sin_aport": 92.9256
+   },
+   "dd": {
+    "base_mensual": -0.076898,
+    "base_sin_aport": -0.076699
+   },
+   "eur": {
+    "base_mensual": 15107.19,
+    "base_sin_aport": 9292.56
+   },
+   "benchmark": 98.6811
+  },
+  {
+   "date": "2023-07-03",
+   "values": {
+    "base_mensual": 93.7348,
+    "base_sin_aport": 93.7663
+   },
+   "dd": {
+    "base_mensual": -0.068659,
+    "base_sin_aport": -0.068346
+   },
+   "eur": {
+    "base_mensual": 15242.02,
+    "base_sin_aport": 9376.63
+   },
+   "benchmark": 100.9348
+  },
+  {
+   "date": "2023-07-06",
+   "values": {
+    "base_mensual": 92.3027,
+    "base_sin_aport": 92.3321
+   },
+   "dd": {
+    "base_mensual": -0.082888,
+    "base_sin_aport": -0.082596
+   },
+   "eur": {
+    "base_mensual": 15009.15,
+    "base_sin_aport": 9233.21
+   },
+   "benchmark": 100.4269
+  },
+  {
+   "date": "2023-07-11",
+   "values": {
+    "base_mensual": 92.2436,
+    "base_sin_aport": 92.2741
+   },
+   "dd": {
+    "base_mensual": -0.083475,
+    "base_sin_aport": -0.083172
+   },
+   "eur": {
+    "base_mensual": 14999.55,
+    "base_sin_aport": 9227.41
+   },
+   "benchmark": 99.7038
+  },
+  {
+   "date": "2023-07-14",
+   "values": {
+    "base_mensual": 92.8563,
+    "base_sin_aport": 92.8832
+   },
+   "dd": {
+    "base_mensual": -0.077387,
+    "base_sin_aport": -0.07712
+   },
+   "eur": {
+    "base_mensual": 15099.18,
+    "base_sin_aport": 9288.32
+   },
+   "benchmark": 99.2446
+  },
+  {
+   "date": "2023-07-19",
+   "values": {
+    "base_mensual": 93.9026,
+    "base_sin_aport": 93.934
+   },
+   "dd": {
+    "base_mensual": -0.066991,
+    "base_sin_aport": -0.066679
+   },
+   "eur": {
+    "base_mensual": 15571.01,
+    "base_sin_aport": 9393.4
+   },
+   "benchmark": 100.526
+  },
+  {
+   "date": "2023-07-24",
+   "values": {
+    "base_mensual": 94.3419,
+    "base_sin_aport": 94.3759
+   },
+   "dd": {
+    "base_mensual": -0.062627,
+    "base_sin_aport": -0.062289
+   },
+   "eur": {
+    "base_mensual": 15643.85,
+    "base_sin_aport": 9437.59
+   },
+   "benchmark": 101.2271
+  },
+  {
+   "date": "2023-07-27",
+   "values": {
+    "base_mensual": 95.3729,
+    "base_sin_aport": 95.4175
+   },
+   "dd": {
+    "base_mensual": -0.052383,
+    "base_sin_aport": -0.05194
+   },
+   "eur": {
+    "base_mensual": 15814.8,
+    "base_sin_aport": 9541.75
+   },
+   "benchmark": 101.2819
+  },
+  {
+   "date": "2023-08-01",
+   "values": {
+    "base_mensual": 94.9981,
+    "base_sin_aport": 95.0441
+   },
+   "dd": {
+    "base_mensual": -0.056106,
+    "base_sin_aport": -0.05565
+   },
+   "eur": {
+    "base_mensual": 15752.67,
+    "base_sin_aport": 9504.41
+   },
+   "benchmark": 102.9252
+  },
+  {
+   "date": "2023-08-04",
+   "values": {
+    "base_mensual": 93.7924,
+    "base_sin_aport": 93.8285
+   },
+   "dd": {
+    "base_mensual": -0.068087,
+    "base_sin_aport": -0.067728
+   },
+   "eur": {
+    "base_mensual": 15552.73,
+    "base_sin_aport": 9382.85
+   },
+   "benchmark": 101.1421
+  },
+  {
+   "date": "2023-08-09",
+   "values": {
+    "base_mensual": 93.5341,
+    "base_sin_aport": 93.5642
+   },
+   "dd": {
+    "base_mensual": -0.070653,
+    "base_sin_aport": -0.070354
+   },
+   "eur": {
+    "base_mensual": 15509.9,
+    "base_sin_aport": 9356.42
+   },
+   "benchmark": 100.8537
+  },
+  {
+   "date": "2023-08-14",
+   "values": {
+    "base_mensual": 93.6327,
+    "base_sin_aport": 93.67
+   },
+   "dd": {
+    "base_mensual": -0.069673,
+    "base_sin_aport": -0.069303
+   },
+   "eur": {
+    "base_mensual": 15526.25,
+    "base_sin_aport": 9367.0
+   },
+   "benchmark": 101.5185
+  },
+  {
+   "date": "2023-08-17",
+   "values": {
+    "base_mensual": 92.4548,
+    "base_sin_aport": 92.4865
+   },
+   "dd": {
+    "base_mensual": -0.081377,
+    "base_sin_aport": -0.081062
+   },
+   "eur": {
+    "base_mensual": 15330.93,
+    "base_sin_aport": 9248.65
+   },
+   "benchmark": 99.502
+  },
+  {
+   "date": "2023-08-22",
+   "values": {
+    "base_mensual": 92.7194,
+    "base_sin_aport": 92.7506
+   },
+   "dd": {
+    "base_mensual": -0.078748,
+    "base_sin_aport": -0.078438
+   },
+   "eur": {
+    "base_mensual": 15677.1,
+    "base_sin_aport": 9275.06
+   },
+   "benchmark": 99.6883
+  },
+  {
+   "date": "2023-08-25",
+   "values": {
+    "base_mensual": 93.0456,
+    "base_sin_aport": 93.0749
+   },
+   "dd": {
+    "base_mensual": -0.075507,
+    "base_sin_aport": -0.075215
+   },
+   "eur": {
+    "base_mensual": 15732.25,
+    "base_sin_aport": 9307.49
+   },
+   "benchmark": 101.0374
+  },
+  {
+   "date": "2023-08-30",
+   "values": {
+    "base_mensual": 94.1694,
+    "base_sin_aport": 94.207
+   },
+   "dd": {
+    "base_mensual": -0.064341,
+    "base_sin_aport": -0.063967
+   },
+   "eur": {
+    "base_mensual": 15922.27,
+    "base_sin_aport": 9420.7
+   },
+   "benchmark": 102.8948
+  },
+  {
+   "date": "2023-09-04",
+   "values": {
+    "base_mensual": 94.9588,
+    "base_sin_aport": 95.0068
+   },
+   "dd": {
+    "base_mensual": -0.056497,
+    "base_sin_aport": -0.05602
+   },
+   "eur": {
+    "base_mensual": 16055.74,
+    "base_sin_aport": 9500.68
+   },
+   "benchmark": null
+  },
+  {
+   "date": "2023-09-07",
+   "values": {
+    "base_mensual": 94.5002,
+    "base_sin_aport": 94.5463
+   },
+   "dd": {
+    "base_mensual": -0.061054,
+    "base_sin_aport": -0.060596
+   },
+   "eur": {
+    "base_mensual": 15978.19,
+    "base_sin_aport": 9454.63
+   },
+   "benchmark": 102.8643
+  },
+  {
+   "date": "2023-09-12",
+   "values": {
+    "base_mensual": 94.6169,
+    "base_sin_aport": 94.6656
+   },
+   "dd": {
+    "base_mensual": -0.059895,
+    "base_sin_aport": -0.059411
+   },
+   "eur": {
+    "base_mensual": 15997.93,
+    "base_sin_aport": 9466.56
+   },
+   "benchmark": 102.8734
+  },
+  {
+   "date": "2023-09-15",
+   "values": {
+    "base_mensual": 95.1373,
+    "base_sin_aport": 95.1916
+   },
+   "dd": {
+    "base_mensual": -0.054724,
+    "base_sin_aport": -0.054185
+   },
+   "eur": {
+    "base_mensual": 16085.92,
+    "base_sin_aport": 9519.16
+   },
+   "benchmark": 103.7326
+  },
+  {
+   "date": "2023-09-20",
+   "values": {
+    "base_mensual": 94.6149,
+    "base_sin_aport": 94.6664
+   },
+   "dd": {
+    "base_mensual": -0.059914,
+    "base_sin_aport": -0.059403
+   },
+   "eur": {
+    "base_mensual": 16297.4,
+    "base_sin_aport": 9466.64
+   },
+   "benchmark": 102.1883
+  },
+  {
+   "date": "2023-09-25",
+   "values": {
+    "base_mensual": 93.2657,
+    "base_sin_aport": 93.31
+   },
+   "dd": {
+    "base_mensual": -0.07332,
+    "base_sin_aport": -0.072879
+   },
+   "eur": {
+    "base_mensual": 16065.0,
+    "base_sin_aport": 9331.0
+   },
+   "benchmark": 101.0086
+  },
+  {
+   "date": "2023-09-28",
+   "values": {
+    "base_mensual": 92.7337,
+    "base_sin_aport": 92.7826
+   },
+   "dd": {
+    "base_mensual": -0.078606,
+    "base_sin_aport": -0.07812
+   },
+   "eur": {
+    "base_mensual": 15973.37,
+    "base_sin_aport": 9278.26
+   },
+   "benchmark": 101.5165
+  },
+  {
+   "date": "2023-10-03",
+   "values": {
+    "base_mensual": 91.9422,
+    "base_sin_aport": 91.9827
+   },
+   "dd": {
+    "base_mensual": -0.08647,
+    "base_sin_aport": -0.086067
+   },
+   "eur": {
+    "base_mensual": 15837.03,
+    "base_sin_aport": 9198.27
+   },
+   "benchmark": 100.1036
+  },
+  {
+   "date": "2023-10-06",
+   "values": {
+    "base_mensual": 92.1585,
+    "base_sin_aport": 92.1994
+   },
+   "dd": {
+    "base_mensual": -0.084321,
+    "base_sin_aport": -0.083914
+   },
+   "eur": {
+    "base_mensual": 15874.28,
+    "base_sin_aport": 9219.94
+   },
+   "benchmark": 101.3725
+  },
+  {
+   "date": "2023-10-11",
+   "values": {
+    "base_mensual": 93.629,
+    "base_sin_aport": 93.672
+   },
+   "dd": {
+    "base_mensual": -0.069711,
+    "base_sin_aport": -0.069283
+   },
+   "eur": {
+    "base_mensual": 16127.57,
+    "base_sin_aport": 9367.2
+   },
+   "benchmark": 102.4252
+  },
+  {
+   "date": "2023-10-16",
+   "values": {
+    "base_mensual": 93.9122,
+    "base_sin_aport": 93.9636
+   },
+   "dd": {
+    "base_mensual": -0.066896,
+    "base_sin_aport": -0.066385
+   },
+   "eur": {
+    "base_mensual": 16176.36,
+    "base_sin_aport": 9396.36
+   },
+   "benchmark": 103.1719
+  },
+  {
+   "date": "2023-10-19",
+   "values": {
+    "base_mensual": 92.4009,
+    "base_sin_aport": 92.4437
+   },
+   "dd": {
+    "base_mensual": -0.081913,
+    "base_sin_aport": -0.081487
+   },
+   "eur": {
+    "base_mensual": 16213.66,
+    "base_sin_aport": 9244.37
+   },
+   "benchmark": 100.7619
+  },
+  {
+   "date": "2023-10-24",
+   "values": {
+    "base_mensual": 91.4494,
+    "base_sin_aport": 91.4764
+   },
+   "dd": {
+    "base_mensual": -0.091366,
+    "base_sin_aport": -0.091098
+   },
+   "eur": {
+    "base_mensual": 16046.71,
+    "base_sin_aport": 9147.64
+   },
+   "benchmark": 98.8217
+  },
+  {
+   "date": "2023-10-27",
+   "values": {
+    "base_mensual": 90.0731,
+    "base_sin_aport": 90.0842
+   },
+   "dd": {
+    "base_mensual": -0.105041,
+    "base_sin_aport": -0.104931
+   },
+   "eur": {
+    "base_mensual": 15805.21,
+    "base_sin_aport": 9008.42
+   },
+   "benchmark": 96.7496
+  },
+  {
+   "date": "2023-11-01",
+   "values": {
+    "base_mensual": 91.623,
+    "base_sin_aport": 91.6451
+   },
+   "dd": {
+    "base_mensual": -0.089642,
+    "base_sin_aport": -0.089422
+   },
+   "eur": {
+    "base_mensual": 16077.17,
+    "base_sin_aport": 9164.51
+   },
+   "benchmark": 99.4591
+  },
+  {
+   "date": "2023-11-06",
+   "values": {
+    "base_mensual": 92.8489,
+    "base_sin_aport": 92.8808
+   },
+   "dd": {
+    "base_mensual": -0.077462,
+    "base_sin_aport": -0.077145
+   },
+   "eur": {
+    "base_mensual": 16292.27,
+    "base_sin_aport": 9288.08
+   },
+   "benchmark": 101.0191
+  },
+  {
+   "date": "2023-11-09",
+   "values": {
+    "base_mensual": 93.4732,
+    "base_sin_aport": 93.5056
+   },
+   "dd": {
+    "base_mensual": -0.071259,
+    "base_sin_aport": -0.070937
+   },
+   "eur": {
+    "base_mensual": 16401.82,
+    "base_sin_aport": 9350.56
+   },
+   "benchmark": 100.8186
+  },
+  {
+   "date": "2023-11-14",
+   "values": {
+    "base_mensual": 94.3659,
+    "base_sin_aport": 94.403
+   },
+   "dd": {
+    "base_mensual": -0.062389,
+    "base_sin_aport": -0.06202
+   },
+   "eur": {
+    "base_mensual": 16558.46,
+    "base_sin_aport": 9440.3
+   },
+   "benchmark": 104.3865
+  },
+  {
+   "date": "2023-11-17",
+   "values": {
+    "base_mensual": 94.5008,
+    "base_sin_aport": 94.5379
+   },
+   "dd": {
+    "base_mensual": -0.061048,
+    "base_sin_aport": -0.060679
+   },
+   "eur": {
+    "base_mensual": 16582.14,
+    "base_sin_aport": 9453.79
+   },
+   "benchmark": 103.3906
+  },
+  {
+   "date": "2023-11-22",
+   "values": {
+    "base_mensual": 95.2603,
+    "base_sin_aport": 95.3025
+   },
+   "dd": {
+    "base_mensual": -0.053502,
+    "base_sin_aport": -0.053082
+   },
+   "eur": {
+    "base_mensual": 17017.59,
+    "base_sin_aport": 9530.25
+   },
+   "benchmark": 103.7686
+  },
+  {
+   "date": "2023-11-27",
+   "values": {
+    "base_mensual": 95.0058,
+    "base_sin_aport": 95.0435
+   },
+   "dd": {
+    "base_mensual": -0.056031,
+    "base_sin_aport": -0.055656
+   },
+   "eur": {
+    "base_mensual": 16972.12,
+    "base_sin_aport": 9504.35
+   },
+   "benchmark": 103.4213
+  },
+  {
+   "date": "2023-11-30",
+   "values": {
+    "base_mensual": 95.3967,
+    "base_sin_aport": 95.4326
+   },
+   "dd": {
+    "base_mensual": -0.052147,
+    "base_sin_aport": -0.05179
+   },
+   "eur": {
+    "base_mensual": 17041.96,
+    "base_sin_aport": 9543.26
+   },
+   "benchmark": 103.5509
+  },
+  {
+   "date": "2023-12-05",
+   "values": {
+    "base_mensual": 96.6469,
+    "base_sin_aport": 96.689
+   },
+   "dd": {
+    "base_mensual": -0.039725,
+    "base_sin_aport": -0.039306
+   },
+   "eur": {
+    "base_mensual": 17265.3,
+    "base_sin_aport": 9668.9
+   },
+   "benchmark": 104.8492
+  },
+  {
+   "date": "2023-12-08",
+   "values": {
+    "base_mensual": 97.4531,
+    "base_sin_aport": 97.4972
+   },
+   "dd": {
+    "base_mensual": -0.031715,
+    "base_sin_aport": -0.031276
+   },
+   "eur": {
+    "base_mensual": 17409.31,
+    "base_sin_aport": 9749.72
+   },
+   "benchmark": 106.172
+  },
+  {
+   "date": "2023-12-13",
+   "values": {
+    "base_mensual": 98.1236,
+    "base_sin_aport": 98.1682
+   },
+   "dd": {
+    "base_mensual": -0.025052,
+    "base_sin_aport": -0.024609
+   },
+   "eur": {
+    "base_mensual": 17529.1,
+    "base_sin_aport": 9816.82
+   },
+   "benchmark": 108.4819
+  },
+  {
+   "date": "2023-12-18",
+   "values": {
+    "base_mensual": 98.8689,
+    "base_sin_aport": 98.9122
+   },
+   "dd": {
+    "base_mensual": -0.017647,
+    "base_sin_aport": -0.017216
+   },
+   "eur": {
+    "base_mensual": 17962.25,
+    "base_sin_aport": 9891.22
+   },
+   "benchmark": 108.3169
+  },
+  {
+   "date": "2023-12-21",
+   "values": {
+    "base_mensual": 98.9149,
+    "base_sin_aport": 98.9457
+   },
+   "dd": {
+    "base_mensual": -0.01719,
+    "base_sin_aport": -0.016884
+   },
+   "eur": {
+    "base_mensual": 17970.59,
+    "base_sin_aport": 9894.57
+   },
+   "benchmark": 107.9801
+  },
+  {
+   "date": "2023-12-28",
+   "values": {
+    "base_mensual": 99.2086,
+    "base_sin_aport": 99.2427
+   },
+   "dd": {
+    "base_mensual": -0.014272,
+    "base_sin_aport": -0.013933
+   },
+   "eur": {
+    "base_mensual": 18023.96,
+    "base_sin_aport": 9924.27
+   },
+   "benchmark": 107.238
+  },
+  {
+   "date": "2024-01-03",
+   "values": {
+    "base_mensual": 98.8418,
+    "base_sin_aport": 98.8789
+   },
+   "dd": {
+    "base_mensual": -0.017916,
+    "base_sin_aport": -0.017548
+   },
+   "eur": {
+    "base_mensual": 17957.32,
+    "base_sin_aport": 9887.89
+   },
+   "benchmark": 107.0991
+  },
+  {
+   "date": "2024-01-08",
+   "values": {
+    "base_mensual": 98.6149,
+    "base_sin_aport": 98.6582
+   },
+   "dd": {
+    "base_mensual": -0.02017,
+    "base_sin_aport": -0.019741
+   },
+   "eur": {
+    "base_mensual": 17916.1,
+    "base_sin_aport": 9865.82
+   },
+   "benchmark": 108.4476
+  },
+  {
+   "date": "2024-01-11",
+   "values": {
+    "base_mensual": 98.7748,
+    "base_sin_aport": 98.8253
+   },
+   "dd": {
+    "base_mensual": -0.018582,
+    "base_sin_aport": -0.01808
+   },
+   "eur": {
+    "base_mensual": 17945.14,
+    "base_sin_aport": 9882.53
+   },
+   "benchmark": 108.5225
+  },
+  {
+   "date": "2024-01-16",
+   "values": {
+    "base_mensual": 99.5163,
+    "base_sin_aport": 99.5756
+   },
+   "dd": {
+    "base_mensual": -0.011214,
+    "base_sin_aport": -0.010625
+   },
+   "eur": {
+    "base_mensual": 18079.87,
+    "base_sin_aport": 9957.56
+   },
+   "benchmark": 108.5006
+  },
+  {
+   "date": "2024-01-19",
+   "values": {
+    "base_mensual": 99.4628,
+    "base_sin_aport": 99.5262
+   },
+   "dd": {
+    "base_mensual": -0.011746,
+    "base_sin_aport": -0.011116
+   },
+   "eur": {
+    "base_mensual": 18371.03,
+    "base_sin_aport": 9952.62
+   },
+   "benchmark": 110.8731
+  },
+  {
+   "date": "2024-01-24",
+   "values": {
+    "base_mensual": 100.7438,
+    "base_sin_aport": 100.8261
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 18607.64,
+    "base_sin_aport": 10082.61
+   },
+   "benchmark": 111.7534
+  },
+  {
+   "date": "2024-01-29",
+   "values": {
+    "base_mensual": 101.6589,
+    "base_sin_aport": 101.7431
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 18776.65,
+    "base_sin_aport": 10174.31
+   },
+   "benchmark": 113.2747
+  },
+  {
+   "date": "2024-02-01",
+   "values": {
+    "base_mensual": 101.2611,
+    "base_sin_aport": 101.3337
+   },
+   "dd": {
+    "base_mensual": -0.005274,
+    "base_sin_aport": -0.005439
+   },
+   "eur": {
+    "base_mensual": 18703.19,
+    "base_sin_aport": 10133.37
+   },
+   "benchmark": 113.207
+  },
+  {
+   "date": "2024-02-06",
+   "values": {
+    "base_mensual": 102.452,
+    "base_sin_aport": 102.5538
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 18923.14,
+    "base_sin_aport": 10255.38
+   },
+   "benchmark": 114.986
+  },
+  {
+   "date": "2024-02-09",
+   "values": {
+    "base_mensual": 102.8036,
+    "base_sin_aport": 102.9171
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 18988.1,
+    "base_sin_aport": 10291.71
+   },
+   "benchmark": 116.3097
+  },
+  {
+   "date": "2024-02-14",
+   "values": {
+    "base_mensual": 102.9242,
+    "base_sin_aport": 103.0331
+   },
+   "dd": {
+    "base_mensual": -0.005467,
+    "base_sin_aport": -0.005566
+   },
+   "eur": {
+    "base_mensual": 19010.37,
+    "base_sin_aport": 10303.31
+   },
+   "benchmark": 116.4837
+  },
+  {
+   "date": "2024-02-19",
+   "values": {
+    "base_mensual": 103.3619,
+    "base_sin_aport": 103.4809
+   },
+   "dd": {
+    "base_mensual": -0.002157,
+    "base_sin_aport": -0.002165
+   },
+   "eur": {
+    "base_mensual": 19391.21,
+    "base_sin_aport": 10348.09
+   },
+   "benchmark": null
+  },
+  {
+   "date": "2024-02-22",
+   "values": {
+    "base_mensual": 103.8193,
+    "base_sin_aport": 103.945
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 19477.01,
+    "base_sin_aport": 10394.5
+   },
+   "benchmark": 117.3364
+  },
+  {
+   "date": "2024-02-27",
+   "values": {
+    "base_mensual": 103.6608,
+    "base_sin_aport": 103.787
+   },
+   "dd": {
+    "base_mensual": -0.005618,
+    "base_sin_aport": -0.0056
+   },
+   "eur": {
+    "base_mensual": 19447.28,
+    "base_sin_aport": 10378.7
+   },
+   "benchmark": 116.8115
+  },
+  {
+   "date": "2024-03-01",
+   "values": {
+    "base_mensual": 104.5108,
+    "base_sin_aport": 104.6448
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 19606.74,
+    "base_sin_aport": 10464.48
+   },
+   "benchmark": 118.7125
+  },
+  {
+   "date": "2024-03-06",
+   "values": {
+    "base_mensual": 104.457,
+    "base_sin_aport": 104.5781
+   },
+   "dd": {
+    "base_mensual": -0.000924,
+    "base_sin_aport": -0.001027
+   },
+   "eur": {
+    "base_mensual": 19596.65,
+    "base_sin_aport": 10457.81
+   },
+   "benchmark": 117.4267
+  },
+  {
+   "date": "2024-03-11",
+   "values": {
+    "base_mensual": 104.399,
+    "base_sin_aport": 104.5157
+   },
+   "dd": {
+    "base_mensual": -0.00577,
+    "base_sin_aport": -0.00581
+   },
+   "eur": {
+    "base_mensual": 19585.78,
+    "base_sin_aport": 10451.57
+   },
+   "benchmark": 116.819
+  },
+  {
+   "date": "2024-03-14",
+   "values": {
+    "base_mensual": 104.9419,
+    "base_sin_aport": 105.0748
+   },
+   "dd": {
+    "base_mensual": -0.00098,
+    "base_sin_aport": -0.000919
+   },
+   "eur": {
+    "base_mensual": 19687.62,
+    "base_sin_aport": 10507.48
+   },
+   "benchmark": 117.4668
+  },
+  {
+   "date": "2024-03-19",
+   "values": {
+    "base_mensual": 105.2302,
+    "base_sin_aport": 105.3699
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 20041.99,
+    "base_sin_aport": 10536.99
+   },
+   "benchmark": 118.9951
+  },
+  {
+   "date": "2024-03-22",
+   "values": {
+    "base_mensual": 106.7155,
+    "base_sin_aport": 106.8667
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 20324.89,
+    "base_sin_aport": 10686.67
+   },
+   "benchmark": 120.4271
+  },
+  {
+   "date": "2024-03-27",
+   "values": {
+    "base_mensual": 106.6682,
+    "base_sin_aport": 106.816
+   },
+   "dd": {
+    "base_mensual": -0.000444,
+    "base_sin_aport": -0.000475
+   },
+   "eur": {
+    "base_mensual": 20315.87,
+    "base_sin_aport": 10681.6
+   },
+   "benchmark": 121.1054
+  },
+  {
+   "date": "2024-04-03",
+   "values": {
+    "base_mensual": 106.3356,
+    "base_sin_aport": 106.4918
+   },
+   "dd": {
+    "base_mensual": -0.007461,
+    "base_sin_aport": -0.00746
+   },
+   "eur": {
+    "base_mensual": 20252.53,
+    "base_sin_aport": 10649.18
+   },
+   "benchmark": 120.9773
+  },
+  {
+   "date": "2024-04-08",
+   "values": {
+    "base_mensual": 105.9886,
+    "base_sin_aport": 106.1399
+   },
+   "dd": {
+    "base_mensual": -0.0107,
+    "base_sin_aport": -0.010739
+   },
+   "eur": {
+    "base_mensual": 20186.43,
+    "base_sin_aport": 10613.99
+   },
+   "benchmark": 120.0931
+  },
+  {
+   "date": "2024-04-11",
+   "values": {
+    "base_mensual": 105.9519,
+    "base_sin_aport": 106.1057
+   },
+   "dd": {
+    "base_mensual": -0.011042,
+    "base_sin_aport": -0.011058
+   },
+   "eur": {
+    "base_mensual": 20179.45,
+    "base_sin_aport": 10610.57
+   },
+   "benchmark": 121.0306
+  },
+  {
+   "date": "2024-04-16",
+   "values": {
+    "base_mensual": 104.8747,
+    "base_sin_aport": 105.0148
+   },
+   "dd": {
+    "base_mensual": -0.021097,
+    "base_sin_aport": -0.021226
+   },
+   "eur": {
+    "base_mensual": 19974.29,
+    "base_sin_aport": 10501.48
+   },
+   "benchmark": 118.8924
+  },
+  {
+   "date": "2024-04-19",
+   "values": {
+    "base_mensual": 103.9057,
+    "base_sin_aport": 104.029
+   },
+   "dd": {
+    "base_mensual": -0.030141,
+    "base_sin_aport": -0.030414
+   },
+   "eur": {
+    "base_mensual": 20087.57,
+    "base_sin_aport": 10402.9
+   },
+   "benchmark": 116.7215
+  },
+  {
+   "date": "2024-04-24",
+   "values": {
+    "base_mensual": 104.8012,
+    "base_sin_aport": 104.9472
+   },
+   "dd": {
+    "base_mensual": -0.021783,
+    "base_sin_aport": -0.021856
+   },
+   "eur": {
+    "base_mensual": 20260.68,
+    "base_sin_aport": 10494.72
+   },
+   "benchmark": 118.508
+  },
+  {
+   "date": "2024-04-29",
+   "values": {
+    "base_mensual": 105.4211,
+    "base_sin_aport": 105.5684
+   },
+   "dd": {
+    "base_mensual": -0.015997,
+    "base_sin_aport": -0.016066
+   },
+   "eur": {
+    "base_mensual": 20380.53,
+    "base_sin_aport": 10556.84
+   },
+   "benchmark": 119.531
+  },
+  {
+   "date": "2024-05-03",
+   "values": {
+    "base_mensual": 105.3386,
+    "base_sin_aport": 105.4804
+   },
+   "dd": {
+    "base_mensual": -0.016767,
+    "base_sin_aport": -0.016887
+   },
+   "eur": {
+    "base_mensual": 20364.58,
+    "base_sin_aport": 10548.04
+   },
+   "benchmark": 119.523
+  },
+  {
+   "date": "2024-05-08",
+   "values": {
+    "base_mensual": 106.5493,
+    "base_sin_aport": 106.7069
+   },
+   "dd": {
+    "base_mensual": -0.005466,
+    "base_sin_aport": -0.005455
+   },
+   "eur": {
+    "base_mensual": 20598.64,
+    "base_sin_aport": 10670.69
+   },
+   "benchmark": 120.7325
+  },
+  {
+   "date": "2024-05-13",
+   "values": {
+    "base_mensual": 106.7634,
+    "base_sin_aport": 106.9301
+   },
+   "dd": {
+    "base_mensual": -0.003468,
+    "base_sin_aport": -0.003374
+   },
+   "eur": {
+    "base_mensual": 20640.02,
+    "base_sin_aport": 10693.01
+   },
+   "benchmark": 121.3375
+  },
+  {
+   "date": "2024-05-16",
+   "values": {
+    "base_mensual": 107.7843,
+    "base_sin_aport": 107.9587
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 20837.4,
+    "base_sin_aport": 10795.87
+   },
+   "benchmark": 121.8123
+  },
+  {
+   "date": "2024-05-21",
+   "values": {
+    "base_mensual": 107.691,
+    "base_sin_aport": 107.8701
+   },
+   "dd": {
+    "base_mensual": -0.001518,
+    "base_sin_aport": -0.001553
+   },
+   "eur": {
+    "base_mensual": 21118.89,
+    "base_sin_aport": 10787.01
+   },
+   "benchmark": 122.7165
+  },
+  {
+   "date": "2024-05-24",
+   "values": {
+    "base_mensual": 107.3361,
+    "base_sin_aport": 107.516
+   },
+   "dd": {
+    "base_mensual": -0.004808,
+    "base_sin_aport": -0.004831
+   },
+   "eur": {
+    "base_mensual": 21049.3,
+    "base_sin_aport": 10751.6
+   },
+   "benchmark": 122.8854
+  },
+  {
+   "date": "2024-05-29",
+   "values": {
+    "base_mensual": 106.7279,
+    "base_sin_aport": 106.9077
+   },
+   "dd": {
+    "base_mensual": -0.010447,
+    "base_sin_aport": -0.010461
+   },
+   "eur": {
+    "base_mensual": 20930.04,
+    "base_sin_aport": 10690.77
+   },
+   "benchmark": 121.5714
+  },
+  {
+   "date": "2024-06-03",
+   "values": {
+    "base_mensual": 106.7651,
+    "base_sin_aport": 106.9333
+   },
+   "dd": {
+    "base_mensual": -0.010102,
+    "base_sin_aport": -0.010225
+   },
+   "eur": {
+    "base_mensual": 20937.33,
+    "base_sin_aport": 10693.33
+   },
+   "benchmark": 121.9761
+  },
+  {
+   "date": "2024-06-06",
+   "values": {
+    "base_mensual": 107.9249,
+    "base_sin_aport": 108.1094
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 21164.77,
+    "base_sin_aport": 10810.94
+   },
+   "benchmark": 123.348
+  },
+  {
+   "date": "2024-06-11",
+   "values": {
+    "base_mensual": 108.2773,
+    "base_sin_aport": 108.4851
+   },
+   "dd": {
+    "base_mensual": -0.00097,
+    "base_sin_aport": -0.000993
+   },
+   "eur": {
+    "base_mensual": 21233.88,
+    "base_sin_aport": 10848.51
+   },
+   "benchmark": 125.1665
+  },
+  {
+   "date": "2024-06-14",
+   "values": {
+    "base_mensual": 109.2468,
+    "base_sin_aport": 109.4498
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 21424.0,
+    "base_sin_aport": 10944.98
+   },
+   "benchmark": 126.8121
+  },
+  {
+   "date": "2024-06-19",
+   "values": {
+    "base_mensual": 109.8057,
+    "base_sin_aport": 110.0217
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 21833.76,
+    "base_sin_aport": 11002.17
+   },
+   "benchmark": null
+  },
+  {
+   "date": "2024-06-24",
+   "values": {
+    "base_mensual": 109.9847,
+    "base_sin_aport": 110.2053
+   },
+   "dd": {
+    "base_mensual": -0.001309,
+    "base_sin_aport": -0.001334
+   },
+   "eur": {
+    "base_mensual": 21869.36,
+    "base_sin_aport": 11020.53
+   },
+   "benchmark": 127.8354
+  },
+  {
+   "date": "2024-06-27",
+   "values": {
+    "base_mensual": 109.8138,
+    "base_sin_aport": 110.0356
+   },
+   "dd": {
+    "base_mensual": -0.002861,
+    "base_sin_aport": -0.002871
+   },
+   "eur": {
+    "base_mensual": 21835.39,
+    "base_sin_aport": 11003.56
+   },
+   "benchmark": 128.7504
+  },
+  {
+   "date": "2024-07-02",
+   "values": {
+    "base_mensual": 109.6357,
+    "base_sin_aport": 109.8636
+   },
+   "dd": {
+    "base_mensual": -0.004478,
+    "base_sin_aport": -0.00443
+   },
+   "eur": {
+    "base_mensual": 21799.97,
+    "base_sin_aport": 10986.36
+   },
+   "benchmark": 128.698
+  },
+  {
+   "date": "2024-07-05",
+   "values": {
+    "base_mensual": 110.3041,
+    "base_sin_aport": 110.5317
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 21932.87,
+    "base_sin_aport": 11053.17
+   },
+   "benchmark": 129.196
+  },
+  {
+   "date": "2024-07-10",
+   "values": {
+    "base_mensual": 110.9743,
+    "base_sin_aport": 111.21
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 22066.14,
+    "base_sin_aport": 11121.0
+   },
+   "benchmark": 130.7177
+  },
+  {
+   "date": "2024-07-15",
+   "values": {
+    "base_mensual": 111.4018,
+    "base_sin_aport": 111.6349
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 22151.14,
+    "base_sin_aport": 11163.49
+   },
+   "benchmark": 129.8241
+  },
+  {
+   "date": "2024-07-18",
+   "values": {
+    "base_mensual": 110.2784,
+    "base_sin_aport": 110.4832
+   },
+   "dd": {
+    "base_mensual": -0.011935,
+    "base_sin_aport": -0.012149
+   },
+   "eur": {
+    "base_mensual": 22227.75,
+    "base_sin_aport": 11048.32
+   },
+   "benchmark": 127.1904
+  },
+  {
+   "date": "2024-07-23",
+   "values": {
+    "base_mensual": 110.8884,
+    "base_sin_aport": 111.1105
+   },
+   "dd": {
+    "base_mensual": -0.006469,
+    "base_sin_aport": -0.00654
+   },
+   "eur": {
+    "base_mensual": 22350.72,
+    "base_sin_aport": 11111.05
+   },
+   "benchmark": 128.0492
+  },
+  {
+   "date": "2024-07-26",
+   "values": {
+    "base_mensual": 109.1929,
+    "base_sin_aport": 109.3806
+   },
+   "dd": {
+    "base_mensual": -0.02166,
+    "base_sin_aport": -0.022008
+   },
+   "eur": {
+    "base_mensual": 22008.98,
+    "base_sin_aport": 10938.06
+   },
+   "benchmark": 126.28
+  },
+  {
+   "date": "2024-07-31",
+   "values": {
+    "base_mensual": 110.8643,
+    "base_sin_aport": 111.0678
+   },
+   "dd": {
+    "base_mensual": -0.006685,
+    "base_sin_aport": -0.006922
+   },
+   "eur": {
+    "base_mensual": 22345.86,
+    "base_sin_aport": 11106.78
+   },
+   "benchmark": 128.1698
+  },
+  {
+   "date": "2024-08-05",
+   "values": {
+    "base_mensual": 105.0391,
+    "base_sin_aport": 105.1234
+   },
+   "dd": {
+    "base_mensual": -0.058878,
+    "base_sin_aport": -0.060072
+   },
+   "eur": {
+    "base_mensual": 21171.72,
+    "base_sin_aport": 10512.34
+   },
+   "benchmark": 119.3383
+  },
+  {
+   "date": "2024-08-08",
+   "values": {
+    "base_mensual": 106.7565,
+    "base_sin_aport": 106.8785
+   },
+   "dd": {
+    "base_mensual": -0.04349,
+    "base_sin_aport": -0.044379
+   },
+   "eur": {
+    "base_mensual": 21517.88,
+    "base_sin_aport": 10687.85
+   },
+   "benchmark": 122.2112
+  },
+  {
+   "date": "2024-08-13",
+   "values": {
+    "base_mensual": 108.1727,
+    "base_sin_aport": 108.3091
+   },
+   "dd": {
+    "base_mensual": -0.030801,
+    "base_sin_aport": -0.031587
+   },
+   "eur": {
+    "base_mensual": 21803.34,
+    "base_sin_aport": 10830.91
+   },
+   "benchmark": 124.7966
+  },
+  {
+   "date": "2024-08-16",
+   "values": {
+    "base_mensual": 109.7426,
+    "base_sin_aport": 109.9199
+   },
+   "dd": {
+    "base_mensual": -0.016735,
+    "base_sin_aport": -0.017185
+   },
+   "eur": {
+    "base_mensual": 22119.76,
+    "base_sin_aport": 10991.99
+   },
+   "benchmark": 127.1826
+  },
+  {
+   "date": "2024-08-21",
+   "values": {
+    "base_mensual": 110.0328,
+    "base_sin_aport": 110.2043
+   },
+   "dd": {
+    "base_mensual": -0.014135,
+    "base_sin_aport": -0.014642
+   },
+   "eur": {
+    "base_mensual": 22478.34,
+    "base_sin_aport": 11020.43
+   },
+   "benchmark": 126.9356
+  },
+  {
+   "date": "2024-08-26",
+   "values": {
+    "base_mensual": 110.0711,
+    "base_sin_aport": 110.2484
+   },
+   "dd": {
+    "base_mensual": -0.013792,
+    "base_sin_aport": -0.014248
+   },
+   "eur": {
+    "base_mensual": 22486.17,
+    "base_sin_aport": 11024.84
+   },
+   "benchmark": 126.1715
+  },
+  {
+   "date": "2024-08-29",
+   "values": {
+    "base_mensual": 110.9702,
+    "base_sin_aport": 111.17
+   },
+   "dd": {
+    "base_mensual": -0.005736,
+    "base_sin_aport": -0.006008
+   },
+   "eur": {
+    "base_mensual": 22669.84,
+    "base_sin_aport": 11117.0
+   },
+   "benchmark": 126.3409
+  },
+  {
+   "date": "2024-09-03",
+   "values": {
+    "base_mensual": 110.4023,
+    "base_sin_aport": 110.5893
+   },
+   "dd": {
+    "base_mensual": -0.010824,
+    "base_sin_aport": -0.0112
+   },
+   "eur": {
+    "base_mensual": 22553.83,
+    "base_sin_aport": 11058.93
+   },
+   "benchmark": 125.5962
+  },
+  {
+   "date": "2024-09-06",
+   "values": {
+    "base_mensual": 108.0753,
+    "base_sin_aport": 108.199
+   },
+   "dd": {
+    "base_mensual": -0.031674,
+    "base_sin_aport": -0.032572
+   },
+   "eur": {
+    "base_mensual": 22078.44,
+    "base_sin_aport": 10819.9
+   },
+   "benchmark": 122.4008
+  },
+  {
+   "date": "2024-09-11",
+   "values": {
+    "base_mensual": 108.8224,
+    "base_sin_aport": 108.9542
+   },
+   "dd": {
+    "base_mensual": -0.02498,
+    "base_sin_aport": -0.02582
+   },
+   "eur": {
+    "base_mensual": 22231.07,
+    "base_sin_aport": 10895.42
+   },
+   "benchmark": 126.7445
+  },
+  {
+   "date": "2024-09-16",
+   "values": {
+    "base_mensual": 110.6236,
+    "base_sin_aport": 110.7886
+   },
+   "dd": {
+    "base_mensual": -0.008842,
+    "base_sin_aport": -0.009418
+   },
+   "eur": {
+    "base_mensual": 22599.03,
+    "base_sin_aport": 11078.86
+   },
+   "benchmark": 127.8132
+  },
+  {
+   "date": "2024-09-19",
+   "values": {
+    "base_mensual": 111.6892,
+    "base_sin_aport": 111.8888
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 23119.84,
+    "base_sin_aport": 11188.88
+   },
+   "benchmark": 129.3456
+  },
+  {
+   "date": "2024-09-24",
+   "values": {
+    "base_mensual": 111.8537,
+    "base_sin_aport": 112.0477
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 23153.89,
+    "base_sin_aport": 11204.77
+   },
+   "benchmark": 129.8215
+  },
+  {
+   "date": "2024-09-27",
+   "values": {
+    "base_mensual": 112.3755,
+    "base_sin_aport": 112.5824
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 23261.9,
+    "base_sin_aport": 11258.24
+   },
+   "benchmark": 129.1919
+  },
+  {
+   "date": "2024-10-02",
+   "values": {
+    "base_mensual": 112.7124,
+    "base_sin_aport": 112.9176
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 23331.64,
+    "base_sin_aport": 11291.76
+   },
+   "benchmark": 129.8863
+  },
+  {
+   "date": "2024-10-07",
+   "values": {
+    "base_mensual": 113.0531,
+    "base_sin_aport": 113.2844
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 23402.17,
+    "base_sin_aport": 11328.44
+   },
+   "benchmark": 130.6616
+  },
+  {
+   "date": "2024-10-10",
+   "values": {
+    "base_mensual": 113.8412,
+    "base_sin_aport": 114.0877
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 23565.31,
+    "base_sin_aport": 11408.77
+   },
+   "benchmark": 132.994
+  },
+  {
+   "date": "2024-10-15",
+   "values": {
+    "base_mensual": 114.7478,
+    "base_sin_aport": 115.0051
+   },
+   "dd": {
+    "base_mensual": -0.000836,
+    "base_sin_aport": -0.000928
+   },
+   "eur": {
+    "base_mensual": 23752.98,
+    "base_sin_aport": 11500.51
+   },
+   "benchmark": 134.2354
+  },
+  {
+   "date": "2024-10-18",
+   "values": {
+    "base_mensual": 115.5398,
+    "base_sin_aport": 115.8025
+   },
+   "dd": {
+    "base_mensual": -0.000318,
+    "base_sin_aport": -0.000364
+   },
+   "eur": {
+    "base_mensual": 24216.92,
+    "base_sin_aport": 11580.25
+   },
+   "benchmark": 136.3823
+  },
+  {
+   "date": "2024-10-23",
+   "values": {
+    "base_mensual": 114.7348,
+    "base_sin_aport": 115.0005
+   },
+   "dd": {
+    "base_mensual": -0.007283,
+    "base_sin_aport": -0.007287
+   },
+   "eur": {
+    "base_mensual": 24048.2,
+    "base_sin_aport": 11500.05
+   },
+   "benchmark": 135.2295
+  },
+  {
+   "date": "2024-10-28",
+   "values": {
+    "base_mensual": 114.9361,
+    "base_sin_aport": 115.2016
+   },
+   "dd": {
+    "base_mensual": -0.005541,
+    "base_sin_aport": -0.005551
+   },
+   "eur": {
+    "base_mensual": 24090.38,
+    "base_sin_aport": 11520.16
+   },
+   "benchmark": 135.8498
+  },
+  {
+   "date": "2024-10-31",
+   "values": {
+    "base_mensual": 112.8977,
+    "base_sin_aport": 113.1342
+   },
+   "dd": {
+    "base_mensual": -0.023178,
+    "base_sin_aport": -0.023397
+   },
+   "eur": {
+    "base_mensual": 23663.15,
+    "base_sin_aport": 11313.42
+   },
+   "benchmark": 132.3392
+  },
+  {
+   "date": "2024-11-05",
+   "values": {
+    "base_mensual": 113.2859,
+    "base_sin_aport": 113.5306
+   },
+   "dd": {
+    "base_mensual": -0.01982,
+    "base_sin_aport": -0.019976
+   },
+   "eur": {
+    "base_mensual": 23744.5,
+    "base_sin_aport": 11353.06
+   },
+   "benchmark": 133.9625
+  },
+  {
+   "date": "2024-11-08",
+   "values": {
+    "base_mensual": 117.1322,
+    "base_sin_aport": 117.4585
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 24550.68,
+    "base_sin_aport": 11745.85
+   },
+   "benchmark": 139.9403
+  },
+  {
+   "date": "2024-11-13",
+   "values": {
+    "base_mensual": 118.1772,
+    "base_sin_aport": 118.5221
+   },
+   "dd": {
+    "base_mensual": -0.000609,
+    "base_sin_aport": -0.000578
+   },
+   "eur": {
+    "base_mensual": 24769.7,
+    "base_sin_aport": 11852.21
+   },
+   "benchmark": 142.066
+  },
+  {
+   "date": "2024-11-18",
+   "values": {
+    "base_mensual": 117.2883,
+    "base_sin_aport": 117.6093
+   },
+   "dd": {
+    "base_mensual": -0.008134,
+    "base_sin_aport": -0.008275
+   },
+   "eur": {
+    "base_mensual": 24883.4,
+    "base_sin_aport": 11760.93
+   },
+   "benchmark": 141.0474
+  },
+  {
+   "date": "2024-11-21",
+   "values": {
+    "base_mensual": 118.5139,
+    "base_sin_aport": 118.8583
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 25143.41,
+    "base_sin_aport": 11885.83
+   },
+   "benchmark": 142.2256
+  },
+  {
+   "date": "2024-11-26",
+   "values": {
+    "base_mensual": 119.6558,
+    "base_sin_aport": 120.008
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 25385.67,
+    "base_sin_aport": 12000.8
+   },
+   "benchmark": 145.3905
+  },
+  {
+   "date": "2024-11-29",
+   "values": {
+    "base_mensual": 119.9492,
+    "base_sin_aport": 120.285
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 25447.92,
+    "base_sin_aport": 12028.5
+   },
+   "benchmark": 144.036
+  },
+  {
+   "date": "2024-12-04",
+   "values": {
+    "base_mensual": 121.0058,
+    "base_sin_aport": 121.3596
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 25672.09,
+    "base_sin_aport": 12135.96
+   },
+   "benchmark": 146.0725
+  },
+  {
+   "date": "2024-12-09",
+   "values": {
+    "base_mensual": 120.6337,
+    "base_sin_aport": 120.9804
+   },
+   "dd": {
+    "base_mensual": -0.003076,
+    "base_sin_aport": -0.003124
+   },
+   "eur": {
+    "base_mensual": 25593.14,
+    "base_sin_aport": 12098.04
+   },
+   "benchmark": 144.5595
+  },
+  {
+   "date": "2024-12-12",
+   "values": {
+    "base_mensual": 120.9486,
+    "base_sin_aport": 121.3201
+   },
+   "dd": {
+    "base_mensual": -0.002805,
+    "base_sin_aport": -0.002745
+   },
+   "eur": {
+    "base_mensual": 25659.96,
+    "base_sin_aport": 12132.01
+   },
+   "benchmark": 145.3325
+  },
+  {
+   "date": "2024-12-17",
+   "values": {
+    "base_mensual": 120.2885,
+    "base_sin_aport": 120.6523
+   },
+   "dd": {
+    "base_mensual": -0.008248,
+    "base_sin_aport": -0.008234
+   },
+   "eur": {
+    "base_mensual": 25519.91,
+    "base_sin_aport": 12065.23
+   },
+   "benchmark": 145.2127
+  },
+  {
+   "date": "2024-12-20",
+   "values": {
+    "base_mensual": 119.0553,
+    "base_sin_aport": 119.3966
+   },
+   "dd": {
+    "base_mensual": -0.018415,
+    "base_sin_aport": -0.018556
+   },
+   "eur": {
+    "base_mensual": 25554.83,
+    "base_sin_aport": 11939.66
+   },
+   "benchmark": 144.4415
+  },
+  {
+   "date": "2024-12-30",
+   "values": {
+    "base_mensual": 118.7154,
+    "base_sin_aport": 119.0606
+   },
+   "dd": {
+    "base_mensual": -0.021218,
+    "base_sin_aport": -0.021318
+   },
+   "eur": {
+    "base_mensual": 25481.87,
+    "base_sin_aport": 11906.06
+   },
+   "benchmark": 143.0039
+  },
+  {
+   "date": "2025-01-06",
+   "values": {
+    "base_mensual": 120.186,
+    "base_sin_aport": 120.5785
+   },
+   "dd": {
+    "base_mensual": -0.009093,
+    "base_sin_aport": -0.008841
+   },
+   "eur": {
+    "base_mensual": 25797.52,
+    "base_sin_aport": 12057.85
+   },
+   "benchmark": 146.4431
+  },
+  {
+   "date": "2025-01-09",
+   "values": {
+    "base_mensual": 119.4548,
+    "base_sin_aport": 119.8463
+   },
+   "dd": {
+    "base_mensual": -0.015121,
+    "base_sin_aport": -0.014859
+   },
+   "eur": {
+    "base_mensual": 25640.57,
+    "base_sin_aport": 11984.63
+   },
+   "benchmark": null
+  },
+  {
+   "date": "2025-01-14",
+   "values": {
+    "base_mensual": 118.1389,
+    "base_sin_aport": 118.5135
+   },
+   "dd": {
+    "base_mensual": -0.025971,
+    "base_sin_aport": -0.025815
+   },
+   "eur": {
+    "base_mensual": 25358.12,
+    "base_sin_aport": 11851.35
+   },
+   "benchmark": 143.7896
+  },
+  {
+   "date": "2025-01-17",
+   "values": {
+    "base_mensual": 120.9142,
+    "base_sin_aport": 121.3323
+   },
+   "dd": {
+    "base_mensual": -0.003089,
+    "base_sin_aport": -0.002645
+   },
+   "eur": {
+    "base_mensual": 25953.82,
+    "base_sin_aport": 12133.23
+   },
+   "benchmark": 147.0676
+  },
+  {
+   "date": "2025-01-22",
+   "values": {
+    "base_mensual": 121.4085,
+    "base_sin_aport": 121.832
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 26362.21,
+    "base_sin_aport": 12183.2
+   },
+   "benchmark": 147.7823
+  },
+  {
+   "date": "2025-01-27",
+   "values": {
+    "base_mensual": 119.5658,
+    "base_sin_aport": 119.9456
+   },
+   "dd": {
+    "base_mensual": -0.015549,
+    "base_sin_aport": -0.015921
+   },
+   "eur": {
+    "base_mensual": 25962.09,
+    "base_sin_aport": 11994.56
+   },
+   "benchmark": 145.1409
+  },
+  {
+   "date": "2025-01-30",
+   "values": {
+    "base_mensual": 121.3063,
+    "base_sin_aport": 121.7279
+   },
+   "dd": {
+    "base_mensual": -0.001219,
+    "base_sin_aport": -0.001298
+   },
+   "eur": {
+    "base_mensual": 26340.03,
+    "base_sin_aport": 12172.79
+   },
+   "benchmark": 147.1609
+  },
+  {
+   "date": "2025-02-04",
+   "values": {
+    "base_mensual": 121.6967,
+    "base_sin_aport": 122.1018
+   },
+   "dd": {
+    "base_mensual": -0.005613,
+    "base_sin_aport": -0.005856
+   },
+   "eur": {
+    "base_mensual": 26424.81,
+    "base_sin_aport": 12210.18
+   },
+   "benchmark": 147.7603
+  },
+  {
+   "date": "2025-02-07",
+   "values": {
+    "base_mensual": 122.3664,
+    "base_sin_aport": 122.7839
+   },
+   "dd": {
+    "base_mensual": -0.001436,
+    "base_sin_aport": -0.001469
+   },
+   "eur": {
+    "base_mensual": 26570.22,
+    "base_sin_aport": 12278.39
+   },
+   "benchmark": 146.652
+  },
+  {
+   "date": "2025-02-10",
+   "values": {
+    "base_mensual": 122.9075,
+    "base_sin_aport": 123.3364
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 26687.71,
+    "base_sin_aport": 12333.64
+   },
+   "benchmark": 148.719
+  },
+  {
+   "date": "2025-02-12",
+   "values": {
+    "base_mensual": 121.8487,
+    "base_sin_aport": 122.2723
+   },
+   "dd": {
+    "base_mensual": -0.008615,
+    "base_sin_aport": -0.008628
+   },
+   "eur": {
+    "base_mensual": 26457.8,
+    "base_sin_aport": 12227.23
+   },
+   "benchmark": 147.6203
+  },
+  {
+   "date": "2025-02-17",
+   "values": {
+    "base_mensual": 122.6246,
+    "base_sin_aport": 123.0643
+   },
+   "dd": {
+    "base_mensual": -0.002302,
+    "base_sin_aport": -0.002207
+   },
+   "eur": {
+    "base_mensual": 26626.27,
+    "base_sin_aport": 12306.43
+   },
+   "benchmark": null
+  },
+  {
+   "date": "2025-02-20",
+   "values": {
+    "base_mensual": 121.9925,
+    "base_sin_aport": 122.4238
+   },
+   "dd": {
+    "base_mensual": -0.007445,
+    "base_sin_aport": -0.0074
+   },
+   "eur": {
+    "base_mensual": 26787.43,
+    "base_sin_aport": 12242.38
+   },
+   "benchmark": 148.4977
+  },
+  {
+   "date": "2025-02-25",
+   "values": {
+    "base_mensual": 119.6995,
+    "base_sin_aport": 120.0586
+   },
+   "dd": {
+    "base_mensual": -0.026101,
+    "base_sin_aport": -0.026576
+   },
+   "eur": {
+    "base_mensual": 26283.93,
+    "base_sin_aport": 12005.86
+   },
+   "benchmark": 144.0143
+  },
+  {
+   "date": "2025-02-28",
+   "values": {
+    "base_mensual": 120.1974,
+    "base_sin_aport": 120.5587
+   },
+   "dd": {
+    "base_mensual": -0.02205,
+    "base_sin_aport": -0.022521
+   },
+   "eur": {
+    "base_mensual": 26393.27,
+    "base_sin_aport": 12055.87
+   },
+   "benchmark": 144.9359
+  },
+  {
+   "date": "2025-03-05",
+   "values": {
+    "base_mensual": 115.4754,
+    "base_sin_aport": 115.7751
+   },
+   "dd": {
+    "base_mensual": -0.06047,
+    "base_sin_aport": -0.061307
+   },
+   "eur": {
+    "base_mensual": 25356.38,
+    "base_sin_aport": 11577.51
+   },
+   "benchmark": 139.1299
+  },
+  {
+   "date": "2025-03-10",
+   "values": {
+    "base_mensual": 113.3656,
+    "base_sin_aport": 113.6195
+   },
+   "dd": {
+    "base_mensual": -0.077635,
+    "base_sin_aport": -0.078784
+   },
+   "eur": {
+    "base_mensual": 24893.11,
+    "base_sin_aport": 11361.95
+   },
+   "benchmark": 130.8705
+  },
+  {
+   "date": "2025-03-13",
+   "values": {
+    "base_mensual": 111.8604,
+    "base_sin_aport": 112.0771
+   },
+   "dd": {
+    "base_mensual": -0.089882,
+    "base_sin_aport": -0.09129
+   },
+   "eur": {
+    "base_mensual": 24562.59,
+    "base_sin_aport": 11207.71
+   },
+   "benchmark": 128.4133
+  },
+  {
+   "date": "2025-03-18",
+   "values": {
+    "base_mensual": 112.9248,
+    "base_sin_aport": 113.1623
+   },
+   "dd": {
+    "base_mensual": -0.081221,
+    "base_sin_aport": -0.082491
+   },
+   "eur": {
+    "base_mensual": 25096.34,
+    "base_sin_aport": 11316.23
+   },
+   "benchmark": 130.2259
+  },
+  {
+   "date": "2025-03-21",
+   "values": {
+    "base_mensual": 113.9746,
+    "base_sin_aport": 114.2323
+   },
+   "dd": {
+    "base_mensual": -0.07268,
+    "base_sin_aport": -0.073816
+   },
+   "eur": {
+    "base_mensual": 25329.63,
+    "base_sin_aport": 11423.23
+   },
+   "benchmark": 132.2301
+  },
+  {
+   "date": "2025-03-26",
+   "values": {
+    "base_mensual": 115.1682,
+    "base_sin_aport": 115.4578
+   },
+   "dd": {
+    "base_mensual": -0.062969,
+    "base_sin_aport": -0.063879
+   },
+   "eur": {
+    "base_mensual": 25594.9,
+    "base_sin_aport": 11545.78
+   },
+   "benchmark": 134.1329
+  },
+  {
+   "date": "2025-03-31",
+   "values": {
+    "base_mensual": 112.4703,
+    "base_sin_aport": 112.6765
+   },
+   "dd": {
+    "base_mensual": -0.084919,
+    "base_sin_aport": -0.08643
+   },
+   "eur": {
+    "base_mensual": 24995.33,
+    "base_sin_aport": 11267.65
+   },
+   "benchmark": 131.3513
+  },
+  {
+   "date": "2025-04-03",
+   "values": {
+    "base_mensual": 109.4613,
+    "base_sin_aport": 109.5735
+   },
+   "dd": {
+    "base_mensual": -0.109401,
+    "base_sin_aport": -0.111589
+   },
+   "eur": {
+    "base_mensual": 24326.59,
+    "base_sin_aport": 10957.35
+   },
+   "benchmark": 125.3424
+  },
+  {
+   "date": "2025-04-08",
+   "values": {
+    "base_mensual": 105.8936,
+    "base_sin_aport": 105.9124
+   },
+   "dd": {
+    "base_mensual": -0.138429,
+    "base_sin_aport": -0.141273
+   },
+   "eur": {
+    "base_mensual": 23533.71,
+    "base_sin_aport": 10591.24
+   },
+   "benchmark": 115.68
+  },
+  {
+   "date": "2025-04-09",
+   "values": {
+    "base_mensual": 102.3278,
+    "base_sin_aport": 102.2483
+   },
+   "dd": {
+    "base_mensual": -0.167441,
+    "base_sin_aport": -0.170981
+   },
+   "eur": {
+    "base_mensual": 22741.25,
+    "base_sin_aport": 10224.83
+   },
+   "benchmark": 125.9382
+  },
+  {
+   "date": "2025-04-11",
+   "values": {
+    "base_mensual": 104.4073,
+    "base_sin_aport": 104.3917
+   },
+   "dd": {
+    "base_mensual": -0.150522,
+    "base_sin_aport": -0.153603
+   },
+   "eur": {
+    "base_mensual": 23203.4,
+    "base_sin_aport": 10439.17
+   },
+   "benchmark": 120.754
+  },
+  {
+   "date": "2025-04-16",
+   "values": {
+    "base_mensual": 106.7713,
+    "base_sin_aport": 106.7845
+   },
+   "dd": {
+    "base_mensual": -0.131287,
+    "base_sin_aport": -0.134202
+   },
+   "eur": {
+    "base_mensual": 23728.78,
+    "base_sin_aport": 10678.45
+   },
+   "benchmark": 118.4285
+  },
+  {
+   "date": "2025-04-23",
+   "values": {
+    "base_mensual": 107.8047,
+    "base_sin_aport": 107.8418
+   },
+   "dd": {
+    "base_mensual": -0.122879,
+    "base_sin_aport": -0.125629
+   },
+   "eur": {
+    "base_mensual": 24264.96,
+    "base_sin_aport": 10784.18
+   },
+   "benchmark": 120.0715
+  },
+  {
+   "date": "2025-04-28",
+   "values": {
+    "base_mensual": 108.9548,
+    "base_sin_aport": 109.0215
+   },
+   "dd": {
+    "base_mensual": -0.113522,
+    "base_sin_aport": -0.116065
+   },
+   "eur": {
+    "base_mensual": 24523.82,
+    "base_sin_aport": 10902.15
+   },
+   "benchmark": 123.5775
+  },
+  {
+   "date": "2025-05-02",
+   "values": {
+    "base_mensual": 111.5831,
+    "base_sin_aport": 111.7252
+   },
+   "dd": {
+    "base_mensual": -0.092138,
+    "base_sin_aport": -0.094142
+   },
+   "eur": {
+    "base_mensual": 25115.4,
+    "base_sin_aport": 11172.52
+   },
+   "benchmark": 127.6483
+  },
+  {
+   "date": "2025-05-07",
+   "values": {
+    "base_mensual": 110.9536,
+    "base_sin_aport": 111.0699
+   },
+   "dd": {
+    "base_mensual": -0.09726,
+    "base_sin_aport": -0.099456
+   },
+   "eur": {
+    "base_mensual": 24973.72,
+    "base_sin_aport": 11106.99
+   },
+   "benchmark": 125.8985
+  },
+  {
+   "date": "2025-05-12",
+   "values": {
+    "base_mensual": 114.748,
+    "base_sin_aport": 114.9946
+   },
+   "dd": {
+    "base_mensual": -0.066387,
+    "base_sin_aport": -0.067635
+   },
+   "eur": {
+    "base_mensual": 25827.78,
+    "base_sin_aport": 11499.46
+   },
+   "benchmark": 132.013
+  },
+  {
+   "date": "2025-05-15",
+   "values": {
+    "base_mensual": 115.4779,
+    "base_sin_aport": 115.7379
+   },
+   "dd": {
+    "base_mensual": -0.060449,
+    "base_sin_aport": -0.061609
+   },
+   "eur": {
+    "base_mensual": 25992.07,
+    "base_sin_aport": 11573.79
+   },
+   "benchmark": 134.2695
+  },
+  {
+   "date": "2025-05-20",
+   "values": {
+    "base_mensual": 115.8421,
+    "base_sin_aport": 116.1075
+   },
+   "dd": {
+    "base_mensual": -0.057485,
+    "base_sin_aport": -0.058612
+   },
+   "eur": {
+    "base_mensual": 26374.44,
+    "base_sin_aport": 11610.75
+   },
+   "benchmark": 134.2253
+  },
+  {
+   "date": "2025-05-23",
+   "values": {
+    "base_mensual": 113.5977,
+    "base_sin_aport": 113.7994
+   },
+   "dd": {
+    "base_mensual": -0.075746,
+    "base_sin_aport": -0.077325
+   },
+   "eur": {
+    "base_mensual": 25863.45,
+    "base_sin_aport": 11379.94
+   },
+   "benchmark": 130.5673
+  },
+  {
+   "date": "2025-05-28",
+   "values": {
+    "base_mensual": 115.248,
+    "base_sin_aport": 115.484
+   },
+   "dd": {
+    "base_mensual": -0.062319,
+    "base_sin_aport": -0.063667
+   },
+   "eur": {
+    "base_mensual": 26239.18,
+    "base_sin_aport": 11548.4
+   },
+   "benchmark": 131.8631
+  },
+  {
+   "date": "2025-06-02",
+   "values": {
+    "base_mensual": 114.4658,
+    "base_sin_aport": 114.6742
+   },
+   "dd": {
+    "base_mensual": -0.068684,
+    "base_sin_aport": -0.070233
+   },
+   "eur": {
+    "base_mensual": 26061.08,
+    "base_sin_aport": 11467.42
+   },
+   "benchmark": 132.7646
+  },
+  {
+   "date": "2025-06-05",
+   "values": {
+    "base_mensual": 115.5426,
+    "base_sin_aport": 115.7912
+   },
+   "dd": {
+    "base_mensual": -0.059923,
+    "base_sin_aport": -0.061176
+   },
+   "eur": {
+    "base_mensual": 26306.24,
+    "base_sin_aport": 11579.12
+   },
+   "benchmark": 132.0586
+  },
+  {
+   "date": "2025-06-10",
+   "values": {
+    "base_mensual": 115.997,
+    "base_sin_aport": 116.2444
+   },
+   "dd": {
+    "base_mensual": -0.056225,
+    "base_sin_aport": -0.057502
+   },
+   "eur": {
+    "base_mensual": 26409.71,
+    "base_sin_aport": 11624.44
+   },
+   "benchmark": 134.232
+  },
+  {
+   "date": "2025-06-13",
+   "values": {
+    "base_mensual": 114.8278,
+    "base_sin_aport": 115.049
+   },
+   "dd": {
+    "base_mensual": -0.065738,
+    "base_sin_aport": -0.067194
+   },
+   "eur": {
+    "base_mensual": 26143.5,
+    "base_sin_aport": 11504.9
+   },
+   "benchmark": 130.9103
+  },
+  {
+   "date": "2025-06-18",
+   "values": {
+    "base_mensual": 114.9571,
+    "base_sin_aport": 115.1766
+   },
+   "dd": {
+    "base_mensual": -0.064686,
+    "base_sin_aport": -0.066159
+   },
+   "eur": {
+    "base_mensual": 26472.96,
+    "base_sin_aport": 11517.66
+   },
+   "benchmark": 132.3676
+  },
+  {
+   "date": "2025-06-23",
+   "values": {
+    "base_mensual": 114.3588,
+    "base_sin_aport": 114.5599
+   },
+   "dd": {
+    "base_mensual": -0.069554,
+    "base_sin_aport": -0.071159
+   },
+   "eur": {
+    "base_mensual": 26335.18,
+    "base_sin_aport": 11455.99
+   },
+   "benchmark": 133.1467
+  },
+  {
+   "date": "2025-06-26",
+   "values": {
+    "base_mensual": 115.0642,
+    "base_sin_aport": 115.2931
+   },
+   "dd": {
+    "base_mensual": -0.063815,
+    "base_sin_aport": -0.065214
+   },
+   "eur": {
+    "base_mensual": 26497.61,
+    "base_sin_aport": 11529.31
+   },
+   "benchmark": 133.5882
+  },
+  {
+   "date": "2025-07-01",
+   "values": {
+    "base_mensual": 115.5041,
+    "base_sin_aport": 115.7423
+   },
+   "dd": {
+    "base_mensual": -0.060236,
+    "base_sin_aport": -0.061573
+   },
+   "eur": {
+    "base_mensual": 26598.91,
+    "base_sin_aport": 11574.23
+   },
+   "benchmark": 133.6689
+  },
+  {
+   "date": "2025-07-04",
+   "values": {
+    "base_mensual": 115.9856,
+    "base_sin_aport": 116.2378
+   },
+   "dd": {
+    "base_mensual": -0.056318,
+    "base_sin_aport": -0.057555
+   },
+   "eur": {
+    "base_mensual": 26709.79,
+    "base_sin_aport": 11623.78
+   },
+   "benchmark": null
+  },
+  {
+   "date": "2025-07-09",
+   "values": {
+    "base_mensual": 116.4589,
+    "base_sin_aport": 116.739
+   },
+   "dd": {
+    "base_mensual": -0.052467,
+    "base_sin_aport": -0.053491
+   },
+   "eur": {
+    "base_mensual": 26818.78,
+    "base_sin_aport": 11673.9
+   },
+   "benchmark": 135.8272
+  },
+  {
+   "date": "2025-07-14",
+   "values": {
+    "base_mensual": 116.5186,
+    "base_sin_aport": 116.8134
+   },
+   "dd": {
+    "base_mensual": -0.051981,
+    "base_sin_aport": -0.052888
+   },
+   "eur": {
+    "base_mensual": 26832.54,
+    "base_sin_aport": 11681.34
+   },
+   "benchmark": 136.4557
+  },
+  {
+   "date": "2025-07-17",
+   "values": {
+    "base_mensual": 117.571,
+    "base_sin_aport": 117.8843
+   },
+   "dd": {
+    "base_mensual": -0.043419,
+    "base_sin_aport": -0.044205
+   },
+   "eur": {
+    "base_mensual": 27074.88,
+    "base_sin_aport": 11788.43
+   },
+   "benchmark": 137.6432
+  },
+  {
+   "date": "2025-07-22",
+   "values": {
+    "base_mensual": 116.9582,
+    "base_sin_aport": 117.2341
+   },
+   "dd": {
+    "base_mensual": -0.048405,
+    "base_sin_aport": -0.049477
+   },
+   "eur": {
+    "base_mensual": 27233.07,
+    "base_sin_aport": 11723.41
+   },
+   "benchmark": 137.2326
+  },
+  {
+   "date": "2025-07-25",
+   "values": {
+    "base_mensual": 117.852,
+    "base_sin_aport": 118.1808
+   },
+   "dd": {
+    "base_mensual": -0.041133,
+    "base_sin_aport": -0.041802
+   },
+   "eur": {
+    "base_mensual": 27441.18,
+    "base_sin_aport": 11818.08
+   },
+   "benchmark": 138.2334
+  },
+  {
+   "date": "2025-07-30",
+   "values": {
+    "base_mensual": 119.4054,
+    "base_sin_aport": 119.7782
+   },
+   "dd": {
+    "base_mensual": -0.028494,
+    "base_sin_aport": -0.02885
+   },
+   "eur": {
+    "base_mensual": 27802.9,
+    "base_sin_aport": 11977.82
+   },
+   "benchmark": 140.1235
+  },
+  {
+   "date": "2025-08-04",
+   "values": {
+    "base_mensual": 118.1666,
+    "base_sin_aport": 118.4807
+   },
+   "dd": {
+    "base_mensual": -0.038573,
+    "base_sin_aport": -0.03937
+   },
+   "eur": {
+    "base_mensual": 27514.43,
+    "base_sin_aport": 11848.07
+   },
+   "benchmark": 138.99
+  },
+  {
+   "date": "2025-08-07",
+   "values": {
+    "base_mensual": 118.3452,
+    "base_sin_aport": 118.6641
+   },
+   "dd": {
+    "base_mensual": -0.03712,
+    "base_sin_aport": -0.037883
+   },
+   "eur": {
+    "base_mensual": 27556.01,
+    "base_sin_aport": 11866.41
+   },
+   "benchmark": 138.3019
+  },
+  {
+   "date": "2025-08-12",
+   "values": {
+    "base_mensual": 118.9529,
+    "base_sin_aport": 119.3133
+   },
+   "dd": {
+    "base_mensual": -0.032175,
+    "base_sin_aport": -0.032619
+   },
+   "eur": {
+    "base_mensual": 27697.53,
+    "base_sin_aport": 11931.33
+   },
+   "benchmark": 141.1814
+  },
+  {
+   "date": "2025-08-15",
+   "values": {
+    "base_mensual": 119.2272,
+    "base_sin_aport": 119.6029
+   },
+   "dd": {
+    "base_mensual": -0.029944,
+    "base_sin_aport": -0.030271
+   },
+   "eur": {
+    "base_mensual": 27761.39,
+    "base_sin_aport": 11960.29
+   },
+   "benchmark": 140.9125
+  },
+  {
+   "date": "2025-08-20",
+   "values": {
+    "base_mensual": 118.9559,
+    "base_sin_aport": 119.3119
+   },
+   "dd": {
+    "base_mensual": -0.032152,
+    "base_sin_aport": -0.03263
+   },
+   "eur": {
+    "base_mensual": 27997.14,
+    "base_sin_aport": 11931.19
+   },
+   "benchmark": 139.8641
+  },
+  {
+   "date": "2025-08-25",
+   "values": {
+    "base_mensual": 119.5906,
+    "base_sin_aport": 119.9785
+   },
+   "dd": {
+    "base_mensual": -0.026987,
+    "base_sin_aport": -0.027226
+   },
+   "eur": {
+    "base_mensual": 28146.54,
+    "base_sin_aport": 11997.85
+   },
+   "benchmark": 140.0365
+  },
+  {
+   "date": "2025-08-28",
+   "values": {
+    "base_mensual": 119.9474,
+    "base_sin_aport": 120.3371
+   },
+   "dd": {
+    "base_mensual": -0.024084,
+    "base_sin_aport": -0.024318
+   },
+   "eur": {
+    "base_mensual": 28230.52,
+    "base_sin_aport": 12033.71
+   },
+   "benchmark": 142.1577
+  },
+  {
+   "date": "2025-09-02",
+   "values": {
+    "base_mensual": 118.342,
+    "base_sin_aport": 118.7039
+   },
+   "dd": {
+    "base_mensual": -0.037146,
+    "base_sin_aport": -0.03756
+   },
+   "eur": {
+    "base_mensual": 27852.66,
+    "base_sin_aport": 11870.39
+   },
+   "benchmark": 139.4971
+  },
+  {
+   "date": "2025-09-05",
+   "values": {
+    "base_mensual": 119.3264,
+    "base_sin_aport": 119.6886
+   },
+   "dd": {
+    "base_mensual": -0.029137,
+    "base_sin_aport": -0.029576
+   },
+   "eur": {
+    "base_mensual": 28084.34,
+    "base_sin_aport": 11968.86
+   },
+   "benchmark": 141.6794
+  },
+  {
+   "date": "2025-09-10",
+   "values": {
+    "base_mensual": 120.4482,
+    "base_sin_aport": 120.8405
+   },
+   "dd": {
+    "base_mensual": -0.02001,
+    "base_sin_aport": -0.020237
+   },
+   "eur": {
+    "base_mensual": 28348.38,
+    "base_sin_aport": 12084.05
+   },
+   "benchmark": 142.241
+  },
+  {
+   "date": "2025-09-15",
+   "values": {
+    "base_mensual": 121.1787,
+    "base_sin_aport": 121.5952
+   },
+   "dd": {
+    "base_mensual": -0.014066,
+    "base_sin_aport": -0.014118
+   },
+   "eur": {
+    "base_mensual": 28520.31,
+    "base_sin_aport": 12159.52
+   },
+   "benchmark": 143.8013
+  },
+  {
+   "date": "2025-09-18",
+   "values": {
+    "base_mensual": 121.2806,
+    "base_sin_aport": 121.706
+   },
+   "dd": {
+    "base_mensual": -0.013237,
+    "base_sin_aport": -0.013219
+   },
+   "eur": {
+    "base_mensual": 28844.3,
+    "base_sin_aport": 12170.6
+   },
+   "benchmark": 142.9563
+  },
+  {
+   "date": "2025-09-23",
+   "values": {
+    "base_mensual": 121.5995,
+    "base_sin_aport": 122.0418
+   },
+   "dd": {
+    "base_mensual": -0.010643,
+    "base_sin_aport": -0.010497
+   },
+   "eur": {
+    "base_mensual": 28920.13,
+    "base_sin_aport": 12204.18
+   },
+   "benchmark": 143.8135
+  },
+  {
+   "date": "2025-09-26",
+   "values": {
+    "base_mensual": 121.4504,
+    "base_sin_aport": 121.8857
+   },
+   "dd": {
+    "base_mensual": -0.011856,
+    "base_sin_aport": -0.011763
+   },
+   "eur": {
+    "base_mensual": 28884.66,
+    "base_sin_aport": 12188.57
+   },
+   "benchmark": 145.2365
+  },
+  {
+   "date": "2025-10-01",
+   "values": {
+    "base_mensual": 122.3526,
+    "base_sin_aport": 122.8091
+   },
+   "dd": {
+    "base_mensual": -0.004515,
+    "base_sin_aport": -0.004275
+   },
+   "eur": {
+    "base_mensual": 29099.25,
+    "base_sin_aport": 12280.91
+   },
+   "benchmark": 145.8216
+  },
+  {
+   "date": "2025-10-06",
+   "values": {
+    "base_mensual": 123.4123,
+    "base_sin_aport": 123.902
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 29351.28,
+    "base_sin_aport": 12390.2
+   },
+   "benchmark": 146.7732
+  },
+  {
+   "date": "2025-10-09",
+   "values": {
+    "base_mensual": 124.1553,
+    "base_sin_aport": 124.662
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 29527.99,
+    "base_sin_aport": 12466.2
+   },
+   "benchmark": 147.6818
+  },
+  {
+   "date": "2025-10-14",
+   "values": {
+    "base_mensual": 122.7855,
+    "base_sin_aport": 123.2239
+   },
+   "dd": {
+    "base_mensual": -0.011033,
+    "base_sin_aport": -0.011537
+   },
+   "eur": {
+    "base_mensual": 29202.2,
+    "base_sin_aport": 12322.39
+   },
+   "benchmark": 146.5326
+  },
+  {
+   "date": "2025-10-17",
+   "values": {
+    "base_mensual": 122.3588,
+    "base_sin_aport": 122.7788
+   },
+   "dd": {
+    "base_mensual": -0.01447,
+    "base_sin_aport": -0.015107
+   },
+   "eur": {
+    "base_mensual": 29100.72,
+    "base_sin_aport": 12277.88
+   },
+   "benchmark": 145.3138
+  },
+  {
+   "date": "2025-10-22",
+   "values": {
+    "base_mensual": 123.8449,
+    "base_sin_aport": 124.3055
+   },
+   "dd": {
+    "base_mensual": -0.004342,
+    "base_sin_aport": -0.004462
+   },
+   "eur": {
+    "base_mensual": 29753.88,
+    "base_sin_aport": 12430.55
+   },
+   "benchmark": 147.3397
+  },
+  {
+   "date": "2025-10-27",
+   "values": {
+    "base_mensual": 125.5191,
+    "base_sin_aport": 126.0447
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 30156.11,
+    "base_sin_aport": 12604.47
+   },
+   "benchmark": 150.8078
+  },
+  {
+   "date": "2025-10-30",
+   "values": {
+    "base_mensual": 126.0161,
+    "base_sin_aport": 126.5558
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 30275.5,
+    "base_sin_aport": 12655.58
+   },
+   "benchmark": 150.0172
+  },
+  {
+   "date": "2025-11-04",
+   "values": {
+    "base_mensual": 125.6519,
+    "base_sin_aport": 126.1857
+   },
+   "dd": {
+    "base_mensual": -0.00289,
+    "base_sin_aport": -0.002925
+   },
+   "eur": {
+    "base_mensual": 30188.01,
+    "base_sin_aport": 12618.57
+   },
+   "benchmark": 150.0107
+  },
+  {
+   "date": "2025-11-07",
+   "values": {
+    "base_mensual": 123.2176,
+    "base_sin_aport": 123.6752
+   },
+   "dd": {
+    "base_mensual": -0.022207,
+    "base_sin_aport": -0.022762
+   },
+   "eur": {
+    "base_mensual": 29603.16,
+    "base_sin_aport": 12367.52
+   },
+   "benchmark": 148.6927
+  },
+  {
+   "date": "2025-11-12",
+   "values": {
+    "base_mensual": 126.072,
+    "base_sin_aport": 126.6115
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 30288.95,
+    "base_sin_aport": 12661.15
+   },
+   "benchmark": 150.9165
+  },
+  {
+   "date": "2025-11-17",
+   "values": {
+    "base_mensual": 124.0456,
+    "base_sin_aport": 124.5331
+   },
+   "dd": {
+    "base_mensual": -0.016074,
+    "base_sin_aport": -0.016416
+   },
+   "eur": {
+    "base_mensual": 29802.1,
+    "base_sin_aport": 12453.31
+   },
+   "benchmark": 146.6814
+  },
+  {
+   "date": "2025-11-20",
+   "values": {
+    "base_mensual": 123.5445,
+    "base_sin_aport": 124.0231
+   },
+   "dd": {
+    "base_mensual": -0.020049,
+    "base_sin_aport": -0.020444
+   },
+   "eur": {
+    "base_mensual": 29983.69,
+    "base_sin_aport": 12402.31
+   },
+   "benchmark": 144.7094
+  },
+  {
+   "date": "2025-11-25",
+   "values": {
+    "base_mensual": 124.1806,
+    "base_sin_aport": 124.6646
+   },
+   "dd": {
+    "base_mensual": -0.015003,
+    "base_sin_aport": -0.015377
+   },
+   "eur": {
+    "base_mensual": 30138.07,
+    "base_sin_aport": 12466.46
+   },
+   "benchmark": 150.0265
+  },
+  {
+   "date": "2025-11-28",
+   "values": {
+    "base_mensual": 125.536,
+    "base_sin_aport": 126.0661
+   },
+   "dd": {
+    "base_mensual": -0.004252,
+    "base_sin_aport": -0.004308
+   },
+   "eur": {
+    "base_mensual": 30467.03,
+    "base_sin_aport": 12606.61
+   },
+   "benchmark": 150.8351
+  },
+  {
+   "date": "2025-12-03",
+   "values": {
+    "base_mensual": 125.0982,
+    "base_sin_aport": 125.629
+   },
+   "dd": {
+    "base_mensual": -0.007724,
+    "base_sin_aport": -0.00776
+   },
+   "eur": {
+    "base_mensual": 30360.78,
+    "base_sin_aport": 12562.9
+   },
+   "benchmark": 150.5127
+  },
+  {
+   "date": "2025-12-08",
+   "values": {
+    "base_mensual": 125.3339,
+    "base_sin_aport": 125.895
+   },
+   "dd": {
+    "base_mensual": -0.005855,
+    "base_sin_aport": -0.005659
+   },
+   "eur": {
+    "base_mensual": 30417.96,
+    "base_sin_aport": 12589.5
+   },
+   "benchmark": 150.3287
+  },
+  {
+   "date": "2025-12-11",
+   "values": {
+    "base_mensual": 124.9213,
+    "base_sin_aport": 125.4619
+   },
+   "dd": {
+    "base_mensual": -0.009127,
+    "base_sin_aport": -0.00908
+   },
+   "eur": {
+    "base_mensual": 30317.84,
+    "base_sin_aport": 12546.19
+   },
+   "benchmark": 150.7431
+  },
+  {
+   "date": "2025-12-16",
+   "values": {
+    "base_mensual": 123.876,
+    "base_sin_aport": 124.3778
+   },
+   "dd": {
+    "base_mensual": -0.017419,
+    "base_sin_aport": -0.017643
+   },
+   "eur": {
+    "base_mensual": 30064.15,
+    "base_sin_aport": 12437.78
+   },
+   "benchmark": 147.9076
+  },
+  {
+   "date": "2025-12-19",
+   "values": {
+    "base_mensual": 124.8438,
+    "base_sin_aport": 125.3893
+   },
+   "dd": {
+    "base_mensual": -0.009743,
+    "base_sin_aport": -0.009653
+   },
+   "eur": {
+    "base_mensual": 30599.88,
+    "base_sin_aport": 12538.93
+   },
+   "benchmark": 149.0274
+  },
+  {
+   "date": "2025-12-29",
+   "values": {
+    "base_mensual": 125.5423,
+    "base_sin_aport": 126.0903
+   },
+   "dd": {
+    "base_mensual": -0.004202,
+    "base_sin_aport": -0.004117
+   },
+   "eur": {
+    "base_mensual": 30771.09,
+    "base_sin_aport": 12609.03
+   },
+   "benchmark": 150.0076
+  },
+  {
+   "date": "2026-01-05",
+   "values": {
+    "base_mensual": 126.4628,
+    "base_sin_aport": 127.0545
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 30996.72,
+    "base_sin_aport": 12705.45
+   },
+   "benchmark": 150.8468
+  },
+  {
+   "date": "2026-01-08",
+   "values": {
+    "base_mensual": 127.0491,
+    "base_sin_aport": 127.6454
+   },
+   "dd": {
+    "base_mensual": -0.001208,
+    "base_sin_aport": -0.001241
+   },
+   "eur": {
+    "base_mensual": 31140.41,
+    "base_sin_aport": 12764.54
+   },
+   "benchmark": 151.6443
+  },
+  {
+   "date": "2026-01-13",
+   "values": {
+    "base_mensual": 127.9709,
+    "base_sin_aport": 128.5964
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 31366.36,
+    "base_sin_aport": 12859.64
+   },
+   "benchmark": 152.721
+  },
+  {
+   "date": "2026-01-16",
+   "values": {
+    "base_mensual": 128.4181,
+    "base_sin_aport": 129.0514
+   },
+   "dd": {
+    "base_mensual": -0.001321,
+    "base_sin_aport": -0.001324
+   },
+   "eur": {
+    "base_mensual": 31475.96,
+    "base_sin_aport": 12905.14
+   },
+   "benchmark": 152.9784
+  },
+  {
+   "date": "2026-01-21",
+   "values": {
+    "base_mensual": 126.1704,
+    "base_sin_aport": 126.7394
+   },
+   "dd": {
+    "base_mensual": -0.018801,
+    "base_sin_aport": -0.019216
+   },
+   "eur": {
+    "base_mensual": 31223.09,
+    "base_sin_aport": 12673.94
+   },
+   "benchmark": 150.0309
+  },
+  {
+   "date": "2026-01-26",
+   "values": {
+    "base_mensual": 126.3794,
+    "base_sin_aport": 126.9384
+   },
+   "dd": {
+    "base_mensual": -0.017175,
+    "base_sin_aport": -0.017675
+   },
+   "eur": {
+    "base_mensual": 31274.82,
+    "base_sin_aport": 12693.84
+   },
+   "benchmark": 150.0048
+  },
+  {
+   "date": "2026-01-29",
+   "values": {
+    "base_mensual": 125.5852,
+    "base_sin_aport": 126.1094
+   },
+   "dd": {
+    "base_mensual": -0.023352,
+    "base_sin_aport": -0.02409
+   },
+   "eur": {
+    "base_mensual": 31078.28,
+    "base_sin_aport": 12610.94
+   },
+   "benchmark": 148.9157
+  },
+  {
+   "date": "2026-02-03",
+   "values": {
+    "base_mensual": 126.7994,
+    "base_sin_aport": 127.3815
+   },
+   "dd": {
+    "base_mensual": -0.01391,
+    "base_sin_aport": -0.014247
+   },
+   "eur": {
+    "base_mensual": 31378.75,
+    "base_sin_aport": 12738.15
+   },
+   "benchmark": 150.0828
+  },
+  {
+   "date": "2026-02-06",
+   "values": {
+    "base_mensual": 126.6111,
+    "base_sin_aport": 127.1761
+   },
+   "dd": {
+    "base_mensual": -0.015374,
+    "base_sin_aport": -0.015836
+   },
+   "eur": {
+    "base_mensual": 31332.16,
+    "base_sin_aport": 12717.61
+   },
+   "benchmark": 150.6715
+  },
+  {
+   "date": "2026-02-11",
+   "values": {
+    "base_mensual": 127.4248,
+    "base_sin_aport": 128.0027
+   },
+   "dd": {
+    "base_mensual": -0.009046,
+    "base_sin_aport": -0.009439
+   },
+   "eur": {
+    "base_mensual": 31533.51,
+    "base_sin_aport": 12800.27
+   },
+   "benchmark": 149.4795
+  },
+  {
+   "date": "2026-02-16",
+   "values": {
+    "base_mensual": 126.2265,
+    "base_sin_aport": 126.7553
+   },
+   "dd": {
+    "base_mensual": -0.018365,
+    "base_sin_aport": -0.019093
+   },
+   "eur": {
+    "base_mensual": 31236.98,
+    "base_sin_aport": 12675.53
+   },
+   "benchmark": null
+  },
+  {
+   "date": "2026-02-19",
+   "values": {
+    "base_mensual": 127.5106,
+    "base_sin_aport": 128.0743
+   },
+   "dd": {
+    "base_mensual": -0.008379,
+    "base_sin_aport": -0.008885
+   },
+   "eur": {
+    "base_mensual": 31854.51,
+    "base_sin_aport": 12807.43
+   },
+   "benchmark": 149.1093
+  },
+  {
+   "date": "2026-02-24",
+   "values": {
+    "base_mensual": 127.5692,
+    "base_sin_aport": 128.1259
+   },
+   "dd": {
+    "base_mensual": -0.007923,
+    "base_sin_aport": -0.008486
+   },
+   "eur": {
+    "base_mensual": 31869.15,
+    "base_sin_aport": 12812.59
+   },
+   "benchmark": 149.6766
+  },
+  {
+   "date": "2026-02-27",
+   "values": {
+    "base_mensual": 127.8666,
+    "base_sin_aport": 128.4171
+   },
+   "dd": {
+    "base_mensual": -0.00561,
+    "base_sin_aport": -0.006232
+   },
+   "eur": {
+    "base_mensual": 31943.45,
+    "base_sin_aport": 12841.71
+   },
+   "benchmark": 149.3365
+  },
+  {
+   "date": "2026-03-04",
+   "values": {
+    "base_mensual": 127.878,
+    "base_sin_aport": 128.46
+   },
+   "dd": {
+    "base_mensual": -0.005522,
+    "base_sin_aport": -0.0059
+   },
+   "eur": {
+    "base_mensual": 31946.28,
+    "base_sin_aport": 12846.0
+   },
+   "benchmark": 151.6039
+  },
+  {
+   "date": "2026-03-10",
+   "values": {
+    "base_mensual": 126.9803,
+    "base_sin_aport": 127.553
+   },
+   "dd": {
+    "base_mensual": -0.012502,
+    "base_sin_aport": -0.012919
+   },
+   "eur": {
+    "base_mensual": 31722.04,
+    "base_sin_aport": 12755.3
+   },
+   "benchmark": 149.6545
+  },
+  {
+   "date": "2026-03-13",
+   "values": {
+    "base_mensual": 125.6758,
+    "base_sin_aport": 126.2491
+   },
+   "dd": {
+    "base_mensual": -0.022648,
+    "base_sin_aport": -0.02301
+   },
+   "eur": {
+    "base_mensual": 31396.14,
+    "base_sin_aport": 12624.91
+   },
+   "benchmark": 147.605
+  },
+  {
+   "date": "2026-03-18",
+   "values": {
+    "base_mensual": 125.6272,
+    "base_sin_aport": 126.1849
+   },
+   "dd": {
+    "base_mensual": -0.023026,
+    "base_sin_aport": -0.023507
+   },
+   "eur": {
+    "base_mensual": 31684.0,
+    "base_sin_aport": 12618.49
+   },
+   "benchmark": 147.2317
+  },
+  {
+   "date": "2026-03-23",
+   "values": {
+    "base_mensual": 123.2376,
+    "base_sin_aport": 123.7345
+   },
+   "dd": {
+    "base_mensual": -0.041609,
+    "base_sin_aport": -0.042469
+   },
+   "eur": {
+    "base_mensual": 31081.33,
+    "base_sin_aport": 12373.45
+   },
+   "benchmark": 146.02
+  },
+  {
+   "date": "2026-03-26",
+   "values": {
+    "base_mensual": 122.9416,
+    "base_sin_aport": 123.4454
+   },
+   "dd": {
+    "base_mensual": -0.043911,
+    "base_sin_aport": -0.044707
+   },
+   "eur": {
+    "base_mensual": 31006.68,
+    "base_sin_aport": 12344.54
+   },
+   "benchmark": 143.7068
+  },
+  {
+   "date": "2026-03-31",
+   "values": {
+    "base_mensual": 122.3091,
+    "base_sin_aport": 122.7656
+   },
+   "dd": {
+    "base_mensual": -0.048829,
+    "base_sin_aport": -0.049967
+   },
+   "eur": {
+    "base_mensual": 30847.17,
+    "base_sin_aport": 12276.56
+   },
+   "benchmark": 146.1477
+  },
+  {
+   "date": "2026-04-07",
+   "values": {
+    "base_mensual": 123.5802,
+    "base_sin_aport": 124.1043
+   },
+   "dd": {
+    "base_mensual": -0.038945,
+    "base_sin_aport": -0.039607
+   },
+   "eur": {
+    "base_mensual": 31167.73,
+    "base_sin_aport": 12410.43
+   },
+   "benchmark": 147.1115
+  },
+  {
+   "date": "2026-04-10",
+   "values": {
+    "base_mensual": 126.5471,
+    "base_sin_aport": 127.1605
+   },
+   "dd": {
+    "base_mensual": -0.015872,
+    "base_sin_aport": -0.015957
+   },
+   "eur": {
+    "base_mensual": 31916.0,
+    "base_sin_aport": 12716.05
+   },
+   "benchmark": 149.6385
+  },
+  {
+   "date": "2026-04-15",
+   "values": {
+    "base_mensual": 128.026,
+    "base_sin_aport": 128.6866
+   },
+   "dd": {
+    "base_mensual": -0.00437,
+    "base_sin_aport": -0.004147
+   },
+   "eur": {
+    "base_mensual": 32289.0,
+    "base_sin_aport": 12868.66
+   },
+   "benchmark": 152.7647
+  },
+  {
+   "date": "2026-04-20",
+   "values": {
+    "base_mensual": 129.5442,
+    "base_sin_aport": 130.239
+   },
+   "dd": {
+    "base_mensual": -0.0034,
+    "base_sin_aport": -0.003458
+   },
+   "eur": {
+    "base_mensual": 32971.9,
+    "base_sin_aport": 13023.9
+   },
+   "benchmark": 155.4117
+  },
+  {
+   "date": "2026-04-23",
+   "values": {
+    "base_mensual": 130.1269,
+    "base_sin_aport": 130.855
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 33120.2,
+    "base_sin_aport": 13085.5
+   },
+   "benchmark": 155.8677
+  },
+  {
+   "date": "2026-04-28",
+   "values": {
+    "base_mensual": 129.3884,
+    "base_sin_aport": 130.1056
+   },
+   "dd": {
+    "base_mensual": -0.005675,
+    "base_sin_aport": -0.005727
+   },
+   "eur": {
+    "base_mensual": 32932.25,
+    "base_sin_aport": 13010.56
+   },
+   "benchmark": 156.3097
+  },
+  {
+   "date": "2026-05-04",
+   "values": {
+    "base_mensual": 130.2899,
+    "base_sin_aport": 131.0469
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 33161.69,
+    "base_sin_aport": 13104.69
+   },
+   "benchmark": 157.643
+  },
+  {
+   "date": "2026-05-07",
+   "values": {
+    "base_mensual": 132.4794,
+    "base_sin_aport": 133.2857
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 33718.98,
+    "base_sin_aport": 13328.57
+   },
+   "benchmark": 160.3494
+  },
+  {
+   "date": "2026-05-12",
+   "values": {
+    "base_mensual": 131.8885,
+    "base_sin_aport": 132.6989
+   },
+   "dd": {
+    "base_mensual": -0.005789,
+    "base_sin_aport": -0.005858
+   },
+   "eur": {
+    "base_mensual": 33568.57,
+    "base_sin_aport": 13269.89
+   },
+   "benchmark": 161.3415
+  },
+  {
+   "date": "2026-05-15",
+   "values": {
+    "base_mensual": 133.3619,
+    "base_sin_aport": 134.2437
+   },
+   "dd": {
+    "base_mensual": -0.007885,
+    "base_sin_aport": -0.007911
+   },
+   "eur": {
+    "base_mensual": 33943.59,
+    "base_sin_aport": 13424.37
+   },
+   "benchmark": 163.1792
+  },
+  {
+   "date": "2026-05-20",
+   "values": {
+    "base_mensual": 133.8562,
+    "base_sin_aport": 134.7331
+   },
+   "dd": {
+    "base_mensual": -0.004208,
+    "base_sin_aport": -0.004294
+   },
+   "eur": {
+    "base_mensual": 34371.69,
+    "base_sin_aport": 13473.31
+   },
+   "benchmark": 164.5181
+  },
+  {
+   "date": "2026-05-25",
+   "values": {
+    "base_mensual": 135.9864,
+    "base_sin_aport": 136.9046
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 34918.67,
+    "base_sin_aport": 13690.46
+   },
+   "benchmark": null
+  },
+  {
+   "date": "2026-05-28",
+   "values": {
+    "base_mensual": 135.6593,
+    "base_sin_aport": 136.5675
+   },
+   "dd": {
+    "base_mensual": -0.002405,
+    "base_sin_aport": -0.002463
+   },
+   "eur": {
+    "base_mensual": 34834.69,
+    "base_sin_aport": 13656.75
+   },
+   "benchmark": 167.2981
+  },
+  {
+   "date": "2026-06-02",
+   "values": {
+    "base_mensual": 136.6003,
+    "base_sin_aport": 137.5481
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 35076.31,
+    "base_sin_aport": 13754.81
+   },
+   "benchmark": 168.0926
+  },
+  {
+   "date": "2026-06-05",
+   "values": {
+    "base_mensual": 135.6246,
+    "base_sin_aport": 136.5565
+   },
+   "dd": {
+    "base_mensual": -0.007143,
+    "base_sin_aport": -0.007209
+   },
+   "eur": {
+    "base_mensual": 34825.76,
+    "base_sin_aport": 13655.65
+   },
+   "benchmark": 163.4744
+  },
+  {
+   "date": "2026-06-10",
+   "values": {
+    "base_mensual": 133.3373,
+    "base_sin_aport": 134.1895
+   },
+   "dd": {
+    "base_mensual": -0.023887,
+    "base_sin_aport": -0.024417
+   },
+   "eur": {
+    "base_mensual": 34238.44,
+    "base_sin_aport": 13418.95
+   },
+   "benchmark": 161.9841
+  },
+  {
+   "date": "2026-06-15",
+   "values": {
+    "base_mensual": 136.6048,
+    "base_sin_aport": 137.5458
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": -1.6e-05
+   },
+   "eur": {
+    "base_mensual": 35077.47,
+    "base_sin_aport": 13754.58
+   },
+   "benchmark": 167.4538
+  },
+  {
+   "date": "2026-06-18",
+   "values": {
+    "base_mensual": 136.9966,
+    "base_sin_aport": 137.9433
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 35478.06,
+    "base_sin_aport": 13794.33
+   },
+   "benchmark": 167.656
+  },
+  {
+   "date": "2026-06-23",
+   "values": {
+    "base_mensual": 136.4705,
+    "base_sin_aport": 137.3941
+   },
+   "dd": {
+    "base_mensual": -0.006059,
+    "base_sin_aport": -0.006322
+   },
+   "eur": {
+    "base_mensual": 35341.82,
+    "base_sin_aport": 13739.41
+   },
+   "benchmark": 165.8026
+  },
+  {
+   "date": "2026-06-26",
+   "values": {
+    "base_mensual": 136.3643,
+    "base_sin_aport": 137.2661
+   },
+   "dd": {
+    "base_mensual": -0.006832,
+    "base_sin_aport": -0.007247
+   },
+   "eur": {
+    "base_mensual": 35314.31,
+    "base_sin_aport": 13726.61
+   },
+   "benchmark": 166.5114
+  },
+  {
+   "date": "2026-07-01",
+   "values": {
+    "base_mensual": 138.1322,
+    "base_sin_aport": 139.1134
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 35772.15,
+    "base_sin_aport": 13911.34
+   },
+   "benchmark": 168.6939
+  },
+  {
+   "date": "2026-07-06",
+   "values": {
+    "base_mensual": 138.4414,
+    "base_sin_aport": 139.4516
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 35852.23,
+    "base_sin_aport": 13945.16
+   },
+   "benchmark": 169.5771
+  },
+  {
+   "date": "2026-07-09",
+   "values": {
+    "base_mensual": 137.7003,
+    "base_sin_aport": 138.7111
+   },
+   "dd": {
+    "base_mensual": -0.005353,
+    "base_sin_aport": -0.00531
+   },
+   "eur": {
+    "base_mensual": 35660.31,
+    "base_sin_aport": 13871.11
+   },
+   "benchmark": 169.9574
+  },
+  {
+   "date": "2026-07-14",
+   "values": {
+    "base_mensual": 137.9636,
+    "base_sin_aport": 138.993
+   },
+   "dd": {
+    "base_mensual": -0.003451,
+    "base_sin_aport": -0.003289
+   },
+   "eur": {
+    "base_mensual": 35728.5,
+    "base_sin_aport": 13899.3
+   },
+   "benchmark": 170.5363
+  },
+  {
+   "date": "2026-07-17",
+   "values": {
+    "base_mensual": 136.8462,
+    "base_sin_aport": 137.8391
+   },
+   "dd": {
+    "base_mensual": -0.011523,
+    "base_sin_aport": -0.011563
+   },
+   "eur": {
+    "base_mensual": 35439.12,
+    "base_sin_aport": 13783.91
+   },
+   "benchmark": 167.7193
+  },
+  {
+   "date": "2026-07-22",
+   "values": {
+    "base_mensual": 137.7609,
+    "base_sin_aport": 138.8055
+   },
+   "dd": {
+    "base_mensual": -0.004916,
+    "base_sin_aport": -0.004633
+   },
+   "eur": {
+    "base_mensual": 35977.31,
+    "base_sin_aport": 13880.55
+   },
+   "benchmark": 169.2607
+  },
+  {
+   "date": "2026-07-27",
+   "values": {
+    "base_mensual": 136.7927,
+    "base_sin_aport": 137.778
+   },
+   "dd": {
+    "base_mensual": -0.011909,
+    "base_sin_aport": -0.012001
+   },
+   "eur": {
+    "base_mensual": 35724.45,
+    "base_sin_aport": 13777.8
+   },
+   "benchmark": 167.4739
+  },
+  {
+   "date": "2026-07-30",
+   "values": {
+    "base_mensual": 135.8209,
+    "base_sin_aport": 136.7764
+   },
+   "dd": {
+    "base_mensual": -0.018928,
+    "base_sin_aport": -0.019184
+   },
+   "eur": {
+    "base_mensual": 35470.68,
+    "base_sin_aport": 13677.64
+   },
+   "benchmark": 166.9701
+  },
+  {
+   "date": "2026-08-04",
+   "values": {
+    "base_mensual": 139.4912,
+    "base_sin_aport": 140.5736
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 36429.19,
+    "base_sin_aport": 14057.36
+   },
+   "benchmark": 173.0967
+  },
+  {
+   "date": "2026-08-07",
+   "values": {
+    "base_mensual": 140.2052,
+    "base_sin_aport": 141.319
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 36615.67,
+    "base_sin_aport": 14131.9
+   },
+   "benchmark": 173.3169
+  },
+  {
+   "date": "2026-08-12",
+   "values": {
+    "base_mensual": 140.2537,
+    "base_sin_aport": 141.3818
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 36628.33,
+    "base_sin_aport": 14138.18
+   },
+   "benchmark": 172.8545
+  },
+  {
+   "date": "2026-08-17",
+   "values": {
+    "base_mensual": 140.0578,
+    "base_sin_aport": 141.1975
+   },
+   "dd": {
+    "base_mensual": -0.005408,
+    "base_sin_aport": -0.005381
+   },
+   "eur": {
+    "base_mensual": 36577.17,
+    "base_sin_aport": 14119.75
+   },
+   "benchmark": 172.3734
+  },
+  {
+   "date": "2026-08-20",
+   "values": {
+    "base_mensual": 137.8021,
+    "base_sin_aport": 138.8609
+   },
+   "dd": {
+    "base_mensual": -0.021427,
+    "base_sin_aport": -0.02184
+   },
+   "eur": {
+    "base_mensual": 36285.8,
+    "base_sin_aport": 13886.09
+   },
+   "benchmark": 168.6436
+  },
+  {
+   "date": "2026-08-25",
+   "values": {
+    "base_mensual": 138.2381,
+    "base_sin_aport": 139.2937
+   },
+   "dd": {
+    "base_mensual": -0.018331,
+    "base_sin_aport": -0.018792
+   },
+   "eur": {
+    "base_mensual": 36400.61,
+    "base_sin_aport": 13929.37
+   },
+   "benchmark": 169.5418
+  },
+  {
+   "date": "2026-08-28",
+   "values": {
+    "base_mensual": 139.5619,
+    "base_sin_aport": 140.6922
+   },
+   "dd": {
+    "base_mensual": -0.00893,
+    "base_sin_aport": -0.00894
+   },
+   "eur": {
+    "base_mensual": 36749.19,
+    "base_sin_aport": 14069.22
+   },
+   "benchmark": 170.4846
+  },
+  {
+   "date": "2026-09-02",
+   "values": {
+    "base_mensual": 138.139,
+    "base_sin_aport": 139.2412
+   },
+   "dd": {
+    "base_mensual": -0.019035,
+    "base_sin_aport": -0.019161
+   },
+   "eur": {
+    "base_mensual": 36374.52,
+    "base_sin_aport": 13924.12
+   },
+   "benchmark": 170.4013
+  },
+  {
+   "date": "2026-09-07",
+   "values": {
+    "base_mensual": 138.613,
+    "base_sin_aport": 139.7331
+   },
+   "dd": {
+    "base_mensual": -0.015669,
+    "base_sin_aport": -0.015696
+   },
+   "eur": {
+    "base_mensual": 36499.33,
+    "base_sin_aport": 13973.31
+   },
+   "benchmark": null
+  },
+  {
+   "date": "2026-09-10",
+   "values": {
+    "base_mensual": 136.7402,
+    "base_sin_aport": 137.8223
+   },
+   "dd": {
+    "base_mensual": -0.028967,
+    "base_sin_aport": -0.029156
+   },
+   "eur": {
+    "base_mensual": 36006.2,
+    "base_sin_aport": 13782.23
+   },
+   "benchmark": 168.2485
+  },
+  {
+   "date": "2026-09-15",
+   "values": {
+    "base_mensual": 136.9852,
+    "base_sin_aport": 138.0889
+   },
+   "dd": {
+    "base_mensual": -0.027228,
+    "base_sin_aport": -0.027278
+   },
+   "eur": {
+    "base_mensual": 36070.72,
+    "base_sin_aport": 13808.89
+   },
+   "benchmark": 169.4012
+  },
+  {
+   "date": "2026-09-18",
+   "values": {
+    "base_mensual": 138.0399,
+    "base_sin_aport": 139.1887
+   },
+   "dd": {
+    "base_mensual": -0.019738,
+    "base_sin_aport": -0.019531
+   },
+   "eur": {
+    "base_mensual": 36648.42,
+    "base_sin_aport": 13918.87
+   },
+   "benchmark": 171.9393
+  },
+  {
+   "date": "2026-09-23",
+   "values": {
+    "base_mensual": 139.7245,
+    "base_sin_aport": 140.9565
+   },
+   "dd": {
+    "base_mensual": -0.007775,
+    "base_sin_aport": -0.007078
+   },
+   "eur": {
+    "base_mensual": 37095.68,
+    "base_sin_aport": 14095.65
+   },
+   "benchmark": 173.629
+  },
+  {
+   "date": "2026-09-28",
+   "values": {
+    "base_mensual": 139.1077,
+    "base_sin_aport": 140.3397
+   },
+   "dd": {
+    "base_mensual": -0.012156,
+    "base_sin_aport": -0.011423
+   },
+   "eur": {
+    "base_mensual": 36931.91,
+    "base_sin_aport": 14033.97
+   },
+   "benchmark": 174.1954
+  },
+  {
+   "date": "2026-10-01",
+   "values": {
+    "base_mensual": 139.2798,
+    "base_sin_aport": 140.5245
+   },
+   "dd": {
+    "base_mensual": -0.010933,
+    "base_sin_aport": -0.010121
+   },
+   "eur": {
+    "base_mensual": 36977.6,
+    "base_sin_aport": 14052.45
+   },
+   "benchmark": 174.6036
+  },
+  {
+   "date": "2026-10-06",
+   "values": {
+    "base_mensual": 142.1372,
+    "base_sin_aport": 143.4652
+   },
+   "dd": {
+    "base_mensual": 0.0,
+    "base_sin_aport": 0.0
+   },
+   "eur": {
+    "base_mensual": 37736.22,
+    "base_sin_aport": 14346.52
+   },
+   "benchmark": 179.8565
+  },
+  {
+   "date": "2026-10-09",
+   "values": {
+    "base_mensual": 141.8837,
+    "base_sin_aport": 143.2143
+   },
+   "dd": {
+    "base_mensual": -0.001783,
+    "base_sin_aport": -0.001749
+   },
+   "eur": {
+    "base_mensual": 37668.93,
+    "base_sin_aport": 14321.43
+   },
+   "benchmark": 179.7769
+  },
+  {
+   "date": "2026-10-14",
+   "values": {
+    "base_mensual": 142.0273,
+    "base_sin_aport": 143.3602
+   },
+   "dd": {
+    "base_mensual": -0.00255,
+    "base_sin_aport": -0.002659
+   },
+   "eur": {
+    "base_mensual": 37707.05,
+    "base_sin_aport": 14336.02
+   },
+   "benchmark": 177.788
+  },
+  {
+   "date": "2026-10-19",
+   "values": {
+    "base_mensual": 141.0593,
+    "base_sin_aport": 142.3497
+   },
+   "dd": {
+    "base_mensual": -0.009348,
+    "base_sin_aport": -0.009689
+   },
+   "eur": {
+    "base_mensual": 37750.06,
+    "base_sin_aport": 14234.97
+   },
+   "benchmark": 176.8211
+  },
+  {
+   "date": "2026-10-22",
+   "values": {
+    "base_mensual": 140.4347,
+    "base_sin_aport": 141.6979
+   },
+   "dd": {
+    "base_mensual": -0.013735,
+    "base_sin_aport": -0.014223
+   },
+   "eur": {
+    "base_mensual": 37582.91,
+    "base_sin_aport": 14169.79
+   },
+   "benchmark": 176.055
+  },
+  {
+   "date": "2026-10-27",
+   "values": {
+    "base_mensual": 142.0006,
+    "base_sin_aport": 143.3092
+   },
+   "dd": {
+    "base_mensual": -0.002738,
+    "base_sin_aport": -0.003013
+   },
+   "eur": {
+    "base_mensual": 38001.96,
+    "base_sin_aport": 14330.92
+   },
+   "benchmark": 178.3927
+  },
+  {
+   "date": "2026-10-30",
+   "values": {
+    "base_mensual": 140.4223,
+    "base_sin_aport": 141.6529
+   },
+   "dd": {
+    "base_mensual": -0.013822,
+    "base_sin_aport": -0.014536
+   },
+   "eur": {
+    "base_mensual": 37579.57,
+    "base_sin_aport": 14165.29
+   },
+   "benchmark": 174.9749
+  },
+  {
+   "date": "2026-11-04",
+   "values": {
+    "base_mensual": 141.3239,
+    "base_sin_aport": 142.562
+   },
+   "dd": {
+    "base_mensual": -0.00749,
+    "base_sin_aport": -0.008211
+   },
+   "eur": {
+    "base_mensual": 37820.87,
+    "base_sin_aport": 14256.2
+   },
+   "benchmark": 177.1049
+  },
+  {
+   "date": "2026-11-09",
+   "values": {
+    "base_mensual": 139.681,
+    "base_sin_aport": 140.8349
+   },
+   "dd": {
+    "base_mensual": -0.019028,
+    "base_sin_aport": -0.020227
+   },
+   "eur": {
+    "base_mensual": 37381.19,
+    "base_sin_aport": 14083.49
+   },
+   "benchmark": 174.8608
+  },
+  {
+   "date": "2026-11-12",
+   "values": {
+    "base_mensual": 142.1668,
+    "base_sin_aport": 143.4536
+   },
+   "dd": {
+    "base_mensual": -0.001571,
+    "base_sin_aport": -0.002008
+   },
+   "eur": {
+    "base_mensual": 38046.43,
+    "base_sin_aport": 14345.36
+   },
+   "benchmark": 176.7015
+  },
+  {
+   "date": "2026-11-17",
+   "values": {
+    "base_mensual": 138.3166,
+    "base_sin_aport": 139.4486
+   },
+   "dd": {
+    "base_mensual": -0.02861,
+    "base_sin_aport": -0.029871
+   },
+   "eur": {
+    "base_mensual": 37016.05,
+    "base_sin_aport": 13944.86
+   },
+   "benchmark": 172.3961
+  },
+  {
+   "date": "2026-11-18",
+   "values": {
+    "base_mensual": 138.2605,
+    "base_sin_aport": 139.3867
+   },
+   "dd": {
+    "base_mensual": -0.029004,
+    "base_sin_aport": -0.030302
+   },
+   "eur": {
+    "base_mensual": 37301.05,
+    "base_sin_aport": 13938.67
+   },
+   "benchmark": 172.098
+  }
+ ]
+}

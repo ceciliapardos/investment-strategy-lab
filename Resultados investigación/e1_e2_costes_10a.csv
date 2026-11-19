@@ -1,0 +1,34 @@
+﻿estrategia;escenario;id;completo;no_cubierto;aportado_total;n_aportaciones;compras_iniciales;compras_periodicas;valor_bruto;twr_bruta;coste_compras;coste_divisa;custodia;mantenimiento;costes_durante;valor_neto;impacto;impacto_pct_aportado;costes_pct_valor_final_bruto;salida_estimada;valor_neto_tras_salida;notas
+BASE 70/30 · mensual 300 €;Sin costes de intermediación;none;True;;46000.0;240;2;240;84540.67;1.423652;0.0;0.0;0.0;0.0;0.0;84540.67;0.0;0.0;0.0;0.0;84540.67;
+BASE 70/30 · mensual 300 €;Santander · Tarifa online;santander_online;True;;46000.0;240;2;240;84540.67;1.423652;4840.0;0.0;3726.22;0.0;8566.22;73741.61;10799.06;0.234762;0.101327;253.05;73488.56;Custodia calculada con la tarifa MÁXIMA publicada: la aplicada a cada cliente puede ser menor.
+BASE 70/30 · mensual 300 €;CaixaBank · Tarifa estándar;caixabank_std;True;;46000.0;240;2;240;84540.67;1.423652;8712.0;0.0;600.16;0.0;9312.16;71209.4;13331.27;0.28981;0.11015;192.94;71016.46;Custodia estimada solo con el mínimo por clase de valor: la tarifa se calcula sobre el valor nominal, que no está disponible.
+BASE 70/30 · mensual 300 €;Bankinter · Tarifa estándar;bankinter_std;True;;46000.0;240;2;240;84540.67;1.423652;4840.0;0.0;734.98;0.0;5574.98;76732.85;7807.82;0.169735;0.065944;153.17;76579.68;
+BASE 70/30 · mensual 300 €;ING · Broker Naranja;ing;True;;46000.0;240;2;240;84540.67;1.423652;772.0;0.0;0.0;0.0;772.0;83395.2;1145.47;0.024901;0.009132;89.4;83305.81;
+BASE 70/30 · mensual 300 €;BBVA · Tarifa ETF;bbva_etf;True;;46000.0;240;2;240;84540.67;1.423652;69.0;0.0;0.0;0.0;69.0;84413.86;126.81;0.002757;0.000816;126.62;84287.24;
+BASE 70/30 · mensual 300 €;BBVA · Tarifa joven (<30);bbva_joven;True;;46000.0;240;2;240;84540.67;1.423652;239.58;0.0;0.0;0.0;239.58;84190.56;350.11;0.007611;0.002834;1.98;84188.58;
+BASE 70/30 · mensual 300 €;MyInvestor;myinvestor;True;;46000.0;240;2;240;84540.67;1.423652;252.0;0.0;0.0;0.0;252.0;84161.27;379.4;0.008248;0.002981;40.69;84120.58;
+BASE 70/30 · mensual 300 €;Trade Republic;traderepublic;True;;46000.0;240;2;240;84540.67;1.423652;2.0;0.0;0.0;0.0;2.0;84536.57;4.1;8.9e-05;2.4e-05;2.0;84534.57;
+BASE 70/30 · mensual 300 €;Revolut · Plan Estándar;revolut_standard;True;;46000.0;240;2;240;84540.67;1.423652;2.0;0.0;0.0;0.0;2.0;84536.57;4.1;8.9e-05;2.4e-05;2.0;84534.57;
+BASE 70/30 · mensual 300 €;Revolut · Plan Premium;revolut_premium;True;;46000.0;240;2;240;84540.67;1.423652;0.0;0.0;0.0;1199.13;1199.13;83341.54;1199.13;0.026068;0.014184;2.0;83339.54;
+BASE 70/30 · trimestral 900 €;Sin costes de intermediación;none;True;;46000.0;80;2;80;83741.65;1.422229;0.0;0.0;0.0;0.0;0.0;83741.65;0.0;0.0;0.0;0.0;83741.65;
+BASE 70/30 · trimestral 900 €;Santander · Tarifa online;santander_online;True;;46000.0;80;2;80;83741.65;1.422229;1640.0;0.0;3862.69;0.0;5502.69;77492.01;6249.64;0.135862;0.06571;261.31;77230.7;Custodia calculada con la tarifa MÁXIMA publicada: la aplicada a cada cliente puede ser menor.
+BASE 70/30 · trimestral 900 €;CaixaBank · Tarifa estándar;caixabank_std;True;;46000.0;80;2;80;83741.65;1.422229;2952.0;0.0;600.16;0.0;3552.16;78844.98;4896.67;0.106449;0.042418;205.16;78639.82;Custodia estimada solo con el mínimo por clase de valor: la tarifa se calcula sobre el valor nominal, que no está disponible.
+BASE 70/30 · trimestral 900 €;Bankinter · Tarifa estándar;bankinter_std;True;;46000.0;80;2;80;83741.65;1.422229;1640.0;0.0;763.33;0.0;2403.33;80591.37;3150.28;0.068484;0.028699;157.89;80433.48;
+BASE 70/30 · trimestral 900 €;ING · Broker Naranja;ing;True;;46000.0;80;2;80;83741.65;1.422229;292.0;0.0;0.0;0.0;292.0;83299.87;441.78;0.009604;0.003487;89.3;83210.57;
+BASE 70/30 · trimestral 900 €;BBVA · Tarifa ETF;bbva_etf;True;;46000.0;80;2;80;83741.65;1.422229;69.0;0.0;0.0;0.0;69.0;83616.04;125.61;0.002731;0.000824;125.42;83490.61;
+BASE 70/30 · trimestral 900 €;BBVA · Tarifa joven (<30);bbva_joven;True;;46000.0;80;2;80;83741.65;1.422229;81.18;0.0;0.0;0.0;81.18;83623.5;118.15;0.002569;0.000969;1.98;83621.52;
+BASE 70/30 · trimestral 900 €;MyInvestor;myinvestor;True;;46000.0;80;2;80;83741.65;1.422229;92.0;0.0;0.0;0.0;92.0;83596.54;145.11;0.003154;0.001099;40.78;83555.76;
+BASE 70/30 · trimestral 900 €;Trade Republic;traderepublic;True;;46000.0;80;2;80;83741.65;1.422229;2.0;0.0;0.0;0.0;2.0;83737.55;4.1;8.9e-05;2.4e-05;2.0;83735.55;
+BASE 70/30 · trimestral 900 €;Revolut · Plan Estándar;revolut_standard;True;;46000.0;80;2;80;83741.65;1.422229;2.0;0.0;0.0;0.0;2.0;83737.55;4.1;8.9e-05;2.4e-05;2.0;83735.55;
+BASE 70/30 · trimestral 900 €;Revolut · Plan Premium;revolut_premium;True;;46000.0;80;2;80;83741.65;1.422229;0.0;0.0;0.0;1199.13;1199.13;82542.52;1199.13;0.026068;0.014319;2.0;82540.52;
+BASE 70/30 · anual 3.600 €;Sin costes de intermediación;none;True;;46000.0;20;2;20;81793.44;1.420392;0.0;0.0;0.0;0.0;0.0;81793.44;0.0;0.0;0.0;0.0;81793.44;
+BASE 70/30 · anual 3.600 €;Santander · Tarifa online;santander_online;True;;46000.0;20;2;20;81793.44;1.420392;440.0;0.0;3739.18;0.0;4179.18;77411.45;4381.99;0.095261;0.051094;258.6;77152.86;Custodia calculada con la tarifa MÁXIMA publicada: la aplicada a cada cliente puede ser menor.
+BASE 70/30 · anual 3.600 €;CaixaBank · Tarifa estándar;caixabank_std;True;;46000.0;20;2;20;81793.44;1.420392;792.0;0.0;600.16;0.0;1392.16;80036.22;1757.22;0.0382;0.01702;205.56;79830.66;Custodia estimada solo con el mínimo por clase de valor: la tarifa se calcula sobre el valor nominal, que no está disponible.
+BASE 70/30 · anual 3.600 €;Bankinter · Tarifa estándar;bankinter_std;True;;46000.0;20;2;20;81793.44;1.420392;440.0;0.0;736.83;0.0;1176.83;80413.8;1379.64;0.029992;0.014388;156.34;80257.46;
+BASE 70/30 · anual 3.600 €;ING · Broker Naranja;ing;True;;46000.0;20;2;20;81793.44;1.420392;112.0;0.0;290.4;0.0;402.4;81324.83;468.62;0.010187;0.00492;87.62;81237.21;
+BASE 70/30 · anual 3.600 €;BBVA · Tarifa ETF;bbva_etf;True;;46000.0;20;2;20;81793.44;1.420392;69.0;0.0;0.0;0.0;69.0;81670.75;122.69;0.002667;0.000844;122.51;81548.25;
+BASE 70/30 · anual 3.600 €;BBVA · Tarifa joven (<30);bbva_joven;True;;46000.0;20;2;20;81793.44;1.420392;21.78;0.0;0.0;0.0;21.78;81761.62;31.82;0.000692;0.000266;1.98;81759.64;
+BASE 70/30 · anual 3.600 €;MyInvestor;myinvestor;True;;46000.0;20;2;20;81793.44;1.420392;55.2;0.0;0.0;0.0;55.2;81695.29;98.15;0.002134;0.000675;40.81;81654.48;
+BASE 70/30 · anual 3.600 €;Trade Republic;traderepublic;True;;46000.0;20;2;20;81793.44;1.420392;2.0;0.0;0.0;0.0;2.0;81789.34;4.1;8.9e-05;2.4e-05;2.0;81787.34;
+BASE 70/30 · anual 3.600 €;Revolut · Plan Estándar;revolut_standard;True;;46000.0;20;2;20;81793.44;1.420392;2.0;0.0;0.0;0.0;2.0;81789.34;4.1;8.9e-05;2.4e-05;2.0;81787.34;
+BASE 70/30 · anual 3.600 €;Revolut · Plan Premium;revolut_premium;True;;46000.0;20;2;20;81793.44;1.420392;0.0;0.0;0.0;1199.13;1199.13;80594.32;1199.13;0.026068;0.01466;2.0;80592.32;

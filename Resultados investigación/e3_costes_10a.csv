@@ -1,0 +1,7 @@
+﻿estrategia;escenario;id;completo;no_cubierto;aportado_total;n_aportaciones;compras_iniciales;compras_periodicas;valor_bruto;twr_bruta;coste_compras;coste_divisa;custodia;mantenimiento;costes_durante;valor_neto;impacto;impacto_pct_aportado;costes_pct_valor_final_bruto;salida_estimada;valor_neto_tras_salida;notas
+A · Global 100 % RV;Sin costes de intermediación;none;True;;10000.0;0;1;0;31433.16;2.143316;0.0;0.0;0.0;0.0;0.0;31433.16;0.0;0.0;0.0;0.0;31433.16;
+A · Global 100 % RV;ING · Broker Naranja;ing;True;;10000.0;0;1;0;31433.16;2.143316;13.0;0.0;191.34;0.0;204.34;31200.96;232.2;0.02322;0.006501;20.0;31180.96;
+B · Mixta 60/40;Sin costes de intermediación;none;True;;10000.0;0;2;0;22702.55;1.270255;0.0;0.0;0.0;0.0;0.0;22702.55;0.0;0.0;0.0;0.0;22702.55;
+B · Mixta 60/40;ING · Broker Naranja;ing;True;;10000.0;0;2;0;22702.55;1.270255;16.0;0.0;382.68;0.0;398.68;22284.86;417.69;0.041769;0.017561;26.84;22258.02;
+C · Concentrada España;Sin costes de intermediación;none;True;;10000.0;0;3;0;41673.03;3.167303;0.0;0.0;0.0;0.0;0.0;41673.03;0.0;0.0;0.0;0.0;41673.03;
+C · Concentrada España;ING · Broker Naranja;ing;True;;10000.0;0;3;0;41673.03;3.167303;19.0;0.0;574.01;0.0;593.01;41019.84;653.19;0.065319;0.01423;46.94;40972.89;

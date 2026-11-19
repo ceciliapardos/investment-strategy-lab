@@ -1,0 +1,102 @@
+.capi {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.capi__figure {
+  flex-shrink: 0;
+  width: 112px;
+}
+
+.capi--compact .capi__figure { width: 72px; }
+
+.capi__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.capi__body {
+  animation: capi-float 3.6s ease-in-out infinite;
+  transform-origin: 60px 72px;
+}
+
+.capi__shadow {
+  animation: capi-shadow 3.6s ease-in-out infinite;
+  transform-origin: 60px 122px;
+}
+
+.capi__eyes {
+  animation: capi-blink 5s infinite;
+  transform-origin: 60px 70px;
+}
+
+.capi__wave {
+  animation: capi-wave 1.6s ease-in-out infinite;
+  transform-origin: 24px 66px;
+}
+
+@keyframes capi-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes capi-shadow {
+  0%, 100% { transform: scaleX(1); opacity: 0.18; }
+  50% { transform: scaleX(0.85); opacity: 0.12; }
+}
+
+@keyframes capi-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+@keyframes capi-wave {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(14deg); }
+}
+
+/* Bocadillo */
+.capi__bubble {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 300px;
+  padding: var(--space-3) var(--space-4);
+  border-radius: 16px 16px 16px 4px;
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.capi__name {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.capi--dark .capi__bubble {
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--color-text-primary);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.45);
+}
+
+.capi--dark .capi__name { color: var(--color-accent); }
+
+.capi--light .capi__bubble {
+  background: var(--color-accent-light);
+  border: 1px solid var(--color-accent-subtle);
+  color: #26306E;
+}
+
+.capi--light .capi__name { color: var(--color-accent); }
+
+@media (max-width: 540px) {
+  .capi__figure { width: 76px; }
+  .capi__bubble { margin-bottom: 18px; }
+}

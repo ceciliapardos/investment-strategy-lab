@@ -1,0 +1,418 @@
+{
+  "dataset_version": "2026-11-12b",
+  "description": "Tarifas de intermediación verificadas manualmente en documentos oficiales (entidad + perfil tarifario). No incluye costes internos de los productos (TER), impuestos, cánones de mercado ni spreads.",
+  "brokers": [
+    {
+      "id": "santander_online",
+      "entity": "Santander",
+      "profile": "Tarifa online (nueva cuenta de valores)",
+      "name": "Santander · Tarifa online",
+      "category": "bank",
+      "kind": "Banco",
+      "country": "ES",
+      "plan": "Órdenes por web o app con una nueva cuenta de valores. La custodia es la del folleto de tarifas MÁXIMAS: puede no ser la que se aplique a cada cliente",
+      "instruments": ["Stock", "ETF"],
+      "source": {
+        "publisher": "Banco Santander, S.A.",
+        "document": "Página oficial «Tarifas» de Bolsa e inversión (compraventa) y «Folleto informativo de tarifas máximas en operaciones y servicios del mercado de valores», en vigor desde 10-02-2025 (custodia)",
+        "url": "https://www.bancosantander.es/particulares/ahorro-inversion/bolsa-inversion/tarifas/",
+        "extra_urls": ["https://wcm.bancosantander.es/wce/documentos-cms/do-folleto_de_tarifas_maximas_en_operaciones_y_servicios.pdf"],
+        "document_date": "2025-02-10",
+        "consulted": "2026-11-12"
+      },
+      "trade": {
+        "applies_to": ["buy", "sell"],
+        "by_market": {
+          "ES": { "tier_ccy": "EUR", "tiers": [ { "upto": 2000, "fixed": 3 }, { "upto": 15000, "fixed": 6 }, { "upto": null, "rate": 0.0025 } ] },
+          "INTERNATIONAL": { "tier_ccy": "EUR", "tiers": [ { "upto": 15000, "fixed": 20 }, { "upto": null, "rate": 0.0035 } ] }
+        }
+      },
+      "fx": null,
+      "custody": {
+        "type": "percent_per_class",
+        "period_months": 12,
+        "basis": "average_value",
+        "rates": { "domestic": 0.0025, "international": 0.01 },
+        "mins": { "domestic": 24, "international": 60 },
+        "tariff_kind": "maximum"
+      },
+      "maintenance": null,
+      "notes": [
+        "Compraventa nacional: 3 € hasta 2.000 €; 6 € de 2.000,01 € a 15.000 €; 0,25 % por encima de 15.000,01 €.",
+        "Compraventa internacional: 20 € hasta 15.000 €; 0,35 % por encima.",
+        "Custodia (tarifa MÁXIMA del folleto): 0,25 % anual (mín. 24 €) por clase de valor nacional y 1,00 % anual (mín. 60 €) internacional, sobre la media de saldos efectivos diarios y prorrateada por días. El folleto indica que se cargarán los impuestos correspondientes."
+      ],
+      "not_modeled": [
+        "Impuestos sobre la custodia (el folleto no indica el tipo)",
+        "Cambio de divisa: la tarifa no publica un porcentaje",
+        "Tasas y cánones de mercado repercutidos",
+        "Promociones temporales y condiciones negociadas"
+      ]
+    },
+    {
+      "id": "caixabank_std",
+      "entity": "CaixaBank",
+      "profile": "Ocean Bróker · tarifa estándar (sin pack)",
+      "name": "CaixaBank · Tarifa estándar",
+      "category": "bank",
+      "kind": "Banco",
+      "country": "ES",
+      "plan": "Tarifa estándar de renta variable sin pack de bolsa contratado",
+      "instruments": ["Stock", "ETF"],
+      "source": {
+        "publisher": "CaixaBank, S.A.",
+        "document": "Página oficial «Tarifas» de Bolsa y mercados (NRI: 50182-2026/09542)",
+        "url": "https://www.caixabank.es/particular/bolsa-mercados/tarifas.html",
+        "document_date": null,
+        "consulted": "2026-11-12"
+      },
+      "trade": {
+        "applies_to": ["buy", "sell"],
+        "by_market": {
+          "ES": { "rate": 0.0065, "min": 10, "fixed_ccy": "EUR" },
+          "INTERNATIONAL": { "tier_ccy": "EUR", "tiers": [ { "upto": 15000, "fixed": 36 }, { "upto": null, "rate": 0.0025 } ] }
+        }
+      },
+      "fx": null,
+      "custody": {
+        "type": "percent_per_class",
+        "period_months": 6,
+        "basis": "nominal_min_only",
+        "rates": { "domestic": 0.001, "international": 0.004 },
+        "mins": { "domestic": 6, "international": 15 }
+      },
+      "maintenance": null,
+      "notes": [
+        "Compraventa nacional: 0,65 % (mínimo 10 €).",
+        "Compraventa internacional: 36 € fijos por debajo de 15.000 €; 0,25 % desde 15.000 €.",
+        "Custodia: 0,10 % semestral sobre el importe NOMINAL (mín. 6 €) nacional y 0,40 % semestral (mín. 15 €) internacional. Como el valor nominal no está disponible, la app aplica solo el mínimo por clase de valor y semestre (estimación por defecto)."
+      ],
+      "not_modeled": [
+        "Packs de bolsa (Iniciación, Avanzado, Experto) y custodia gratuita con 12 operaciones al semestre",
+        "Cambio de divisa: la página no publica un porcentaje",
+        "Valores que cotizan en SEND (0,65 %)",
+        "IVA: la página indica que los precios lo incluyen"
+      ]
+    },
+    {
+      "id": "bankinter_std",
+      "entity": "Bankinter",
+      "profile": "Bróker · tarifa sin Servicio Bróker Cero",
+      "name": "Bankinter · Tarifa estándar",
+      "category": "bank",
+      "kind": "Banco",
+      "country": "ES",
+      "plan": "Compraventa por internet sin Servicio Bróker Cero; ETF no promocionados («Resto de ETPs»)",
+      "instruments": ["Stock", "ETF"],
+      "source": {
+        "publisher": "Bankinter, S.A.",
+        "document": "Páginas oficiales «Tarifas y comisiones de acciones» y «Tarifas y comisiones de ETPs» del Bróker Bankinter",
+        "url": "https://www.bankinter.com/broker/tarifas-comisiones/acciones",
+        "extra_urls": ["https://www.bankinter.com/broker/tarifas-comisiones/etfs"],
+        "document_date": null,
+        "consulted": "2026-11-12"
+      },
+      "trade": {
+        "applies_to": ["buy", "sell"],
+        "by_market": {
+          "ES": { "tier_ccy": "EUR", "tiers": [ { "upto": 2000, "fixed": 3.95 }, { "upto": 60000, "fixed": 8 }, { "upto": null, "rate": 0.0007, "max": 200 } ] },
+          "EUROZONE": { "tier_ccy": "EUR", "tiers": [ { "upto": 40000, "fixed": 20 }, { "upto": null, "rate": 0.002 } ] },
+          "US": { "tier_ccy": "USD", "tiers": [ { "upto": 40000, "fixed": 20 }, { "upto": null, "rate": 0.002 } ] },
+          "UK": { "tier_ccy": "GBP", "tiers": [ { "upto": 30000, "fixed": 20 }, { "upto": null, "rate": 0.002 } ] },
+          "SE": { "tier_ccy": "SEK", "tiers": [ { "upto": 425000, "fixed": 20 }, { "upto": null, "rate": 0.002 } ] }
+        }
+      },
+      "fx": { "rate": 0.01, "applies_to": ["buy", "sell"] },
+      "custody": {
+        "type": "percent_per_class",
+        "period_months": 3,
+        "basis": "average_value",
+        "rates": { "domestic": 0.0004, "international": 0.0005 },
+        "mins": { "domestic": 6, "international": 6 },
+        "waive_min_if_periodic": ["ETF"]
+      },
+      "maintenance": null,
+      "notes": [
+        "Compraventa nacional (acciones y ETF no promocionados): 3,95 € hasta 2.000 €; 8 € hasta 60.000 €; 0,07 % por encima (máximo 200 €).",
+        "Compraventa internacional, principales mercados: 20 € hasta 40.000 € (40.000 $, 30.000 £ o 425.000 SEK); 0,20 % a partir de ese importe.",
+        "Cambio de divisa: diferencial de ±1 % sobre el cambio fijado por Bankinter.",
+        "Custodia: 0,04 % trimestral (nacional) y 0,05 % trimestral (internacional) sobre la media del valor efectivo de cada clase de valor, mínimo 6 €, prorrateada por días. ETF con compra periódica activa: sin importe mínimo."
+      ],
+      "not_modeled": [
+        "Servicio Bróker Cero (0 € en compraventa nacional de acciones) y ETF promocionados con compra a 0 €",
+        "Mercados internacionales fuera de los principales (otras tarifas): se marcan como datos incompletos",
+        "Cánones de bolsa, canon BME y gastos de correo",
+        "Impuesto sobre transacciones financieras"
+      ]
+    },
+    {
+      "id": "ing",
+      "entity": "ING",
+      "profile": "Broker Naranja · Tarifa Base",
+      "name": "ING · Broker Naranja",
+      "category": "bank",
+      "kind": "Banco",
+      "country": "ES",
+      "plan": "Tarifa Base (clientes con menos de 15 operaciones en el trimestre natural anterior)",
+      "instruments": ["Stock", "ETF"],
+      "source": {
+        "publisher": "ING Bank N.V., Sucursal en España",
+        "document": "Tarifas Aplicables Broker NARANJA (LT A BRN OL 10/26)",
+        "url": "https://www.ing.es/sobre-ing/pdf/TarifasApliBroker.pdf",
+        "document_date": "2026-10-22",
+        "consulted": "2026-11-12"
+      },
+      "trade": {
+        "applies_to": ["buy", "sell"],
+        "by_market": {
+          "ES":       { "fixed": 3,  "fixed_ccy": "EUR", "rate": 0.0010, "cap": 20, "cap_ccy": "EUR", "cap_if_amount_below": 50000 },
+          "EUROZONE": { "fixed": 3,  "fixed_ccy": "EUR", "rate": 0.0010, "cap": 20, "cap_ccy": "EUR", "cap_if_amount_below": 50000 },
+          "US":       { "fixed": 3,  "fixed_ccy": "USD", "rate": 0.0010, "cap": 20, "cap_ccy": "USD", "cap_if_amount_below": 50000 },
+          "UK":       { "fixed": 3,  "fixed_ccy": "GBP", "rate": 0.0010, "cap": 20, "cap_ccy": "GBP", "cap_if_amount_below": 50000 },
+          "SE":       { "fixed": 3,  "fixed_ccy": "SEK", "rate": 0.0010, "cap": 214, "cap_ccy": "SEK", "cap_if_amount_below": 534750 },
+          "OTHER":    { "fixed": 40, "fixed_ccy": "EUR", "rate": 0.0045 }
+        }
+      },
+      "fx": { "rate": 0.005, "applies_to": ["buy", "sell"] },
+      "custody": {
+        "type": "per_position_quarterly_if_no_trade",
+        "amount": 4,
+        "amount_ccy": "EUR",
+        "vat": 0.21,
+        "max_per_account": 49.59
+      },
+      "maintenance": null,
+      "notes": [
+        "Comisión por compra y por venta: fijo + 0,10 % del importe; para operaciones de menos de 50.000 € / $ / £ la comisión no supera 20 € / $ / £.",
+        "Cambio de divisa (Tarifa Base): +0,50 % en compras de divisa y −0,50 % en ventas.",
+        "Custodia: 0 € si hay al menos una operación en el trimestre natural; si no, 4 € por clase de valor + IVA, prorrateado por días; máximo 49,59 € + IVA por cuenta."
+      ],
+      "not_modeled": [
+        "Tarifa Reducida (15 o más operaciones en el trimestre anterior)",
+        "Tasas y cánones de mercado y de liquidación repercutidos",
+        "Gastos de comunicación, traspasos y operaciones corporativas"
+      ]
+    },
+    {
+      "id": "bbva_etf",
+      "entity": "BBVA",
+      "profile": "Tarifa ETF (0,15 %)",
+      "name": "BBVA · Tarifa ETF",
+      "category": "bank",
+      "kind": "Banco",
+      "country": "ES",
+      "plan": "Compraventa de la selección de ETF de BBVA con tarifa del 0,15 %. Las acciones tienen otra tarifa (perfiles de BBVA Trader) que no se ha podido verificar: no se incluyen",
+      "instruments": ["ETF"],
+      "source": {
+        "publisher": "Banco Bilbao Vizcaya Argentaria, S.A.",
+        "document": "Página oficial «Inversión y trading con acciones, ETF y más»",
+        "url": "https://www.bbva.es/personas/productos/bolsa/inversion-y-trading-en-acciones.html",
+        "document_date": null,
+        "consulted": "2026-11-12"
+      },
+      "trade": {
+        "applies_to": ["buy", "sell"],
+        "flat": { "rate": 0.0015, "fixed_ccy": "EUR" }
+      },
+      "fx": null,
+      "custody": null,
+      "maintenance": null,
+      "notes": [
+        "ETF: 0,15 % por operación, sin comisión mínima ni comisión de custodia.",
+        "Solo para la selección de ETF de las principales gestoras que ofrece BBVA: no se comprueba si cada ETF está en esa selección."
+      ],
+      "not_modeled": [
+        "Acciones (perfiles de BBVA Trader según número de órdenes): el folleto oficial no se pudo consultar",
+        "Tipo de cambio dinámico de BBVA Trader: sin porcentaje publicado",
+        "Cánones y tasas de mercado"
+      ]
+    },
+    {
+      "id": "bbva_joven",
+      "entity": "BBVA",
+      "profile": "Tarifa joven (menores de 30 años)",
+      "name": "BBVA · Tarifa joven (<30)",
+      "category": "bank",
+      "kind": "Banco",
+      "country": "ES",
+      "plan": "Solo para clientes menores de 30 años con BBVA Trader Bolsa (desde el 13/04/2026)",
+      "instruments": ["Stock", "ETF"],
+      "source": {
+        "publisher": "BBVA (nota oficial en bbva.com)",
+        "document": "«Los jóvenes podrán invertir en bolsa a través de BBVA con una de las tarifas más competitivas del mercado» (28/04/2026)",
+        "url": "https://www.bbva.com/es/es/salud-financiera/los-jovenes-podran-invertir-en-bolsa-a-traves-de-bbva-con-una-de-las-tarifas-mas-competitivas-del-mercado/",
+        "document_date": "2026-04-28",
+        "consulted": "2026-11-12"
+      },
+      "trade": {
+        "applies_to": ["buy", "sell"],
+        "flat": { "fixed": 0.99, "fixed_ccy": "EUR" }
+      },
+      "fx": null,
+      "custody": null,
+      "maintenance": null,
+      "notes": [
+        "0,99 € por operación en acciones y ETF de mercados nacionales e internacionales.",
+        "Sin comisión de custodia."
+      ],
+      "not_modeled": [
+        "Cambio de divisa: la nota no publica un porcentaje",
+        "Requisito de edad: no aplica a clientes de 30 años o más",
+        "Cánones y tasas de mercado"
+      ]
+    },
+    {
+      "id": "myinvestor",
+      "entity": "MyInvestor",
+      "profile": "Tarifa estándar (sin Premium)",
+      "name": "MyInvestor",
+      "category": "digital",
+      "kind": "Banco digital",
+      "country": "ES",
+      "plan": "Tarifa estándar (sin plan Premium)",
+      "instruments": ["Stock", "ETF"],
+      "source": {
+        "publisher": "MyInvestor Banco, S.A.",
+        "document": "Página oficial «Acciones y ETF» (bróker)",
+        "url": "https://myinvestor.es/inversion/broker/",
+        "document_date": null,
+        "consulted": "2026-11-12"
+      },
+      "trade": {
+        "applies_to": ["buy", "sell"],
+        "by_instrument": {
+          "Stock": { "rate": 0.0012, "min": 3, "max": 25, "fixed_ccy": "EUR" },
+          "ETF":   { "rate": 0.0012, "min": 1, "max": 25, "fixed_ccy": "EUR" }
+        }
+      },
+      "fx": { "rate": 0.003, "applies_to": ["buy", "sell"] },
+      "custody": null,
+      "maintenance": null,
+      "notes": [
+        "Acciones: 0,12 % por operación, mínimo 3 €, máximo 25 €.",
+        "ETF: 0,12 % por operación, mínimo 1 €, máximo 25 € (sin mínimo con Premium, no modelado).",
+        "Cambio de divisa: 0,30 %.",
+        "Mantenimiento, depositaría, custodia, inactividad y cobro de dividendos: 0 €."
+      ],
+      "not_modeled": [
+        "Plan Premium",
+        "Cánones de bolsa y «SEC fee» estadounidense, que la página indica como costes adicionales no cobrados por MyInvestor"
+      ]
+    },
+    {
+      "id": "traderepublic",
+      "entity": "Trade Republic",
+      "profile": "Órdenes individuales y planes de inversión",
+      "name": "Trade Republic",
+      "category": "digital",
+      "kind": "Bróker digital",
+      "country": "DE (sucursal en España)",
+      "plan": "Órdenes individuales (1 € de liquidación) y planes de inversión (ejecución sin cargo)",
+      "instruments": ["Stock", "ETF"],
+      "source": {
+        "publisher": "Trade Republic Bank GmbH, Sucursal en España",
+        "document": "Web oficial (es-es), apartado «Fijación de precios»; la lista completa de precios está en la app",
+        "url": "https://traderepublic.com/es-es",
+        "extra_urls": ["https://assets.traderepublic.com/documents/ES/FURTHER_INFORMATION_PRICE_LIST_20230426144247.pdf"],
+        "document_date": null,
+        "consulted": "2026-11-12"
+      },
+      "trade": {
+        "applies_to": ["buy", "sell"],
+        "flat": { "fixed": 1, "fixed_ccy": "EUR" },
+        "periodic_buy": { "instruments": ["Stock", "ETF"], "rule": { "fixed": 0, "fixed_ccy": "EUR" } }
+      },
+      "fx": null,
+      "custody": null,
+      "maintenance": null,
+      "notes": [
+        "Comisión de orden: sin cargo. Comisión de liquidación de operaciones: 1,00 € (2,00 € si se elige la bolsa con Precio Directo; no modelado).",
+        "Ejecución de planes de inversión para acciones y ETF: sin cargo (se aplica a las aportaciones periódicas).",
+        "La web no publica comisión de cambio de divisa: no se modela ninguna."
+      ],
+      "not_modeled": [
+        "Diferencial de precio (spread) y costes de terceros",
+        "Bolsa con Precio Directo (2,00 €)",
+        "La lista completa de precios solo está en la app"
+      ]
+    },
+    {
+      "id": "revolut_standard",
+      "entity": "Revolut",
+      "profile": "Plan Estándar (gratuito)",
+      "name": "Revolut · Plan Estándar",
+      "category": "digital",
+      "kind": "Banco digital",
+      "country": "LT (opera en España)",
+      "plan": "Plan Estándar: sin órdenes gratuitas al mes",
+      "instruments": ["Stock", "ETF"],
+      "source": {
+        "publisher": "Revolut (Revolut Securities Europe UAB)",
+        "document": "Ayuda oficial «Las comisiones de trading de Revolut» y «Comisiones y límites de cambio de divisas» (Revolut España)",
+        "url": "https://help.revolut.com/es-ES/help/wealth/stocks/trading-stocks/trading-fees/what-fees-will-i-be-charged-for-my-trading/",
+        "extra_urls": ["https://help.revolut.com/es-ES/help/wealth/exchanging-money/how-much-does-it-cost-to-make-an-exchange/will-i-be-charged-for-exchanging-foreign-currencies/", "https://www.revolut.com/es-ES/our-pricing-plans/"],
+        "document_date": null,
+        "consulted": "2026-11-12"
+      },
+      "trade": {
+        "applies_to": ["buy", "sell"],
+        "flat": { "fixed": 1, "fixed_ccy": "EUR" },
+        "free_per_month": 0,
+        "periodic_buy": { "instruments": ["ETF"], "rule": { "fixed": 0, "fixed_ccy": "EUR" } }
+      },
+      "fx": { "rate": 0.01, "applies_to": ["buy", "sell"], "free_per_month_eur": 1000 },
+      "custody": null,
+      "maintenance": null,
+      "notes": [
+        "Órdenes sin comisión al mes: 0 en el plan Estándar; cada orden cuesta 1 €.",
+        "Compras periódicas de ETP seleccionados con planes de inversión: sin comisión (se aplica a las aportaciones periódicas a ETF).",
+        "Cambio de divisa: sin comisión hasta 1.000 € al mes; 1 % sobre lo que lo supere.",
+        "Sin comisión de custodia."
+      ],
+      "not_modeled": [
+        "Recargo de fin de semana en el cambio de divisa (las operaciones simuladas son en días de mercado)",
+        "Comisiones regulatorias (p. ej. impuesto sobre transacciones financieras)",
+        "Qué ETF concretos están en la selección de planes de inversión"
+      ]
+    },
+    {
+      "id": "revolut_premium",
+      "entity": "Revolut",
+      "profile": "Plan Premium (9,99 €/mes)",
+      "name": "Revolut · Plan Premium",
+      "category": "digital",
+      "kind": "Banco digital",
+      "country": "LT (opera en España)",
+      "plan": "Plan Premium: 5 órdenes sin comisión al mes y cambio de divisa sin comisión adicional. La cuota del plan se incluye como mantenimiento",
+      "instruments": ["Stock", "ETF"],
+      "source": {
+        "publisher": "Revolut (Revolut Securities Europe UAB)",
+        "document": "Ayuda oficial «Las comisiones de trading de Revolut», «Comisiones y límites de cambio de divisas» y página «Ver planes de Revolut»",
+        "url": "https://help.revolut.com/es-ES/help/wealth/stocks/trading-stocks/trading-fees/what-fees-will-i-be-charged-for-my-trading/",
+        "extra_urls": ["https://www.revolut.com/es-ES/our-pricing-plans/"],
+        "document_date": null,
+        "consulted": "2026-11-12"
+      },
+      "trade": {
+        "applies_to": ["buy", "sell"],
+        "flat": { "fixed": 1, "fixed_ccy": "EUR" },
+        "free_per_month": 5,
+        "periodic_buy": { "instruments": ["ETF"], "rule": { "fixed": 0, "fixed_ccy": "EUR" } }
+      },
+      "fx": null,
+      "custody": null,
+      "maintenance": { "amount_per_year": 119.88, "label": "Cuota del plan Premium (9,99 €/mes)" },
+      "notes": [
+        "5 órdenes sin comisión al mes; a partir de ahí, 1 € por orden.",
+        "Compras periódicas de ETP seleccionados con planes de inversión: sin comisión.",
+        "Cambio de divisa: sin comisiones adicionales en Premium.",
+        "Cuota del plan: 9,99 €/mes. Incluye otros servicios bancarios, pero aquí se cuenta entera como coste de mantenimiento."
+      ],
+      "not_modeled": [
+        "Otras ventajas del plan Premium ajenas a la inversión",
+        "Comisiones regulatorias",
+        "La asignación se reinicia con el ciclo de facturación; se aproxima por mes natural"
+      ]
+    }
+  ]
+}

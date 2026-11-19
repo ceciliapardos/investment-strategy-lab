@@ -1,0 +1,238 @@
+.news {
+  flex: 1;
+  padding-bottom: var(--space-20);
+}
+
+.news__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding-top: var(--space-6);
+}
+
+/* ---- Pestañas ---- */
+.news__tabs {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+
+.news__tabs::-webkit-scrollbar { display: none; }
+
+.news__tab {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.news__tab:hover { border-color: var(--color-accent); color: var(--color-accent); }
+
+.news__tab--active,
+.news__tab--active:hover {
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+  color: #fff;
+}
+
+.news__search-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.news__search-head h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.news__search-head .btn-ghost { margin-left: auto; }
+
+/* ---- Rejilla editorial ---- */
+.news__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.news__card--lead {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.news__skeleton { min-height: 170px; border-radius: var(--radius-xl); }
+
+.ncard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.ncard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent-subtle);
+}
+
+.ncard:hover .ncard__title { color: var(--color-accent); }
+
+.ncard--lead {
+  background:
+    radial-gradient(600px 220px at 100% 0%, rgba(139, 92, 246, 0.12), transparent 70%),
+    var(--color-bg-card);
+  padding: var(--space-8);
+  justify-content: flex-end;
+}
+
+.ncard__top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.ncard__cat,
+.ncard__official,
+.ncard__lang {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 2px 9px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.ncard__cat { background: var(--color-accent-light); color: var(--color-accent); }
+.ncard__cat--markets { background: #E3F7EF; color: #08795A; }
+.ncard__cat--economy { background: #FFF3E0; color: #B25E00; }
+.ncard__cat--central_banks { background: #F3EEFF; color: #6A3FD6; }
+.ncard__cat--companies { background: #E8F4FD; color: #0B6AA8; }
+.ncard__cat--investing { background: #FDEEF6; color: #B0306F; }
+.ncard__cat--etfs { background: #EEF0FF; color: #3441C9; }
+
+.ncard__official { background: var(--color-navy); color: #fff; }
+.ncard__lang { background: var(--color-bg-sunken); color: var(--color-text-muted); border: 1px solid var(--color-border); }
+
+.ncard__title {
+  font-size: var(--font-size-base);
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color var(--transition-fast);
+}
+
+.ncard--lead .ncard__title {
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.ncard__summary {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ncard__meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  min-width: 0;
+}
+
+.ncard__avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  flex-shrink: 0;
+  background: var(--color-navy);
+  color: #fff;
+  font-weight: 800;
+  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ncard__source {
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ncard__dot { color: var(--color-border); }
+
+.ncard__ext {
+  margin-left: auto;
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
+/* ---- Estados ---- */
+.news__state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
+  padding: var(--space-10) var(--space-6);
+}
+
+.news__state-title { font-weight: 800; font-size: var(--font-size-lg); }
+
+.news__sources {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+}
+
+@media (max-width: 980px) {
+  .news__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .news__card--lead { grid-column: span 2; grid-row: auto; }
+}
+
+@media (max-width: 600px) {
+  .news__grid { grid-template-columns: 1fr; }
+  .news__card--lead { grid-column: auto; }
+  .ncard--lead { padding: var(--space-5); }
+  .news__search-head .btn-ghost { margin-left: 0; }
+}
