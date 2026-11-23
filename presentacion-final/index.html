@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Investment Strategy Lab</title>
+<meta name="description" content="Presentación final de Investment Strategy Lab · Análisis de Servicios Financieros (ICADE E2A)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="viewport">
+<main class="stage" id="stage">
+
+<!-- 01 · PORTADA -->
+<section class="slide s-cover" data-title="Portada">
+  <div class="cover-left">
+    <div class="brand"><span class="logo">ISL</span><span>Investment Strategy Lab</span></div>
+    <h1>¿Cuánto cambia <em>dónde</em> y <em>cómo</em> inviertes?</h1>
+    <p class="lead">Un laboratorio de simulación histórica para comparar estrategias de inversión: rentabilidad, riesgo, <i>benchmark</i> y el coste real del intermediario.</p>
+    <div class="cover-meta">
+      <div><span class="k">Equipo</span>Cecilia Pardos · Almudena López · Covadonga López-Belmonte</div>
+      <div><span class="k">Asignatura</span>Análisis de Servicios Financieros · ICADE E2A</div>
+      <div><span class="k">Carril</span>El carril abierto · Nivel 2: Construir</div>
+    </div>
+    <p class="disclaimer">Herramienta educativa. Simula el pasado: no predice ni asesora.</p>
+  </div>
+  <figure class="cover-shot anim">
+    <img src="assets/comparison-tabla.jpg" alt="Captura real de Strategy Comparison en la Live Demo">
+    <figcaption>Captura real · Strategy Comparison · Live Demo</figcaption>
+  </figure>
+</section>
+
+<!-- 02 · LA PRIMERA PREGUNTA -->
+<section class="slide" data-title="La primera pregunta">
+  <header class="sh"><span class="tag">01 · Punto de partida</span><h2>Nuestra primera pregunta era mala</h2></header>
+  <div class="flow4">
+    <div class="step anim"><span class="n">1</span><h3>«Coste Invisible»</h3><p>Dos alternativas con el mismo capital, las mismas aportaciones y <b>la misma rentabilidad bruta</b>. Solo cambiaba el coste.</p></div>
+    <div class="arrow anim">→</div>
+    <div class="step anim"><span class="n">2</span><h3>Resultado decidido</h3><p>Si solo cambia el coste, el producto barato gana <b>siempre</b>. El cálculo era correcto, pero no ayudaba a decidir nada.</p>
+      <svg class="mini" viewBox="0 0 220 90" aria-label="Esquema: dos líneas con la misma rentabilidad supuesta que solo se separan por el coste">
+        <line x1="10" y1="80" x2="210" y2="80" class="ax"/>
+        <path d="M10 78 C 80 66, 140 40, 210 12" class="l-a"/>
+        <path d="M10 78 C 80 69, 140 50, 210 30" class="l-b"/>
+        <text x="140" y="16" class="lb">barato</text><text x="160" y="66" class="lb">caro</text>
+      </svg>
+      <span class="schema">Esquema, sin datos</span>
+    </div>
+    <div class="arrow anim">→</div>
+    <div class="step human anim"><span class="n">3</span><h3>Decisión humana</h3><p>Abandonar la formulación. Un inversor acepta pagar más si espera algo a cambio: ese <i>trade-off</i> no aparecía.</p></div>
+  </div>
+  <blockquote class="question anim">
+    <span class="qk">Nueva pregunta</span>
+    ¿Hasta qué punto los <b>costes de intermediación</b> y la <b>frecuencia de operativa</b> pueden cambiar la eficiencia real de una estrategia a largo plazo para un inversor minorista, una vez considerados <b>rentabilidad, riesgo y <i>benchmark</i></b>, en simulaciones históricas?
+  </blockquote>
+</section>
+
+<!-- 03 · QUÉ CONSTRUIMOS -->
+<section class="slide" data-title="Qué construimos">
+  <header class="sh"><span class="tag">02 · Producto</span><h2>Qué construimos</h2></header>
+  <div class="build">
+    <div class="build-left">
+      <ol class="modules">
+        <li class="anim"><b>Explore Markets</b><span>Activos reales, métricas y favoritos</span></li>
+        <li class="anim"><b>Strategy Builder</b><span>Pesos, capital y aportaciones periódicas</span></li>
+        <li class="anim"><b>Strategy Comparison</b><span>Backtest en euros frente a un <i>benchmark</i></span></li>
+        <li class="anim"><b>Cost Analysis</b><span>Tarifas oficiales de 10 perfiles de bancos y brokers</span></li>
+        <li class="anim"><b>News</b><span>Actualidad financiera</span></li>
+      </ol>
+      <div class="chips anim">
+        <span>CAGR</span><span>Volatilidad</span><span>Máxima caída</span><span>Sharpe</span><span><i>Benchmark</i> TR</span><span>TER ≠ coste del intermediario</span>
+      </div>
+      <div class="stack anim"><span class="k">Stack</span>React + Vite · FastAPI · pandas · yfinance · Render</div>
+      <a class="btn-primary anim" href="https://investment-strategy-lab.onrender.com" target="_blank" rel="noopener">Abrir Live Demo <span>↗</span></a>
+    </div>
+    <div class="carousel anim" id="carousel">
+      <figure class="on"><img src="assets/explore.jpg" alt="Explore Markets"><figcaption>Explore Markets</figcaption></figure>
+      <figure><img src="assets/builder.jpg" alt="Strategy Builder"><figcaption>Strategy Builder</figcaption></figure>
+      <figure><img src="assets/comparison.jpg" alt="Strategy Comparison: gráfico"><figcaption>Strategy Comparison</figcaption></figure>
+      <figure><img src="assets/costes.jpg" alt="Cost Analysis"><figcaption>Cost Analysis</figcaption></figure>
+      <div class="dots"><i class="on"></i><i></i><i></i><i></i></div>
+      <span class="real">Capturas reales de la Live Demo</span>
+    </div>
+  </div>
+</section>
+
+<!-- 04 · LA MÁQUINA SE EQUIVOCÓ -->
+<section class="slide" data-title="La máquina se equivocó">
+  <header class="sh"><span class="tag">03 · Errores de la IA</span><h2>La máquina también se equivocó</h2></header>
+  <div class="errors">
+    <div class="cases">
+      <article class="case anim">
+        <span class="cn">Caso 1</span>
+        <h3>Un TER del 0,20&nbsp;% en acciones</h3>
+        <p class="said">La IA asignó un TER a Tesla e IonQ. Una acción no tiene gestora.</p>
+        <p class="det"><b>Detección:</b> revisión humana: ¿qué es un TER en una acción?</p>
+        <p class="src"><b>Fuente:</b> guía de ETF de la CNMV · ficha oficial de VOO (0,03 %)</p>
+        <p class="lesson">Un número plausible no es un dato.</p>
+      </article>
+      <article class="case anim">
+        <span class="cn">Caso 2</span>
+        <h3>«Superados al 100&nbsp;%»</h3>
+        <p class="said">El arnés solo fallaba ante una excepción: 3 de 10 tests no podían fallar.</p>
+        <p class="det"><b>Detección:</b> auditoría de la Fase 0, ejecutando el propio arnés</p>
+        <p class="src"><b>Fuente:</b> el propio código del arnés y su ejecución</p>
+        <p class="lesson">La seguridad de una IA no es evidencia.</p>
+      </article>
+      <article class="case anim">
+        <span class="cn">Caso 3</span>
+        <h3>«Precio histórico» que era ajustado</h3>
+        <p class="said"><code>auto_adjust=True</code> por defecto: se mostraba rentabilidad total, no cotización.</p>
+        <p class="det"><b>Detección:</b> auditoría, comparando cierre cotizado y ajustado</p>
+        <p class="src"><b>Fuente:</b> documentación de <code>yfinance</code> · <code>Close</code> frente a <code>Adj Close</code></p>
+        <p class="lesson">Un valor por defecto es una decisión metodológica.</p>
+      </article>
+    </div>
+    <aside class="count anim">
+      <div class="big"><span class="countup" data-to="31">31</span></div>
+      <p class="cl">incidencias documentadas<br>en <code>Errores de la IA.md</code></p>
+      <ul>
+        <li>Índices y criptomonedas clasificados como acciones</li>
+        <li>Un TER que se habría multiplicado por 100</li>
+        <li>Comisión de Bankinter en euros tratada como dólares</li>
+        <li>Un <i>timeout</i> presentado como «backend apagado»</li>
+        <li>Ventas calculadas con la comisión de compra</li>
+      </ul>
+    </aside>
+  </div>
+  <div class="pipeline anim">
+    <span>Salida de la IA</span><b>→</b><span>Duda</span><b>→</b><span>Fuente primaria</span><b>→</b><span class="hd">Decisión humana</span>
+  </div>
+</section>
+
+<!-- 05 · TRES DECISIONES -->
+<section class="slide" data-title="Tres decisiones">
+  <header class="sh"><span class="tag">04 · Decisiones humanas</span><h2>Tres decisiones que cambiaron el proyecto</h2></header>
+  <div class="decisions">
+    <article class="dec anim">
+      <span class="dn">D1</span>
+      <h3>Reformular la pregunta</h3>
+      <p>De un comparador trivial a 2–6 estrategias completas con precios históricos reales en el mismo periodo.</p>
+      <p class="alt"><b>Descartado:</b> pulir el mismo comparador o suponer rentabilidades distintas sin datos.</p>
+      <p class="res">Una calculadora se convirtió en un laboratorio.</p>
+    </article>
+    <article class="dec anim">
+      <span class="dn">D2</span>
+      <h3>Cálculo determinista, validado por fases</h3>
+      <p>Lógica financiera en funciones puras con resultados conocidos. Auditoría antes de construir. Ninguna afirmación de la IA sin una prueba que pueda fallar.</p>
+      <p class="alt"><b>Descartado:</b> seguir parcheando el prototipo, como proponía la IA.</p>
+      <p class="res">Cada cifra se puede rastrear.</p>
+    </article>
+    <article class="dec d3 anim">
+      <span class="dn">D3</span>
+      <h3>Retirar el AI Strategy Analyst</h3>
+      <div class="checks">
+        <span><i>✓</i>Construido</span><span><i>✓</i>Probado</span><span><i>✓</i>Descartado</span>
+      </div>
+      <ul>
+        <li>Modelo local: ~1,96 <i>tokens</i>/s y <i>timeouts</i></li>
+        <li>En público exigiría una API de pago o un modelo de varios GB</li>
+        <li>Repetía lo que la app ya calcula y explica de forma verificable</li>
+      </ul>
+      <p class="alt"><b>Alternativas:</b> mantener la API, cambiar de proveedor o mantener el modelo local. Conservamos sus <i>prompts</i> y decisiones como rastro.</p>
+      <p class="motto">IA como método <span>≠</span> IA obligatoriamente dentro del producto</p>
+    </article>
+  </div>
+</section>
+
+<!-- 06 · CÓMO CONTROLAMOS -->
+<section class="slide" data-title="Cómo controlamos la máquina">
+  <header class="sh"><span class="tag">05 · Método</span><h2>Cómo controlamos la máquina</h2></header>
+  <div class="control">
+    <div class="loop anim">
+      <h4>Cada fase</h4>
+      <ol>
+        <li><b>Criterios de aceptación</b> escritos antes de pedir código</li>
+        <li><b>La IA construye</b> y señala dudas como «posible error para revisión humana»</li>
+        <li><b>Fuente oficial</b> para cada tarifa o concepto (CNMV, ESMA, BCE, intermediarios, emisores)</li>
+        <li><b>Tests que pueden fallar</b>: deterministas, de integración y en navegador</li>
+        <li class="h"><b>Comprobación humana</b> en la interfaz y registro en Obsidian</li>
+      </ol>
+      <p class="tools">Antigravity (prototipo) · Claude Code (agente principal) · Obsidian (documentación, no es IA) · Git y GitHub</p>
+    </div>
+    <div class="chain anim">
+      <h4>Cadena de datos</h4>
+      <div class="nodes">
+        <span>Fuente externa</span><span>Adquisición</span><span>Limpieza y alineación de fechas</span><span>Cálculo</span><span>API</span><span>Interfaz</span><span>Tests</span><span class="end">Resultados</span>
+      </div>
+      <div class="types">
+        <div><b>Datos externos</b>Yahoo Finance · tarifas oficiales con URL y fecha</div>
+        <div><b>Cálculos derivados</b>Funciones probadas</div>
+        <div class="off"><b>Texto generado por IA</b>Ya no existe en el producto</div>
+      </div>
+      <p class="doc">Detalle y diagramas: <code>Cadena de datos y reproducibilidad.md</code></p>
+    </div>
+  </div>
+</section>
+
+<!-- 07 · QUÉ DESCUBRIMOS -->
+<section class="slide s7" data-title="Qué descubrimos">
+  <header class="sh"><span class="tag">06 · Investigación E1–E5</span><h2>Qué descubrimos</h2>
+    <p class="sub">Cartera base 70/30 · 10.000 € + 300 €/mes · 18/11/2016 – 18/11/2026 · hipótesis registradas antes de ejecutar</p></header>
+  <div class="findings">
+    <div class="e1 anim">
+      <div class="fh"><span class="ex">E1</span><h3>Misma estrategia, distinto intermediario</h3></div>
+      <p class="fs">Comisiones de compra en 10 años · 242 compras (sin custodia)</p>
+      <div class="bars" id="bars">
+        <div class="bar" data-v="8712"><span class="bl">CaixaBank</span><span class="bt"><i></i></span><span class="bv">8.712 €</span></div>
+        <div class="bar" data-v="4840"><span class="bl">Bankinter</span><span class="bt"><i></i></span><span class="bv">4.840 €</span></div>
+        <div class="bar" data-v="4840"><span class="bl">Santander</span><span class="bt"><i></i></span><span class="bv">4.840 €</span></div>
+        <div class="bar" data-v="772"><span class="bl">ING</span><span class="bt"><i></i></span><span class="bv">772 €</span></div>
+        <div class="bar" data-v="252"><span class="bl">MyInvestor</span><span class="bt"><i></i></span><span class="bv">252 €</span></div>
+      </div>
+      <p class="note">Tarifas oficiales de noviembre de 2026 aplicadas a todo el periodo</p>
+    </div>
+    <div class="cards">
+      <div class="fc anim"><span class="ex">E2</span><p><b>Frecuencia.</b> Aportar cada mes dio <b class="pos">+2.747 €</b> por el momento de entrada; con ING pagó <b class="neg">677 €</b> más y siguió delante. Con CaixaBank, el orden se invirtió.</p></div>
+      <div class="fc anim"><span class="ex">E3</span><p><b>Composición.</b> La concentrada en 3 acciones españolas: <b>316,7 %</b> frente a 282,0 % del S&amp;P 500 TR, con caída de <b class="neg">−34,4 %</b>. Sharpe casi empatado (0,82–0,86). <span class="warn">Sesgo de selección: no es una recomendación.</span></p></div>
+      <div class="fc anim"><span class="ex">E4</span><p><b>Horizonte.</b> De 10 a 5 años: CAGR 9,26 % → 6,69 %, peor caída −25,6 % → −16,7 %, y el Sharpe frente al índice se invirtió.</p></div>
+      <div class="fc hyp anim"><span class="ex">E5</span><span class="hb">Simulación hipotética</span><p><b>Rotación alta</b> (5 % anual supuesto, sin custodia): <b class="neg">−2,5 %</b> MyInvestor · <b class="neg">−7,6 %</b> ING · <b class="neg">−37,3 %</b> Bankinter.</p></div>
+    </div>
+  </div>
+  <div class="conclusion anim">
+    <span class="ck">No existe «el coste» en abstracto</span>
+    <span class="formula">frecuencia <i>×</i> tarifa <i>×</i> horizonte <i>×</i> estrategia <i>×</i> riesgo</span>
+  </div>
+  <p class="limits anim"><b>Límites:</b> resultados históricos de un periodo concreto, no predicciones · tarifas actuales aplicadas al pasado · custodia de Santander con la tarifa máxima · <code>yfinance</code> no es una API oficial · estrategias ilustrativas con sesgo de selección</p>
+</section>
+
+<!-- 08 · QUÉ APRENDIMOS -->
+<section class="slide" data-title="Qué aprendimos">
+  <header class="sh"><span class="tag">07 · Cierre</span><h2>Qué aprendimos</h2></header>
+  <div class="learn">
+    <div class="col anim">
+      <h4>Sobre inversión</h4>
+      <ul>
+        <li>El TER del producto y el coste del intermediario son cosas distintas.</li>
+        <li>Con muchas compras pequeñas, la <b>estructura</b> de la tarifa pesa más que su apariencia.</li>
+        <li>La rentabilidad se mira junto al riesgo y al horizonte: en E3, más rentabilidad llegó con más caída.</li>
+        <li>Un resultado histórico no es una predicción.</li>
+      </ul>
+    </div>
+    <div class="col anim">
+      <h4>Sobre IA</h4>
+      <ul>
+        <li>Un número plausible no es un dato; un «tests passed» no es una prueba.</li>
+        <li>Las fuentes primarias se consultan, no se suponen.</li>
+        <li>Los errores se registran: 31 casos con evidencia y fuente.</li>
+        <li>Usar IA para construir no obliga a meterla en el producto.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="final anim">El valor no estuvo en dejar que la IA decidiera.<br><b>Estuvo en saber cuándo cuestionarla.</b></p>
+  <div class="links anim">
+    <a href="https://github.com/ceciliapardos/investment-strategy-lab" target="_blank" rel="noopener"><span class="k">GitHub</span>github.com/ceciliapardos/investment-strategy-lab</a>
+    <a href="https://investment-strategy-lab.onrender.com" target="_blank" rel="noopener"><span class="k">Live Demo</span>investment-strategy-lab.onrender.com</a>
+  </div>
+</section>
+
+<!-- 09 · DEMO -->
+<section class="slide s-demo" data-title="Demo">
+  <span class="tag">Demo en vivo · 45–60 s</span>
+  <a class="demo-btn anim" href="https://investment-strategy-lab.onrender.com" target="_blank" rel="noopener">ABRIR DEMO <span>↗</span></a>
+  <div class="routes anim">
+    <a href="https://investment-strategy-lab.onrender.com/markets" target="_blank" rel="noopener"><b>1</b>Explore Markets</a>
+    <a href="https://investment-strategy-lab.onrender.com/strategy-builder" target="_blank" rel="noopener"><b>2</b>Strategy Builder</a>
+    <a href="https://investment-strategy-lab.onrender.com/comparison" target="_blank" rel="noopener"><b>3</b>Strategy Comparison</a>
+    <a href="https://investment-strategy-lab.onrender.com/costs" target="_blank" rel="noopener"><b>4</b>Cost Analysis</a>
+  </div>
+  <p class="demo-note anim">El servidor gratuito tarda alrededor de un minuto en arrancar tras 15 minutos sin uso: abrir la demo antes de empezar.</p>
+</section>
+
+</main>
+</div>
+
+<div class="progress"><i id="bar"></i></div>
+<div class="counter" id="counter">01 / 09</div>
+<nav class="controls" id="controls" aria-label="Controles de la presentación">
+  <button id="prev" title="Anterior (←)" aria-label="Anterior">‹</button>
+  <button id="home" title="Inicio (Home)" aria-label="Inicio">⌂</button>
+  <button id="next" title="Siguiente (→)" aria-label="Siguiente">›</button>
+  <button id="fs" title="Pantalla completa (F)" aria-label="Pantalla completa">⛶</button>
+  <a id="demo" href="https://investment-strategy-lab.onrender.com" target="_blank" rel="noopener">Live Demo ↗</a>
+</nav>
+<script src="script.js"></script>
+</body>
+</html>

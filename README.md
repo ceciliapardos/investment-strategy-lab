@@ -195,6 +195,13 @@ La documentación del proceso está en la raíz del repositorio y forma un vault
 | `Bitácora.md` | Registro cronológico detallado |
 | `Claude.md` | Instrucciones de trabajo dadas a Claude Code |
 
+## Presentation
+
+La presentación final (5 minutos) está en [`presentacion-final/`](presentacion-final/).
+- **Cómo abrirla:** abrid `index.html` en el navegador; no necesita servidor.
+- **Controles:** ← → o espacio para avanzar y retroceder, Home / End, y F para pantalla completa.
+- **Guion:** con el reparto y los tiempos, en `presentacion-final/guion-presentacion.md`.
+
 ## Limitaciones
 
 - **Simulación histórica:** los resultados dependen del periodo elegido.
