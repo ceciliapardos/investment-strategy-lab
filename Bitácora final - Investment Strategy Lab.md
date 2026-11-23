@@ -1,221 +1,149 @@
-# Investment Strategy Lab
+# Investment Strategy Lab — Bitácora final
 
-**Bitácora final del proyecto**
+Cecilia Pardos · Almudena López · Covadonga López-Belmonte · Análisis de Servicios Financieros (ICADE E2A) · El carril abierto · Nivel 2: Construir · Entrega: 26 de noviembre de 2026
 
-El carril abierto · Análisis de Servicios Financieros (ICADE E2A) · Nivel 2: Construir
-
-Cecilia Pardos · Almudena López · Covadonga López-Belmonte
-
-19 de noviembre de 2026
-
-Código, documentación y resultados reproducibles disponibles en el repositorio público del proyecto: https://github.com/ceciliapardos/investment-strategy-lab · Live Demo: https://investment-strategy-lab.onrender.com
-
----
+Repositorio: https://github.com/ceciliapardos/investment-strategy-lab · Live Demo: https://investment-strategy-lab.onrender.com
 
 ## 1. De «Coste Invisible» a Investment Strategy Lab
 
-**Qué queríamos hacer.** En la propuesta del 24 de septiembre planteamos *El coste invisible de invertir*: cuánto patrimonio pierde a largo plazo un inversor minorista por elegir productos o plataformas más caros. El primer prototipo, construido con Antigravity en Streamlit, comparaba dos alternativas con el mismo capital, las mismas aportaciones y **la misma rentabilidad bruta**. Solo cambiaba el coste.
+En la propuesta del 24 de septiembre queríamos medir el «coste invisible» de invertir: cuánto patrimonio pierde a largo plazo un inversor minorista por elegir productos o plataformas más caros. El primer prototipo, construido con Antigravity en Streamlit, comparaba dos alternativas con el mismo capital, las mismas aportaciones y **la misma rentabilidad bruta**; solo cambiaba el coste.
 
-**El problema fue conceptual.** Si todo lo demás es igual, la alternativa más barata siempre gana: el cálculo era correcto, pero la conclusión estaba decidida de antemano. Un inversor acepta pagar más cuando espera algo a cambio, y ese *trade-off* no aparecía. Además, el prototipo se volvía más frágil con cada funcionalidad.
+Al usarlo vimos que la conclusión estaba decidida por construcción: si se supone la misma rentabilidad y solo cambia el coste, el producto barato gana siempre. El cálculo era correcto, pero no ayudaba a decidir nada, porque un inversor acepta pagar más cuando espera algo a cambio (rentabilidad, menos riesgo, diversificación) y ese *trade-off* no aparecía.
 
-**Qué terminamos haciendo.** Lo reformulamos como **Investment Strategy Lab**, una aplicación educativa de **simulación histórica**. Un inversor principiante construye estrategias de largo plazo y ve cómo se habrían comportado en cuanto a rentabilidad, riesgo y diversificación, frente a un *benchmark* y con distintos horizontes, aportaciones, intermediarios y frecuencias de operativa. No predice ni asesora.
+Decidimos abandonar esa formulación. No fue un fracaso: fue la primera decisión importante del proyecto, y la que le dio una pregunta real.
 
-Nada de esto estaba planificado; cada cambio de rumbo está fechado en el registro de decisiones.
+> ¿Hasta qué punto los costes de intermediación y la frecuencia de operativa pueden cambiar la eficiencia real de una estrategia de inversión a largo plazo para un inversor minorista, una vez considerados rentabilidad, riesgo y *benchmark*, en simulaciones históricas?
 
-## 2. Qué construimos y qué pieza financiera analizamos
+La pregunta tiene respaldo: ESMA recuerda en su informe de costes de 2026 que los rendimientos brutos de algunos productos no reflejan lo que paga el inversor, y Barber y Odean (2000) encontraron que los hogares que más operaban obtenían menor rentabilidad neta. Son otro mercado y otra época: motivan la pregunta, no la responden.
 
-El producto final tiene cinco módulos:
+## 2. Qué construimos y qué problema financiero analizamos
 
-- **News:** actualidad financiera.
-- **Explore Markets:** seis tipos de activo con rentabilidad, CAGR, volatilidad, máxima caída, Sharpe y TER, y una lista de favoritos.
-- **Strategy Builder:** estrategias con pesos, capital inicial y **aportaciones periódicas**.
-- **Strategy Comparison:** backtest *buy & hold* en euros sobre el periodo común real de los activos. Mide la rentabilidad ponderada por el tiempo (TWR), muestra métricas de riesgo y permite añadir un *benchmark* (S&P 500 Total Return o MSCI World vía ETF).
-- **Cost Analysis:** aplica a cada operación del backtest las tarifas oficiales de 10 perfiles de bancos y brokers que operan en España. Incluye una **sensibilidad a costes de operativa (rotación)**, que es hipotética.
+Investment Strategy Lab es una aplicación educativa de **simulación histórica**: no predice ni asesora. En **Explore Markets** se estudian activos reales (CAGR, volatilidad, máxima caída, Sharpe y TER) y se guardan favoritos. En **Strategy Builder** se construyen estrategias con pesos, capital y aportaciones periódicas. **Strategy Comparison** las simula en euros sobre el periodo común de sus activos, frente a un *benchmark* opcional (S&P 500 Total Return o MSCI World). **Cost Analysis** aplica a cada operación las tarifas oficiales de 10 perfiles de bancos y brokers que operan en España, con estructuras muy distintas, e incluye una sensibilidad a costes de operativa. Un módulo de **News** completa la aplicación.
 
-Construimos además un **AI Strategy Analyst**, que después retiramos (decisión 3).
+La pieza financiera que analizamos es la intermediación en la inversión minorista. La aplicación separa dos costes que a menudo se confunden: el **coste del producto** (TER), que la gestora descuenta del valor liquidativo y por tanto ya está en el precio, y el **coste del intermediario** (comisiones, custodia y divisa), que depende de dónde y cómo se opera. Esa separación permite preguntarse qué estrategia es realmente más eficiente cuando se miran juntos la rentabilidad, el riesgo, la diversificación, el horizonte, la operativa y los costes. El código, los tests y la documentación completa están en el repositorio, y la aplicación está publicada en la Live Demo.
 
-**Cómo sabemos que funciona.** La aplicación tiene:
-- en el backend, 295 tests deterministas con resultados conocidos y 54 de integración y extremo a extremo con datos reales;
-- en el frontend, 93 tests unitarios y 45 pruebas en navegador real.
+## 3. Tres decisiones humanas que cambiaron el proyecto
 
-Además, el equipo comprobó a mano en la interfaz las seis cifras principales de la investigación, y todas coincidieron.
+**Decisión 1 — Abandonar el comparador trivial y reformular la pregunta.**
+- **Alternativas descartadas:** pulir la interfaz del mismo comparador o suponer rentabilidades distintas sin datos. La segunda contradecía nuestra regla de no inventar cifras.
+- **Qué decidimos:** comparar de 2 a 6 estrategias completas con precios históricos reales, en el mismo periodo.
+- **Qué cambió:** los costes pasaron a competir con el riesgo, la composición y el horizonte. Una calculadora se convirtió en un laboratorio, y todos los módulos posteriores salen de esta decisión.
 
-**Ancla financiera.** Analizamos la inversión minorista a largo plazo: carteras reales, comportamiento histórico, riesgo y la intermediación necesaria para invertir. La base del proyecto es separar dos tipos de coste:
+**Decisión 2 — Separar el cálculo determinista de la interpretación y validar módulo a módulo.** Con Antigravity pedíamos muchas funciones a la vez y aceptábamos resúmenes como «funciona» o «tested». El resultado fueron errores encadenados y documentación que describía cosas que no existían.
+- **Alternativas descartadas:** seguir parcheando el prototipo, que era lo que proponía la IA, o rehacerlo todo sin método.
+- **Qué decidimos:**
+  - toda la lógica financiera en funciones puras, probadas con series de resultado conocido;
+  - una auditoría antes de construir;
+  - trabajo por fases, cada una con tests automáticos y una comprobación humana en la interfaz antes de pasar a la siguiente;
+  - ninguna afirmación de la IA sobre su propio trabajo se aceptaba sin una prueba que pudiera fallar.
+- **Qué ganamos:** control. Cada cifra que mostramos puede rastrearse hasta un cálculo probado.
 
-- **El coste del producto (TER):** la gestora lo descuenta del valor liquidativo, así que ya está en el precio y no debe restarse otra vez.
-- **El coste del intermediario:** comisiones, custodia y divisa, que dependen de cómo y dónde se opera.
+**Decisión 3 — Retirar el AI Strategy Analyst del producto final.** Quisimos añadir una capa de IA que explicara en lenguaje sencillo las diferencias entre estrategias.
+- **Qué construimos:** un proveedor desacoplado, *prompts* versionados, una entrada con solo cifras ya calculadas, una respuesta validada y *guardrails* contra recomendaciones y predicciones. Lo probamos primero con la API de pago de Claude y después con un modelo local (LM Studio con Qwen3 8B).
+- **Qué nos hizo decidir:**
+  - en nuestras pruebas, el modelo local generaba unos 1,96 *tokens*/s y acababa en *timeout*;
+  - en una aplicación pública, el usuario o el servidor tendría que depender de un modelo adicional: una API de pago o varios gigabytes instalados y en marcha;
+  - la herramienta ya calcula y explica de forma determinista y verificable todo lo que el texto generado repetía.
+- **Qué decidimos:** entre mantener la API, cambiar de proveedor, mantener el modelo local o eliminar la funcionalidad, la retiramos conscientemente. Conservamos sus *prompts* y decisiones como rastro.
 
-## 3. Tres decisiones que cambiaron el proyecto
+Para nosotras es la prueba más clara de control: **usar IA como método de trabajo no obliga a meter IA en el producto**.
 
-**Decisión 1 — Abandonar el comparador trivial y reformular la pregunta.** Descartamos tres alternativas:
-- mejorar la interfaz del mismo comparador;
-- suponer rentabilidades distintas sin datos, contrario a nuestra regla de no inventar;
-- mantener un A/B de dos estrategias.
+## 4. Dónde se equivocó la máquina
 
-Decidimos comparar de 2 a 6 estrategias completas con precios históricos reales en el mismo periodo. Así los costes compiten con otras variables, y la pregunta pasa de «¿cuánto cuestan?» a «¿cuándo importan?». Esta decisión convirtió una calculadora en un laboratorio.
-
-**Decisión 2 — Separar el cálculo de la interpretación y validar módulo a módulo.** Con Antigravity pedíamos mucho a la vez y aceptábamos resúmenes del tipo «funciona» o «tested», lo que produjo errores encadenados y documentación de cosas inexistentes. Descartamos seguir parcheando el prototipo, como proponía la IA, y también rehacerlo todo sin método. En su lugar:
-- **Arquitectura.** Elegimos React + FastAPI, con la lógica financiera en funciones puras probadas con series de resultado conocido. Por ejemplo, la serie 100 → 120 → 90 → 110 debe dar una máxima caída del −25 %.
-- **Fases.** Cada fase pasa por auditoría, implementación, tests (deterministas, con datos reales y en navegador), documentación y revisión del equipo. Las fases de la base (0 a 5) se cerraron con un «APROBADO» escrito antes de continuar.
-- **Interpretación.** Toda interpretación se apoya en cifras ya calculadas, nunca las sustituye.
-
-**Decisión 3 — Retirar el AI Strategy Analyst del producto final.**
-
-**Qué construimos.** Queríamos que una IA explicara las diferencias entre estrategias, sin recomendar ni predecir. Construimos un proveedor desacoplado, un *prompt* versionado, una entrada con solo cifras ya calculadas, una salida JSON validada y *guardrails* contra recomendaciones, predicciones y porcentajes inventados. Funcionó primero con la API de pago de Claude y después con un modelo local, LM Studio con Qwen3 8B.
-
-**Por qué lo retiramos.**
-- **Rendimiento:** el modelo local razonaba a unos 1,96 *tokens*/s y acababa en *timeout*.
-- **Distribución:** cada usuario tendría que instalar LM Studio, descargar varios gigabytes y mantener un servidor, algo incompatible con un repositorio público reproducible.
-- **Coste:** la nube volvía a exigir una API de pago.
-- **Valor añadido escaso:** la aplicación ya calcula y explica rentabilidad, riesgo, costes, *benchmark* y sensibilidad.
-
-Entre mantener la API de pago, cambiar a otro proveedor en la nube, mantener LM Studio o eliminar la funcionalidad, elegimos eliminarla. Conservamos los *prompts* y las decisiones como rastro.
-
-**Usar IA como método de desarrollo no obliga a meter IA en el producto.** Abandonar algo sofisticado que no mejora la herramienta también es control sobre la tecnología.
-
-## 4. Cuando la IA se equivocó
-
-Registramos **31 errores e incidencias** de las herramientas de IA, cada uno con su evidencia, su fuente de contraste y la acción humana que provocó:
-
-- **Por herramienta:** 18 de Antigravity, 12 de Claude Code y 1 compartido.
-- **Por gravedad:** 6 muy fuertes, 13 relevantes y 12 menores.
-
-El registro completo está en `Errores de la IA.md`. Estos son los tres casos más sólidos.
+Durante el proyecto registramos **31 incidencias** atribuibles a respuestas, supuestos o implementaciones generadas con IA, tanto de Antigravity como de Claude Code. Desarrollamos las tres mejor contrastadas.
 
 **Caso 1 — Un TER asignado a acciones individuales.**
-- **Qué hizo la IA.** En el módulo de costes del prototipo, Antigravity asignó un TER del 0,20 % a Tesla e IonQ y aplicaba ese «coste estimado» por defecto a cada activo nuevo.
-- **Por qué era incorrecto.** El TER es el gasto corriente que cobra la gestora de un fondo o ETF. Una acción no tiene gestora: sus costes son de intermediación y dependen del bróker. Mezclarlos falsea la comparación entre inversión directa e indexada.
-- **Cómo lo detectamos.** Por razonamiento financiero propio. Lo comprobamos en Yahoo Finance, que clasifica TSLA como `EQUITY`, sin *expense ratio*.
-- **Fuentes primarias.**
-  - CNMV, *Guía rápida: Fondos cotizados (ETF)*: un ETF implica «dos fuentes de gastos», las del fondo, que «se deducen diariamente del valor liquidativo», y las del intermediario.
-  - Ficha oficial de Vanguard VOO, con un TER del 0,03 %.
-- **Corrección.** Separamos los costes del producto y del intermediario. Una acción muestra «TER: No aplica», y de ahí salió también la regla de no restar el TER en el backtest.
-- **Aprendizaje.** Un número plausible no es un dato.
+- **Qué hizo la IA:** en el prototipo, Antigravity asignó un TER del 0,20 % a Tesla e IonQ y aplicaba ese «coste estimado» por defecto a cada activo nuevo. Parecía razonable porque cada activo «tenía su coste», y el TER es el coste más conocido de la inversión indexada.
+- **Cómo lo detectamos:** al revisarlo, nos preguntamos qué era ese 0,20 % en una acción. Una acción no tiene gestora ni comisión de gestión: sus costes son la compraventa, la custodia y la divisa del intermediario. Lo comprobamos en Yahoo Finance, que clasifica TSLA como `EQUITY`, sin *expense ratio*.
+- **Fuentes primarias:**
+  - la guía de ETF de la CNMV explica que invertir en un ETF implica «dos fuentes de gastos»: las comisiones del fondo, que «se deducen diariamente del valor liquidativo», y las del intermediario;
+  - la ficha oficial de Vanguard VOO da un TER del 0,03 %, el mismo que mostraba la aplicación para ese ETF.
+- **Corrección:** separamos los costes del producto y del intermediario. Una acción muestra «TER: No aplica». De ahí salió también la regla de no restar el TER en el backtest, porque ya está en el precio.
+- **Aprendizaje:** un número plausible no es un dato.
 
 **Caso 2 — «Superados al 100 %» con un arnés de tests que no podía fallar.**
-- **Qué afirmó la IA.** Al cerrar la V0.1, la documentación generada decía: «Todos los acceptance tests obligatorios fueron ejecutados y superados al 100%».
-- **Por qué era incorrecto.** El arnés solo marcaba un fallo si había una excepción, así que una comprobación que devolvía `False` contaba como superada. Tres de los diez tests no podían fallar, y otro dependía de si TSLA había bajado en el año.
-- **Cómo lo detectamos.** Antes de seguir construyendo, encargamos una auditoría (Fase 0, 11 de noviembre) en la que Claude Code leyó y ejecutó el arnés. Ya desconfiábamos de los resúmenes: en Streamlit, la IA había dado por corregida una navegación que no funcionaba.
-- **Fuente primaria.** En un error técnico, el propio código y su ejecución reproducible (`test_suite.py` y su salida).
-- **Corrección.** Una suite en tres niveles (deterministas, integración con datos reales y navegador), en la que un `False` cuenta como fallo, y la regla de que nada está terminado hasta que lo probamos nosotras.
-- **Aprendizaje.** Un «10/10» solo vale si cada test puede fallar. Si la misma IA escribe el código y el test, ambos pueden compartir el error, como pasó después con Bankinter.
+- **Qué afirmó la IA:** al cerrar la V0.1, la documentación generada decía que «todos los acceptance tests obligatorios fueron ejecutados y superados al 100%». Parecía razonable porque existía un script y su salida era «10/10 PASSED».
+- **Cómo lo detectamos:** antes de seguir construyendo, encargamos una auditoría (Fase 0), en la que Claude Code leyó y ejecutó el propio arnés. Ya desconfiábamos de los resúmenes: en Streamlit, la IA había dado por corregida una navegación que, al probarla nosotras, seguía fallando.
+- **Qué encontramos:**
+  - el arnés solo marcaba un fallo ante una excepción, así que una comprobación que devolvía `False` contaba como superada;
+  - tres de los diez tests no podían fallar;
+  - otro dependía de si TSLA había bajado en el año, es decir, del mercado y no del código.
+- **Fuente primaria:** en un error técnico, el propio código del arnés y su ejecución reproducible.
+- **Corrección:** nuevos tests deterministas con resultados conocidos, tests de integración y pruebas en navegador, más la comprobación humana de cada fase.
+- **Aprendizaje:** la seguridad con la que una IA afirma algo no es evidencia.
 
 **Caso 3 — Precio ajustado presentado como «precio histórico».**
-- **Qué hizo la IA.** En la V0.1, el gráfico de Explore Markets decía «Precio histórico», pero mostraba una serie ajustada por dividendos y *splits* (`auto_adjust=True`, el valor por defecto de `yfinance`). El porcentaje era, en realidad, una rentabilidad total aproximada. El mismo fallo ya se había corregido en el prototipo y reapareció.
-- **Por qué era incorrecto.** La rentabilidad de precio y la rentabilidad total son medidas distintas. Confundirlas engaña sobre el precio pagado y sesga la comparación con índices de solo precio.
-- **Cómo lo detectamos.** En la auditoría de la Fase 0, comparando el cierre cotizado (`Close`) con el ajustado (`Adj Close`).
-- **Fuentes primarias.** La documentación de `yfinance`, donde `history()` define `auto_adjust` («Adjust all OHLC automatically?») con valor por defecto `True`, y las propias series de Yahoo Finance.
-- **Corrección.** Se muestran por separado el «valor ajustado» y el «cierre cotizado». Por coherencia, el *benchmark* también es de rentabilidad total, y descartamos `^GSPC`, que es solo precio.
-- **Aprendizaje.** Un valor por defecto es una decisión metodológica.
+- **Qué hizo la IA:** en la V0.1, el gráfico de Explore Markets se titulaba «Precio histórico». Pero la serie venía de `yfinance` con `auto_adjust=True`, su valor por defecto, que ajusta los precios por dividendos y *splits*. La auditoría verificó que el porcentaje mostrado era, en realidad, una rentabilidad total aproximada y no la variación del precio de cotización. Parecía razonable porque los datos eran reales y el gráfico, coherente.
+- **Cómo lo detectamos:** en la auditoría, comparando para los mismos activos el cierre cotizado (`Close`) con el ajustado (`Adj Close`). El mismo fallo ya se había corregido una vez en el prototipo y volvió a aparecer.
+- **Fuentes primarias:** la documentación de `yfinance`, donde `history()` define `auto_adjust` («Adjust all OHLC automatically?») con valor por defecto `True`, y las propias series de Yahoo Finance.
+- **Corrección:**
+  - la aplicación muestra por separado el «valor ajustado» y el «cierre cotizado»;
+  - declara que la rentabilidad principal es total, con dividendos reinvertidos;
+  - por coherencia, el *benchmark* también es de rentabilidad total, y descartamos el S&P 500 de solo precio.
+- **Aprendizaje:** un valor por defecto de una librería es una decisión metodológica.
 
-**Otros errores detectados durante el proceso**
+**Otros errores registrados.** Entre ellos:
+- índices y criptomonedas clasificados como acciones;
+- un TER que el código habría multiplicado por 100;
+- la comisión internacional de Bankinter, que está en euros, tratada como si estuviera en dólares (la detectó la propia IA al revisar las cifras a mano, y el test que había escrito repetía el error);
+- un periodo de 1 año que nunca mostraba CAGR;
+- un *timeout* del modelo local presentado como «backend apagado»;
+- las ventas de la sensibilidad, calculadas con la comisión de compra.
 
-| Error | Herramienta · fase | Consecuencia | Resolución |
-|---|---|---|---|
-| Índices, cripto y futuros clasificados como «acción» | Antigravity · V0.1 | `^GSPC` y `BTC-USD` como acciones | Clasificación por `quoteType` |
-| TER de `netExpenseRatio` multiplicado por 100 | Antigravity · V0.1 | Latente: 0,03 % mostrado como 3,00 % | Unidades contrastadas con Vanguard |
-| Documentación de funciones inexistentes | Antigravity · V0.1 | Documentación no fiable | Rehecha y contrastada con el código |
-| Comisión de Bankinter convertida desde dólares | Claude Code · Fase 5.1 | 2.222 € en vez de 2.440 €; el test repetía el error | Revisión a mano con la tarifa oficial |
-| El preset «1 año» nunca mostraba CAGR | Claude Code · Fases 1–2 | Umbral de 365,25 días | 365 días naturales |
-| *Timeout* del modelo local mostrado como «backend apagado» | Claude Code · Fase 6.1 | Diagnóstico erróneo | El equipo halló la causa en los *logs* |
-| La sensibilidad cobraba las ventas con la regla de compra | Claude Code · Fase 7 | Latente | Test con compra 1 € / venta 10 € |
-
-Casi todos parecían correctos porque los tests usaban casos simétricos, valores por defecto o solo los activos del enunciado.
+El registro completo, con evidencia y fuente, está en `Errores de la IA.md`.
 
 ## 5. Cómo controlamos la máquina
 
-En septiembre y octubre, Antigravity construyó, ejecutó y probó el prototipo y la V0.1. Fue rápido, pero aceptamos demasiadas afirmaciones («funciona», «tested», «100 %») sin comprobarlas.
+**Antigravity** construyó y probó la primera etapa. Desde la auditoría, **Claude Code** fue el agente principal: arquitectura, programación, tests, investigación de fuentes y documentación. **Obsidian** no es una IA, sino nuestra bóveda de documentación, donde registramos decisiones fechadas, versiones, fuentes, pruebas y errores. Las fuentes las consultamos directamente en las webs oficiales (CNMV, ESMA, BCE, intermediarios y emisores), y **Git y GitHub** guardan el historial del código.
 
-Desde la auditoría de noviembre, Claude Code pasó a ser la herramienta principal y cambiamos el método. Trabajamos por fases, con criterios de aceptación escritos antes de empezar. Lo verificamos todo con tests deterministas, datos reales, pruebas en navegador y validación humana. La IA debía marcar los fallos como «posible error para revisión humana», no corregirlos ni darlos por buenos. Y separamos lo verificado de lo solo documentado.
-
-| Herramienta | Uso |
-|---|---|
-| **Antigravity** | Prototipo, ejecución, navegador, terminal y primeras pruebas; dejó de ser la principal tras la V0.1 |
-| **Claude Code** | Auditoría, arquitectura, programación, *debugging*, tests, investigación y documentación |
-| **Obsidian** (no es una IA) | Bóveda común: decisiones, versiones, fuentes, errores, *acceptance tests* y bitácora |
-| **LM Studio + Qwen3 8B** | Solo en el experimento descartado del AI Strategy Analyst |
-| **Sin IA** | Yahoo Finance (`yfinance`), React, FastAPI, pytest, Vitest y Playwright |
-
-Las IA aceleraron, investigaron, propusieron, programaron, probaron y documentaron, pero no fueron la autoridad final. Nosotras decidimos el alcance, la metodología, la interpretación financiera, qué se aceptaba y qué se descartaba.
-
-**Rastro del proceso:**
-- 81 decisiones fechadas;
-- versiones V0.1 a V0.11 y *acceptance tests* por fase;
-- registros de errores y *prompts* del analista retirado;
-- transcripciones de las sesiones con la IA, conservadas en local.
+El método importó más que las herramientas. Cada fase empezaba con criterios de aceptación escritos y terminaba con tests y una comprobación nuestra en la interfaz. La IA debía señalar los posibles fallos como «posible error para revisión humana», no corregirlos por su cuenta. Durante casi todo el proyecto tampoco podía añadir casos a `Errores de la IA.md`: queríamos decidir nosotras qué era realmente un error relevante. Las interpretaciones de tarifas que propuso quedaron marcadas como pendientes hasta contrastarlas con la fuente oficial.
 
 ## 6. Cadena de datos y reproducibilidad
 
-Queríamos una **cadena de datos trazable y reproducible**, en la que cualquier cifra pueda seguirse hasta su origen:
+Queríamos que cualquier cifra pudiera seguirse hasta su origen:
 
-> Fuente externa → adquisición con caché → alineación de fechas → cálculo → backtest → costes → métricas → API → interfaz → tests → resultados.
+> Fuente externa → adquisición → limpieza y alineación de fechas → cálculo → API → interfaz → tests → resultados.
 
-Distinguimos tres tipos de información:
-- **Datos externos:** precios y tipos de cambio de Yahoo Finance, tarifas oficiales con URL y fecha, y noticias.
-- **Datos derivados:** rentabilidad, CAGR, volatilidad, máxima caída, Sharpe, TWR, *benchmark* y costes, calculados por funciones probadas.
-- **Interpretación:** nuestras conclusiones, que se apoyan en los datos y nunca los sustituyen.
+Separamos tres tipos de información: **datos externos** (precios y tipos de cambio de Yahoo Finance, tarifas oficiales con URL y fecha), **cálculos derivados** (rentabilidad, CAGR, volatilidad, máxima caída, Sharpe y costes, hechos por funciones probadas) y **texto generado por IA**, que tras retirar el analista ya no existe en el producto.
 
-Un único módulo accede a Yahoo. Las fechas se alinean sin inventar precios y todo se convierte a euros con el tipo de cambio del día. Los experimentos se ejecutaron con un script que llama a la API de la aplicación con fechas fijas y guarda las respuestas.
+La reproducibilidad se apoya en dependencias con versión fijada, el repositorio público, un script de experimentos que llama a la propia API con fechas fijas, hipótesis registradas antes de ejecutar, resultados guardados en CSV y JSON, y fuentes y limitaciones documentadas.
 
-La trazabilidad es completa; la reproducibilidad, *razonable*, porque Yahoo puede corregir datos y las tarifas cambian. El detalle está en `Cadena de datos y reproducibilidad.md`.
+El detalle, con diagramas, está en `Cadena de datos y reproducibilidad.md`.
 
 ## 7. Investigación y experimentos
 
-> **Pregunta:** ¿Hasta qué punto los costes de intermediación y la frecuencia de operativa pueden cambiar la eficiencia real de una estrategia de inversión a largo plazo para un inversor minorista, una vez considerados rentabilidad, riesgo y *benchmark*, en simulaciones históricas?
+Escribimos las hipótesis antes de ejecutar los experimentos y no las cambiamos después. Usamos una cartera base ilustrativa (70 % iShares Core MSCI World y 30 % deuda pública euro, 10.000 € más 300 € al mes) con fechas fijas del 18/11/2016 al 18/11/2026. Comprobamos a mano en la interfaz las seis cifras principales antes de congelar los resultados.
 
-**Por qué importa.** El inversor minorista paga costes de intermediación muy distintos según el canal. ESMA, en su informe de costes de marzo de 2026, recuerda que los rendimientos brutos de algunos productos no reflejan los costes que soporta el inversor. Barber y Odean (2000) encontraron que los hogares que más operaban obtenían menor rentabilidad neta. Son otro mercado y otra época, así que este resultado motiva nuestra pregunta, pero no la responde.
+| Exp. | Qué cambia | Qué encontramos |
+|---|---|---|
+| E1 | Intermediario | Con 242 compras pequeñas, la estructura de la tarifa pesó más que su apariencia: con ING, 772 € de costes; con una comisión fija de 20 € por operación internacional (Bankinter), 4.840 € solo en compras |
+| E2 | Frecuencia (mismos 3.600 € al año) | Aportar cada mes dio +2.747 € antes de costes frente a hacerlo una vez al año, por el **momento de entrada** en un periodo alcista, no por los costes. Con ING la mensual pagó 677 € más y siguió por delante; con CaixaBank, de comisión fija alta, el orden se invirtió |
+| E3 | Composición, frente al S&P 500 TR | La cartera concentrada en tres acciones españolas fue la más rentable (316,7 % frente al 282,0 % del índice), pero con más volatilidad y una caída del −34,4 %, y el Sharpe de las tres estrategias quedó casi empatado (0,82–0,86). Hay un fuerte sesgo de selección retrospectiva: no es una recomendación |
+| E4 | Horizonte | De 10 a 5 años, el CAGR pasó del 9,26 % al 6,69 %, la peor caída del −25,6 % al −16,7 %, y el Sharpe frente al índice se invirtió (0,82 frente a 0,79; 0,65 frente a 0,675) |
+| E5 | Rotación (**simulación hipotética**, no histórica: 5 % anual supuesto, sin custodia) | La misma rotación alta restó en 10 años un 2,5 % con MyInvestor, un 7,6 % con ING y un 37,3 % con Bankinter: el impacto depende casi por completo de la tarifa |
 
-**Método.**
-- **Hipótesis.** Las escribimos antes de ejecutar y no las cambiamos después.
-- **Diseño.** Una sola variable por experimento y fechas fijas: del 18/11/2016 al 18/11/2026, o desde el 18/11/2021 para el horizonte de 5 años.
-- **Cartera base.** Es ilustrativa: 70 % iShares Core MSCI World (`IWDA.AS`) y 30 % deuda pública euro (`EUNH.DE`), con 10.000 € iniciales y 300 € al mes.
-- **Validación.** Antes de congelar los resultados, contrastamos los supuestos tarifarios con las webs oficiales y comprobamos a mano en la interfaz las seis cifras principales. Todas coincidieron.
-
-| Exp. | Qué cambia | Resultado principal | Estado |
-|---|---|---|---|
-| **E1** | Intermediario (misma cartera, 242 compras en 10 años) | Con ING, 772 € de costes y 83.395 € netos sobre 84.541 € brutos. Con comisión fija internacional (20 € en Bankinter y Santander, 36 € en CaixaBank), las compras suman 4.840–8.712 €. El impacto va de unos pocos euros a 13.331 € | Validado con limitaciones |
-| **E2** | Frecuencia (mensual, trimestral o anual, con los mismos 3.600 € al año) | Antes de costes, aportar cada mes da **+2.747 €** frente a hacerlo una vez al año, por el momento de entrada en un periodo alcista. Con ING, la mensual cuesta 677 € más y sigue por delante; con CaixaBank cuesta 11.574 € más y el orden se invierte | Validado con limitaciones |
-| **E3** | Composición: global 100 % RV, mixta 60/40 o tres acciones españolas, frente al S&P 500 TR | La concentrada fue la más rentable (316,7 %, frente al 282,0 % del índice), con más volatilidad (18,4 %) y una caída del −34,4 %. El Sharpe de las tres quedó casi empatado (0,82–0,86) | Validado con limitaciones |
-| **E4** | Horizonte: 10 o 5 años | El CAGR baja del 9,26 % al 6,69 % y la máxima caída, del −25,6 % al −16,7 %. El Sharpe frente al índice **se invierte**: 0,82 frente a 0,79 a 10 años, y 0,65 frente a 0,675 a 5 | Validado |
-| **E5** | Rotación (**simulación hipotética**: 5 % anual supuesto, sin custodia) | La rotación alta (24 órdenes al año) resta en 10 años un 2,5 % con MyInvestor, un 7,6 % con ING y un 37,3 % con Bankinter; comprar y mantener, un 0,1–0,2 % | Hipotético |
-
-**Qué observamos:**
-- **La estructura de la tarifa importa más que la etiqueta de «barato».** Una comisión fija castiga las operaciones pequeñas y repetidas (E1, E5).
-- **La frecuencia mezcla el momento de entrada y las comisiones** (E2).
-- **Más rentabilidad no es más eficiencia** (E3).
-- **El periodo puede cambiar la conclusión** (E4).
-
-**No todas las hipótesis se cumplieron.** Esperábamos que ninguna estrategia superara al S&P 500 TR, y la concentrada lo hizo. Lo leemos con su **sesgo de selección**: son tres grandes empresas que hoy sabemos que sobrevivieron. Y nuestra hipótesis sobre la frecuencia era demasiado general: el momento de entrada dominó con ING, pero no con comisiones fijas altas.
+No todas las hipótesis se cumplieron: esperábamos que ninguna estrategia superara al índice, y la concentrada lo hizo; y nuestra hipótesis sobre la frecuencia era demasiado general. Lo dejamos escrito tal como salió.
 
 ## 8. Limitaciones y qué haríamos diferente
 
-**Limitaciones:**
-- **Datos de mercado.** `yfinance` no es una API oficial y no controla el sesgo de supervivencia.
-- **Tarifas.** Las de noviembre de 2026 se aplican a todo el periodo, y algunas son aproximaciones: la custodia de Santander es la máxima de su folleto, la de CaixaBank usa el mínimo (se calcula sobre el nominal) y la elegibilidad de los ETF en BBVA y Revolut no es verificable públicamente.
-- **Custodia y mantenimiento.** Se restan sin coste de oportunidad y la sensibilidad no los incluye.
-- **Riesgo.** Se mide antes de costes, con un Sharpe de tasa libre de riesgo del 0 %.
-- **Fuera del modelo.** No hay fiscalidad, spreads ni XIRR, y nada es predicción ni asesoramiento.
+**Limitaciones del modelo financiero.** Aplicamos las tarifas de noviembre de 2026 a todo el periodo histórico. Algunas reglas son aproximaciones documentadas: la custodia de Santander es la tarifa máxima de su folleto y la elegibilidad de algunos ETF no es verificable públicamente. La custodia y el mantenimiento se restan sin coste de oportunidad, `yfinance` no es una API oficial, las estrategias ilustrativas tienen sesgo de selección y E5 es hipotético. Ningún resultado histórico es una predicción ni un consejo.
 
-**Qué haríamos diferente:**
-1. **Escribir la pregunta, las hipótesis y el «cómo sabremos si ha salido bien» antes de programar.** Nuestra pregunta definitiva llegó tarde.
-2. **Construir primero un arnés de tests que pueda fallar** y leer qué comprueba cada test antes de creernos un «100 %».
-3. **Contrastar cada concepto y cada tarifa con su fuente oficial antes de modelarlos.** Así se habrían evitado el TER de las acciones y el error de divisa de Bankinter.
-4. **Usar Git y guardar *prompts* y capturas desde el primer día.** De los errores de Antigravity solo conservamos registros escritos.
-5. **Medir el valor añadido de una funcionalidad antes de ampliarla.** Con el AI Strategy Analyst confundimos lo construido con lo necesario.
+**Limitaciones del despliegue.** El servidor gratuito de Render tarda alrededor de un minuto en arrancar tras 15 minutos sin uso. En producción, News solo muestra los *feeds* del BCE y la Fed, porque Google News RSS no responde a las peticiones del servidor.
+
+**Qué haríamos diferente.** Definiríamos la pregunta y los criterios de éxito antes de programar, y escribiríamos *acceptance tests* que puedan fallar antes de pedir código. Fijaríamos desde el principio la separación entre costes del producto y del intermediario, y la política de precios ajustados. Empezaríamos antes por las fuentes primarias y reduciríamos pronto el alcance. Y mediríamos el valor añadido de una funcionalidad generativa antes de integrarla, en lugar de después.
 
 ## Conclusión
 
-En nuestras simulaciones históricas, los costes de intermediación y la frecuencia de operativa **pueden cambiar de forma material** el resultado de una estrategia a largo plazo. Ocurre sobre todo cuando la tarifa tiene componentes fijos y se opera a menudo con importes pequeños. Con tarifas porcentuales bajas o planes sin comisión, su efecto fue pequeño frente al de la composición de la cartera y el periodo elegido. La respuesta es «depende de la estructura de costes y del patrón de operativa», pero ahora sabemos cuantificarlo y separarlo del efecto del mercado.
+En nuestras simulaciones, los costes de intermediación sí pueden cambiar de forma importante el resultado de una estrategia, pero «el coste» no se puede analizar aislado. Su efecto depende de la frecuencia de operativa, de la estructura de la tarifa, del horizonte, de la composición y del riesgo asumido. Con muchas operaciones pequeñas y comisiones fijas puede pesar más que la elección de cartera; en *buy & hold* con tarifas bajas, mucho menos.
 
-El principal aprendizaje no es técnico. La IA nos permitió construir mucho más de lo que habríamos podido solas, pero cada vez que la tratamos como autoridad se equivocó de formas plausibles. El valor del trabajo está en las decisiones sobre lo que construía: qué aceptar, qué contrastar y qué retirar.
+Sobre el método, el aprendizaje principal no es que la IA haga aplicaciones rápido. Es que puede acelerar mucho la construcción y, a la vez, producir resultados plausibles pero conceptualmente incorrectos. Por eso hay que diseñar formas de cuestionarla, probarla y contrastarla con fuentes. Saber cambiar de dirección o descartar una funcionalidad construida también forma parte del control sobre la máquina.
 
 ## Fuentes principales
 
-- CNMV — *Guía rápida: Fondos cotizados (ETF)*. https://www.cnmv.es/DocPortal/Publicaciones/Fichas/FondosCotizados(ETF).pdf (consulta: 18/11/2026).
-- Vanguard — *Vanguard S&P 500 ETF (VOO) Fact sheet*, datos a 30/09/2026. https://fund-docs.vanguard.com/F0968.pdf
-- yfinance — `Ticker.history()`, parámetro `auto_adjust`. https://github.com/ranaroussi/yfinance/blob/main/yfinance/scrapers/history.py (consulta: 18/11/2026).
-- ESMA — *Market report on Costs and performance of EU retail investment products 2025*, nota de prensa del 03/03/2026. https://www.esma.europa.eu/press-news/esma-news/new-investment-funds-drive-reduction-costs-investors
+- CNMV, *Guía rápida: Fondos cotizados (ETF)*. https://www.cnmv.es/DocPortal/Publicaciones/Fichas/FondosCotizados(ETF).pdf
+- Vanguard, *Vanguard S&P 500 ETF (VOO) Fact sheet*, datos a 30/09/2026. https://fund-docs.vanguard.com/F0968.pdf
+- yfinance, `Ticker.history()`, parámetro `auto_adjust`. https://github.com/ranaroussi/yfinance/blob/main/yfinance/scrapers/history.py
+- ESMA, *Costs and performance of EU retail investment products 2025* (03/03/2026). https://www.esma.europa.eu/press-news/esma-news/new-investment-funds-drive-reduction-costs-investors
 - Barber, B. M. y Odean, T. (2000). «Trading Is Hazardous to Your Wealth». *The Journal of Finance*, 55(2), 773–806. https://doi.org/10.1111/0022-1082.00226
 - Sharpe, W. F. (1994). «The Sharpe Ratio». *The Journal of Portfolio Management*, 21(1), 49–58. https://doi.org/10.3905/jpm.1994.409501
-- Tarifas oficiales de ING, Bankinter, Santander (incluido su folleto de tarifas máximas), CaixaBank, BBVA, MyInvestor, Trade Republic y Revolut: URL y fecha de consulta en `Datos y fuentes.md`.
-- Yahoo Finance mediante `yfinance` 1.7.0: precios, tipos de cambio y *benchmarks* (`^SP500TR`, `IWDA.AS`).
+- Tarifas oficiales de cada intermediario, con URL y fecha de consulta, en `Datos y fuentes.md` del repositorio.
