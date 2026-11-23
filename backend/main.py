@@ -1,11 +1,16 @@
 """
 Investment Strategy Lab — API (FastAPI)
 
-Arranque (desde la carpeta backend/):
+Arranque en local (desde la carpeta backend/):
     python -m uvicorn main:app --reload --port 8000
+
+Arranque en producción (Render, ver render.yaml):
+    uvicorn main:app --host 0.0.0.0 --port $PORT
+    ALLOWED_ORIGINS = URL pública del frontend (separadas por comas si hay varias)
 """
 
 import logging
+import os
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -26,9 +31,14 @@ app = FastAPI(
     description="API educativa de análisis histórico. No es asesoramiento financiero.",
 )
 
+# Orígenes permitidos: el frontend local siempre; en producción, solo los que se
+# declaren en ALLOWED_ORIGINS (nunca "*").
+LOCAL_ORIGINS = ["http://localhost:5173", "http://127.0.0.1:5173"]
+EXTRA_ORIGINS = [o.strip().rstrip("/") for o in os.getenv("ALLOWED_ORIGINS", "").split(",") if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=LOCAL_ORIGINS + EXTRA_ORIGINS,
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )

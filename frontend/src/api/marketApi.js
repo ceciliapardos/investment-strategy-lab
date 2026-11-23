@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { IS_REMOTE_API } from './config'
 
 const BASE = '/api/markets'
 
@@ -37,10 +38,13 @@ export function isCancel(err) {
 export function getErrorMessage(err) {
   const apiMessage = err?.response?.data?.error?.message
   if (apiMessage) return apiMessage
-  // Sin respuesta, o un 5xx sin el formato de error de nuestra API: es el proxy
-  // de Vite indicando que el backend no está accesible.
+  // Sin respuesta, o un 5xx sin el formato de error de nuestra API: el backend no
+  // está accesible (en local, el proxy de Vite; en la versión pública, el servidor
+  // gratuito puede estar arrancando tras un periodo sin uso).
   if (!err?.response || err.response.status >= 500) {
-    return 'No se puede conectar con el servidor de datos. Comprueba que el backend está en ejecución (start_backend.bat).'
+    return IS_REMOTE_API
+      ? 'El servidor de datos no responde todavía. En la versión pública gratuita se duerme tras 15 minutos sin uso y tarda alrededor de un minuto en arrancar: espera unos segundos y vuelve a intentarlo.'
+      : 'No se puede conectar con el servidor de datos. Comprueba que el backend está en ejecución (start_backend.bat).'
   }
   return 'El servidor no ha podido responder correctamente. Inténtalo de nuevo.'
 }

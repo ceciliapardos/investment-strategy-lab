@@ -1,0 +1,47 @@
+# Despliegue público de Investment Strategy Lab en Render (plan gratuito, sin tarjeta).
+#
+# Dos servicios creados a partir de este repositorio con un único Blueprint:
+#   1. investment-strategy-lab-api -> backend FastAPI (servicio web gratuito)
+#   2. investment-strategy-lab     -> frontend React/Vite (sitio estático gratuito)
+#
+# El frontend llama al backend mediante VITE_API_BASE_URL (se fija en el build) y el
+# backend solo acepta peticiones del frontend declarado en ALLOWED_ORIGINS (CORS).
+# Si Render asignara otra URL a algún servicio, basta con corregir esas dos variables
+# en el panel de Render y volver a desplegar.
+#
+# Limitación del plan gratuito: el backend se duerme tras 15 min sin tráfico y tarda
+# alrededor de un minuto en volver a arrancar con la primera petición.
+
+services:
+  - type: web
+    name: investment-strategy-lab-api
+    runtime: python
+    plan: free
+    region: frankfurt
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.5
+      - key: ALLOWED_ORIGINS
+        value: https://investment-strategy-lab.onrender.com
+
+  - type: web
+    name: investment-strategy-lab
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: NODE_VERSION
+        value: 22.11.0
+      - key: VITE_API_BASE_URL
+        value: https://investment-strategy-lab-api.onrender.com
+    routes:
+      # Aplicación de una sola página: cualquier ruta interna (/markets, /costs...)
+      # sirve index.html para que funcione al recargar.
+      - type: rewrite
+        source: /*
+        destination: /index.html
