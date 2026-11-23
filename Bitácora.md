@@ -1017,7 +1017,7 @@ Antes de subir nada se simuló la producción en local: dos orígenes, CORS acep
 
 **Hallazgo: News queda parcial en producción.** Google News RSS no responde a las peticiones que salen del servidor de Render, aunque desde un ordenador personal sí. El BCE y la Fed sí funcionan.
 - No se ha intentado eludir el bloqueo.
-- Queda documentado como limitación y como decisión pendiente del equipo.
+- El equipo decidió dejarlo documentado como limitación de la versión pública, sin buscar otra fuente.
 
 **URLs:**
 - Live Demo: https://investment-strategy-lab.onrender.com
@@ -1040,6 +1040,6 @@ Antes de subir nada se simuló la producción en local: dos orígenes, CORS acep
 
 # 28. Próximo paso
 
-1. El equipo revisa la Live Demo y la limitación de News en producción (D82 ⏳).
+1. El equipo revisa la Live Demo. La limitación de News en producción ya está decidida: se deja documentada (D82, 2026-11-23).
 2. Confirmar con el profesor si basta con el enlace al repositorio o lo quiere en github.com/lgarvia.
 3. Preparar la presentación.

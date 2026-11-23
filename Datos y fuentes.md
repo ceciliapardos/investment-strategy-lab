@@ -120,7 +120,7 @@ Para VOO, Yahoo devolvía a la vez `fund_operations` = 0.0003 e `info["netExpens
 | BCE y Reserva Federal (RSS) | Responden | La portada de News y «Bancos centrales» muestran sus titulares |
 | Google News RSS | **No responde.** Las 6 consultas temáticas fallan desde el servidor y funcionan desde un ordenador personal | Las categorías temáticas y el buscador de News muestran el aviso de error |
 
-No se ha cambiado ninguna fuente ni se ha intentado eludir el bloqueo. La decisión sobre una alternativa queda pendiente del equipo ([[Decisiones]] D82).
+No se ha cambiado ninguna fuente ni se ha intentado eludir el bloqueo. El equipo decidió dejarlo documentado como limitación de la versión pública ([[Decisiones]] D82).
 
 ### Fuentes descartadas (comprobadas el 2026-11-11)
 

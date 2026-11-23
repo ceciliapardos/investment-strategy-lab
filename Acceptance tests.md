@@ -61,7 +61,7 @@ Una fase no está terminada hasta que el equipo la prueba desde la interfaz y la
 |---|---|---|
 | [ ] | Abrir la Live Demo desde otro dispositivo o red | La app carga |
 | [ ] | Volver a abrirla tras más de 15 minutos sin uso | El primer dato tarda alrededor de un minuto y después funciona |
-| [ ] | Revisar la limitación de News y decidir (D82 ⏳) | — |
+| [x] | Revisar la limitación de News y decidir (D82) | Decidido por el equipo (2026-11-23): dejarlo documentado |
 
 ---
 

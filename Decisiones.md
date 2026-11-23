@@ -863,4 +863,9 @@ Usar IA para construir no obliga a que el producto final tenga una funcionalidad
 - Desde el servidor de Render (Frankfurt), las 6 consultas a Google News RSS fallan; desde un ordenador personal responden.
 - Los *feeds* oficiales del BCE y de la Fed sí funcionan. La portada muestra esos titulares con el aviso de fuentes no disponibles, y las categorías temáticas y el buscador devuelven el mensaje de error controlado.
 - **No se ha intentado eludir el bloqueo** (por ejemplo, haciéndose pasar por un navegador).
-- Queda como limitación documentada. Las alternativas (otra fuente RSS con licencia clara, o aceptar el estado actual) son una **decisión pendiente del equipo** ⏳.
+- **Decisión del equipo (2026-11-23): dejarlo documentado.**
+  - No se busca otra fuente de noticias.
+  - En la versión pública, News muestra los *feeds* oficiales del BCE y de la Fed.
+  - Las categorías temáticas y el buscador muestran el aviso de error controlado.
+  - En local funcionan todas las fuentes.
+  - Alternativa descartada: buscar otra fuente RSS con licencia clara.
