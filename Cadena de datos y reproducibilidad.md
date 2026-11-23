@@ -223,6 +223,36 @@ flowchart LR
 
 ---
 
+## Cadena de producción (versión pública, desde la V1.0)
+
+Los motores, las fórmulas y los datos son **los mismos** en local y en producción. Solo cambia dónde se ejecuta cada pieza y cómo se conectan.
+
+```mermaid
+flowchart LR
+  U["Usuario<br/>(navegador)"] --> FE["Frontend público<br/>investment-strategy-lab.onrender.com<br/>sitio estático (build de Vite)"]
+  FE -- "VITE_API_BASE_URL<br/>HTTPS + CORS" --> API["API FastAPI pública<br/>investment-strategy-lab-api.onrender.com<br/>main.py · routers/"]
+  API --> SRV["services/<br/>backtest · costes · noticias"]
+  SRV --> ENG["analytics/<br/>motores financieros puros"]
+  SRV --> EXT["Fuentes externas<br/>Yahoo Finance · BCE · Fed<br/>(Google News: no disponible desde el servidor)"]
+  SRV --> J["data/broker_fees.json"]
+  ENG --> SRV --> API -- "respuesta JSON" --> FE --> U
+```
+
+| Aspecto | Desarrollo local | Producción (Render, plan gratuito) |
+|---|---|---|
+| Frontend | `npm run dev` en `http://localhost:5173` | Sitio estático `https://investment-strategy-lab.onrender.com` (build `npm ci && npm run build`) |
+| Llamadas a la API | Rutas relativas `/api/...`, que el proxy de Vite reenvía a `localhost:8000` | `VITE_API_BASE_URL` = `https://investment-strategy-lab-api.onrender.com`, fijada en el build (`frontend/src/api/config.js`) |
+| Backend | `uvicorn main:app --reload --port 8000` | `uvicorn main:app --host 0.0.0.0 --port $PORT`, Python 3.11.5 |
+| CORS | `localhost:5173` | `localhost` + `ALLOWED_ORIGINS` = URL del frontend público |
+| Rutas internas (`/markets`, `/costs`…) | Servidor de Vite | Reescritura `/* → /index.html` (`render.yaml`) |
+| Disponibilidad | Mientras esté arrancado | Se duerme tras 15 minutos sin tráfico; el primer acceso tarda alrededor de un minuto |
+| Caché | En memoria | En memoria; se pierde con cada reinicio o suspensión |
+| News | Google News + BCE + Fed | Solo BCE y Fed: Google News no responde al servidor ([[Decisiones]] D82) |
+
+**Comprobación de equivalencia:** en producción, la sensibilidad a costes con ING (10.000 €, 20 años, 5 %) da exactamente las cifras del experimento E5 ([[Experimentos y resultados]]).
+
+---
+
 ## Cómo reproducir los resultados
 
 1. **Entorno:** Python 3.11 con `pip install -r backend/requirements.txt` (versiones fijadas); `npm install` en `frontend/`.
@@ -240,6 +270,6 @@ flowchart LR
 ## Limitaciones de reproducibilidad
 
 - No hay copia congelada de los datos de mercado. Un resultado con «fin = hoy» cambia cada día.
-- El proyecto **todavía no está bajo git** ([[Bitácora]] §21); el historial de versiones vive en [[Versiones]] y en esta documentación.
+- ~~El proyecto todavía no está bajo git.~~ Desde la Fase 10 está en Git, en el repositorio público https://github.com/ceciliapardos/investment-strategy-lab.
 - La caché vive en memoria y se borra al reiniciar el backend.
 - ~~El modelo local no viene incluido y cada usuario puede cargar uno distinto.~~ Ya no aplica: desde la Fase 8.1 la app no depende de ningún modelo de IA (D80).

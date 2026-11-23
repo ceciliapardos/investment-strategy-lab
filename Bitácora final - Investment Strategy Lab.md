@@ -8,7 +8,7 @@ Cecilia Pardos · Almudena López · Covadonga López-Belmonte
 
 19 de noviembre de 2026
 
-Código, documentación y resultados reproducibles disponibles en el repositorio público del proyecto: https://github.com/ceciliapardos/investment-strategy-lab
+Código, documentación y resultados reproducibles disponibles en el repositorio público del proyecto: https://github.com/ceciliapardos/investment-strategy-lab · Live Demo: https://investment-strategy-lab.onrender.com
 
 ---
 

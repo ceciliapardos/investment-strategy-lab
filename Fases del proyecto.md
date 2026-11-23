@@ -19,7 +19,10 @@ Una fase solo pasa a ✅ cuando el equipo la prueba y escribe **APROBADO**.
 🟦 Fase 8 — Investigación, trazabilidad y auditoría documental  ← documentación completada, pendiente de revisión del equipo
 🟦 Fase 8.1 — Cierre funcional  ← corrección de Cost Sensitivity, retirada de AI Strategy Analyst y README; pendiente de revisión
 🟦 Fase 9 — Investigación empírica con la app  ← 5 experimentos ejecutados; pendiente de revisión y validación manual del equipo
-⬜ Bitácora final y presentación
+✅ Fase 9.1 — Validación metodológica  ← resultados congelados; comprobaciones P1–P6 validadas por el equipo
+🟦 Fase 10 — Bitácora final (.md y .docx) y publicación en GitHub  ← pendiente de revisión del equipo
+🟦 Fase 11 — Publicación web (Live Demo)  ← desplegada en Render y verificada en producción (V1.0); News parcial en producción
+⬜ Presentación
 ```
 
 🔁 = descartada por decisión del equipo (se conserva como historia).
@@ -139,5 +142,17 @@ Detalle técnico de cada versión en [[Versiones]]; decisiones en [[Decisiones]]
   5. sensibilidad a la rotación.
 - **Resultados:** [[Experimentos y resultados]]; datos en `Resultados investigación/` (script reproducible, JSON y CSV).
 - **Estado:** 🟦 pendiente de revisión del equipo y de la validación manual ([[Acceptance tests]], «Validación manual durante experimentos»).
+
+## 🟦 Fase 11 — Publicación web y distribución pública (V1.0, 2026-11-23)
+- **Objetivo:** dos formas de usar el proyecto:
+  - una **Live Demo** pública, sin instalar nada: https://investment-strategy-lab.onrender.com;
+  - el **repositorio** público: https://github.com/ceciliapardos/investment-strategy-lab.
+- **Hosting:** Render, plan gratuito y sin tarjeta, con un servicio web para la API FastAPI y un sitio estático para el frontend (`render.yaml`; [[Decisiones]] D82).
+- **Cambios, solo de despliegue:** `VITE_API_BASE_URL` en el frontend, `ALLOWED_ORIGINS` (CORS) en el backend y un mensaje claro cuando el servidor gratuito está arrancando. Sin cambios en la lógica financiera.
+- **Verificación en producción:** [[Acceptance tests]], «Fase 11».
+- **Limitaciones:**
+  - el servidor tarda alrededor de un minuto en arrancar tras 15 minutos sin uso;
+  - Google News no responde desde el servidor, así que News solo muestra el BCE y la Fed.
+- **Estado:** 🟦 desplegada y verificada por Claude Code; pendiente de revisión del equipo.
 
 > News, prevista inicialmente como Fase 6, se adelantó a la Fase 2 por ser independiente del resto (ver [[Bitácora]] §13).

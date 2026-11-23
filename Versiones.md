@@ -15,9 +15,37 @@
 | V0.9 | Fase 6.1: AI Strategy Analyst local con LM Studio + preparación para GitHub | 2026-11-12 | 🔁 Experimento retirado del producto en la V0.11 (decisión del equipo, D80) |
 | V0.10 | Fase 7: Sharpe, benchmark, sensibilidad a costes y favoritos | 2026-11-18 | Completada técnicamente, pendiente de validación |
 | — | Fase 8: investigación, trazabilidad y auditoría documental | 2026-11-18 | Sin cambios de código; en revisión |
-| **V0.11** | **Fase 8.1: cierre funcional — corrección de Cost Sensitivity, retirada de AI Strategy Analyst y README** | 2026-11-18 | **Completada técnicamente, pendiente de revisión del equipo** |
+| V0.11 | Fase 8.1: cierre funcional — corrección de Cost Sensitivity, retirada de AI Strategy Analyst y README | 2026-11-18 | Completada técnicamente, pendiente de revisión del equipo |
+| **V1.0** | **Fase 11: primera versión pública (Live Demo en Render)** | 2026-11-23 | **Desplegada y verificada en producción; pendiente de revisión del equipo** |
 
 Roadmap y estado de cada fase: [[Fases del proyecto]]. No se empieza una fase hasta que la anterior esté **APROBADA**.
+
+---
+
+## V1.0 — Primera versión pública
+
+**URLs:**
+- Live Demo: https://investment-strategy-lab.onrender.com
+- API: https://investment-strategy-lab-api.onrender.com
+- Repositorio: https://github.com/ceciliapardos/investment-strategy-lab
+
+**Mismo producto que la V0.11.** Solo cambia lo necesario para desplegarlo:
+- `render.yaml`: Blueprint de Render con dos servicios gratuitos en Frankfurt.
+  - `investment-strategy-lab-api`: servicio web Python 3.11.5. Arranca con `uvicorn main:app --host 0.0.0.0 --port $PORT` y comprueba su estado en `/api/health`.
+  - `investment-strategy-lab`: sitio estático. Se construye con `npm ci && npm run build`, publica `dist` y reescribe cualquier ruta a `index.html`.
+- `frontend/src/api/config.js`: dirección de la API desde `VITE_API_BASE_URL`. En local sigue siendo `/api` con el proxy de Vite.
+- `frontend/src/api/marketApi.js`: mensaje específico cuando el servidor gratuito está arrancando.
+- `backend/main.py`: CORS con los orígenes locales más los de `ALLOWED_ORIGINS`, sin `*`.
+- README reorganizado, con la Live Demo al principio.
+
+**Sin cambios** en fórmulas, métricas, benchmarks, tarifas, motores ni resultados.
+- Comprobación cruzada: la sensibilidad con ING en producción da las mismas cifras que E5 a 20 años (diferencias de −34 € a −3.403 €).
+
+**Tests:**
+- Backend: 295 deterministas.
+- Frontend: Vitest 93/93 y build correcto.
+- Simulación local de producción con dos orígenes (CORS aceptado o rechazado y ruta interna directa).
+- Prueba funcional en la URL pública: [[Acceptance tests]] §Fase 11.
 
 ---
 

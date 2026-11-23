@@ -55,7 +55,7 @@ Se actualiza en cada fase; el detalle está en [[Fases del proyecto]].
 - **Fase 6:** experimento AI Strategy Analyst, descartado por decisión del equipo.
 - **Fases 7, 8 y 8.1** (cierre funcional, V0.11): pendientes de revisión.
 - **Producto final:** 5 módulos.
-- **Sin repositorio git** todavía.
+- **Publicado:** https://github.com/ceciliapardos/investment-strategy-lab · Live Demo https://investment-strategy-lab.onrender.com (Render gratuito, `render.yaml`; D82).
 
 ## Documentación
 

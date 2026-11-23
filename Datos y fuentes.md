@@ -112,6 +112,16 @@ Para VOO, Yahoo devolvía a la vez `fund_operations` = 0.0003 e `info["netExpens
 - **Enlaces:** los de Google News llevan a `news.google.com`, que redirige al medio original. En la UE, Google puede mostrar antes su pantalla de consentimiento de cookies (comprobado el 2026-11-11).
 - **Condiciones de uso de Google News RSS:** no hemos encontrado unos términos oficiales actuales sobre el RSS. Fuentes secundarias indican uso no comercial y con atribución a Google News y al medio. **Pendiente de revisión del equipo** ([[Decisiones]] D23).
 
+### Acceso a las fuentes desde la versión pública (Render, comprobado el 2026-11-23)
+
+| Fuente | Desde el servidor público | Efecto en la app |
+|---|---|---|
+| Yahoo Finance (`yfinance`) | Responde: búsqueda, cotización, histórico, TER y benchmarks en torno a 1 s | Explore Markets, Comparison y Cost Analysis completos |
+| BCE y Reserva Federal (RSS) | Responden | La portada de News y «Bancos centrales» muestran sus titulares |
+| Google News RSS | **No responde.** Las 6 consultas temáticas fallan desde el servidor y funcionan desde un ordenador personal | Las categorías temáticas y el buscador de News muestran el aviso de error |
+
+No se ha cambiado ninguna fuente ni se ha intentado eludir el bloqueo. La decisión sobre una alternativa queda pendiente del equipo ([[Decisiones]] D82).
+
 ### Fuentes descartadas (comprobadas el 2026-11-11)
 
 | Fuente | Motivo |

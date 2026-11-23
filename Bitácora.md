@@ -984,20 +984,62 @@ Ningún supuesto obligó a cambiar datos ni a repetir E1.
 
 ---
 
+# 26d. Fase 10 — Bitácora final y publicación en GitHub (2026-11-19 → 2026-11-23)
+
+- **Bitácora final.** Se redactó en `.md` (versión maestra) y `.docx` (derivado), con las tres decisiones (D77-A, D77-B/C y D80), tres errores principales (E01, E02 y E03) y otros siete resumidos.
+- **Repositorio.** Se publicó en https://github.com/ceciliapardos/investment-strategy-lab:
+  - antes de publicar se revisaron secretos y rutas personales, y se ajustó `.gitignore`;
+  - `entrega_provisional/` se excluyó por decisión del equipo;
+  - el commit sale con el email anónimo de GitHub, y la autenticación la hizo el equipo en el navegador.
+
+# 26e. Fase 11 — Publicación web: Live Demo (V1.0, 2026-11-23)
+
+**Objetivo.** Que cualquiera pueda usar la aplicación desde el navegador sin instalar nada, sin coste y sin tarjeta.
+
+**Elección de plataforma.** Antes de elegir se comprobaron las condiciones actuales de cada proveedor:
+- Fly.io y Google Cloud Run exigen tarjeta, y Koyeb verifica una.
+- Render ofrece gratis un servicio web (750 h al mes, 512 MB) y sitios estáticos, sin tarjeta.
+- Se eligió Render para las dos piezas, con un único `render.yaml`, para que el equipo necesitara una sola cuenta ([[Decisiones]] D82).
+
+**Cambios.** Solo de despliegue; nada financiero:
+- `VITE_API_BASE_URL` en el frontend (`frontend/src/api/config.js`);
+- `ALLOWED_ORIGINS` en el CORS del backend, sin `*`;
+- un mensaje claro cuando el servidor gratuito está arrancando;
+- el Blueprint `render.yaml`.
+
+Antes de subir nada se simuló la producción en local: dos orígenes, CORS aceptado y rechazado, y ruta interna directa.
+
+**Acción del equipo.** El equipo creó la cuenta de Render con GitHub y desplegó el Blueprint. Render asignó exactamente las URL previstas, así que no hubo que corregir ninguna variable.
+
+**Verificación en producción** (detalle en [[Acceptance tests]] §Fase 11):
+- Funcionan, probados desde la interfaz pública: Home, navegación, Explore Markets, Mi lista, Strategy Builder (con aportaciones), Strategy Comparison (con benchmark y Sharpe), Cost Analysis (con ING) y la sensibilidad a costes. También la recarga de rutas internas, la página 404 en `/analyst` y la vista móvil.
+- Las cifras de la sensibilidad coinciden con las del experimento E5.
+
+**Hallazgo: News queda parcial en producción.** Google News RSS no responde a las peticiones que salen del servidor de Render, aunque desde un ordenador personal sí. El BCE y la Fed sí funcionan.
+- No se ha intentado eludir el bloqueo.
+- Queda documentado como limitación y como decisión pendiente del equipo.
+
+**URLs:**
+- Live Demo: https://investment-strategy-lab.onrender.com
+- API: https://investment-strategy-lab-api.onrender.com
+- Repositorio: https://github.com/ceciliapardos/investment-strategy-lab
+
+---
+
 # 27. Estado actual
 
 - **Fases 0 a 5:** aprobadas.
 - **Fase 6:** experimento AI Strategy Analyst, construido y **descartado por decisión humana**.
-- **Fase 7, Fase 8, Fase 8.1 y Fase 9** (experimentos): pendientes de revisión del equipo.
+- **Fases 7, 8, 8.1, 10 y 11:** pendientes de revisión del equipo. La Fase 9.1 (resultados congelados) está validada.
 - **Producto final:** 5 módulos, sin dependencias de IA ni servicios de pago.
-- Sin repositorio git.
+- **Publicación:**
+  - repositorio público en GitHub;
+  - Live Demo en https://investment-strategy-lab.onrender.com.
 
 ---
 
 # 28. Próximo paso
 
-1. El equipo revisa la V0.11 y los documentos de las Fases 8 y 8.1.
-2. Elegir los casos de [[Errores de la IA]] y las tres decisiones (D77 y D80).
-3. ~~Ejecutar los experimentos de [[Investigación principal]] §10.~~ ✅ Hecho en la Fase 9 (§26b). Falta la validación manual del equipo.
-4. Crear el repositorio git y decidir qué se publica.
-5. Redactar la bitácora final y la presentación, partiendo de los ⭐ de [[Experimentos y resultados]].
+1. El equipo revisa la Live Demo y la limitación de News en producción (D82 ⏳).
+2. Confirmar con el profesor si basta con el enlace al repositorio o lo quiere en github.com/lgarvia.
+3. Preparar la presentación.

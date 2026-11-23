@@ -821,3 +821,46 @@ Usar IA para construir no obliga a que el producto final tenga una funcionalidad
   - `test_sens_venta_usa_su_propia_comision`: compra 1 €, venta 10 €;
   - `test_sens_divisa_solo_en_el_lado_que_la_cobra`.
   Ambos fallan con la implementación anterior y pasan con la nueva.
+
+---
+
+## Parte XIV — Fase 11: publicación web (2026-11-23)
+
+### D82. Hosting público: Render (plan gratuito) para el backend y el frontend ✅ (requisito del equipo: coste 0 €, sin tarjeta)
+
+**Decisión.** Las dos piezas se alojan en Render, descritas en un único Blueprint (`render.yaml`):
+- **Backend:** servicio web gratuito con Python 3.11.5 (la versión probada; la de Render por defecto es la 3.14).
+- **Frontend:** sitio estático gratuito, con reescritura de todas las rutas a `index.html` para que el `BrowserRouter` funcione al recargar.
+
+**Por qué:**
+- **Coste.** Es gratuito y, según su documentación oficial, no pide tarjeta para el servicio web gratuito. En nuestro alta no la pidió.
+- **Una sola cuenta.** Un único Blueprint crea las dos piezas desde el repositorio.
+- **Infraestructura reproducible.** Queda escrita como código en el propio repositorio.
+- **Ningún cambio en la arquitectura** React → FastAPI.
+
+**Alternativas descartadas** (condiciones consultadas el 23/11/2026):
+
+| Alternativa | Motivo |
+|---|---|
+| Fly.io | Sin plan gratuito permanente; exige tarjeta |
+| Google Cloud Run | Exige método de pago |
+| Koyeb | Su documentación indica que verifica una tarjeta para evitar abusos |
+| Railway | Prueba de 30 días y después un crédito de 1 $/mes, insuficiente para mantener el backend |
+| Vercel, Netlify o Cloudflare Pages solo para el frontend | Viables y gratuitas, pero exigían una segunda cuenta y más pasos sin ventaja real para un sitio estático. Además, el plan Hobby de Vercel es solo para uso personal no comercial |
+| Servir el frontend desde FastAPI (un solo servicio) | Más sencillo, pero mezcla las dos piezas y no respeta la separación frontend / API pedida |
+
+**Configuración:**
+- `VITE_API_BASE_URL` (build del frontend) = URL pública de la API.
+- `ALLOWED_ORIGINS` (backend) = URL pública del frontend, sin `*`.
+- En local no se define nada: se mantienen el proxy de Vite y los orígenes `localhost`.
+
+**Limitaciones del plan gratuito** (aceptadas y documentadas):
+- **Arranque en frío.** El backend se duerme tras 15 minutos sin tráfico y tarda alrededor de un minuto en despertar. La interfaz muestra un mensaje específico mientras tanto.
+- **Cupos.** 750 horas de instancia al mes, 512 MB de memoria, un único proceso y sistema de archivos efímero. La caché vive en memoria y se pierde al reiniciar, lo que no afecta a los resultados.
+- **Sin tarjeta.** Si se superan el ancho de banda o los minutos de build, Render suspende los servicios gratuitos en lugar de cobrar.
+
+**Hallazgo en producción: News queda parcial.**
+- Desde el servidor de Render (Frankfurt), las 6 consultas a Google News RSS fallan; desde un ordenador personal responden.
+- Los *feeds* oficiales del BCE y de la Fed sí funcionan. La portada muestra esos titulares con el aviso de fuentes no disponibles, y las categorías temáticas y el buscador devuelven el mensaje de error controlado.
+- **No se ha intentado eludir el bloqueo** (por ejemplo, haciéndose pasar por un navegador).
+- Queda como limitación documentada. Las alternativas (otra fuente RSS con licencia clara, o aceptar el estado actual) son una **decisión pendiente del equipo** ⏳.

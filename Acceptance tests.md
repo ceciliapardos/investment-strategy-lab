@@ -19,6 +19,52 @@ Una fase no está terminada hasta que el equipo la prueba desde la interfaz y la
 
 ---
 
+## Fase 11 — Publicación web (V1.0, 2026-11-23)
+
+**A. Antes del despliegue (local):**
+- Tests deterministas del backend: 295 superados.
+- Vitest: 93/93.
+- Build de producción correcto.
+- Simulación de producción con dos orígenes (frontend en 4173 con `VITE_API_BASE_URL`, backend en 8001 con `ALLOWED_ORIGINS`):
+  - CORS acepta el frontend declarado y rechaza un origen ajeno;
+  - `/markets?ticker=VOO` se abre directamente;
+  - con el backend parado aparece el nuevo aviso.
+- **No ejecutado:** Playwright local, porque la app local no estaba arrancada.
+
+**B. Comprobación en producción** (Claude Code, con navegador y peticiones HTTP a las URL públicas, 23/11/2026):
+
+| # | Comprobación | Tipo | Resultado |
+|---|---|---|---|
+| 1 | Home carga con los 5 módulos | Interfaz pública | ✅ |
+| 2 | News carga | Interfaz y API | ⚠ Parcial: portada con 10 titulares del BCE y la Fed; «Mercados» y el buscador muestran el aviso de error (Google News no responde al servidor) |
+| 3 | Explore Markets: buscar «iShares Core MSCI World» y abrir IWDA.AS | Interfaz pública | ✅ |
+| 4 | Datos históricos reales | Interfaz pública | ✅ 254 sesiones; rentabilidad, volatilidad, Sharpe y máxima caída. El CAGR sale «—» en 1 año porque dura 364 días (limitación conocida, D20) |
+| 5 | Favoritos («Mi lista») | Interfaz pública | ✅ Se añade y se mantiene al recargar |
+| 6–7 | Strategy Builder: crear, añadir activo y peso, duplicar, aportación de 300 €/mes; guardado | Interfaz pública | ✅ Guardado en `localStorage` |
+| 8 | Strategy Comparison con 2 estrategias, 5 años | Interfaz pública | ✅ Periodo común real, métricas y tabla de aportaciones |
+| 9 | Benchmark S&P 500 TR | Interfaz pública | ✅ Sección de referencia, con Sharpe del índice 0,61 |
+| 10 | Sharpe en Explore Markets y Comparison | Interfaz pública | ✅ 1,14 y 0,71 |
+| 11–12 | Cost Analysis seleccionando ING | Interfaz pública | ✅ Antes y después de costes, impacto y desglose |
+| 13 | Sensibilidad a costes de operativa con ING | Interfaz pública | ✅ Mismas cifras que E5 a 20 años (−34 € a −3.403 €) |
+| 14 | Navegación entre módulos y recarga directa de rutas internas | Interfaz y HTTP | ✅ `/markets`, `/costs` y `/comparison` responden 200 |
+| 15 | Errores de JavaScript | Consola | ✅ Ninguno. Solo aparece el 503 de red de News «Mercados» (punto 2) |
+| 16 | Ninguna referencia al AI Strategy Analyst | Bundle e interfaz | ✅ 0 coincidencias; `/analyst` muestra la 404 de la app |
+| 17 | Sin dependencia de LM Studio | Bundle y API | ✅ 0 coincidencias |
+| 18 | Sin claves ni secretos en el código servido | Bundle | ✅ Solo contiene la URL pública de la API |
+| — | CORS en producción | HTTP | ✅ `access-control-allow-origin` solo para el frontend público |
+| — | Vista móvil (375 px) | Interfaz pública | ✅ Sin desbordamiento horizontal en Home, Explore, Comparison y Cost Analysis |
+| — | Arranque en frío tras 15 minutos | — | ⬜ **No comprobado** en esta sesión (el servicio estaba activo); comportamiento documentado por Render |
+
+**C. Validación del equipo** (pendiente; no marcada):
+
+| ✔ | Comprobación | Esperado |
+|---|---|---|
+| [ ] | Abrir la Live Demo desde otro dispositivo o red | La app carga |
+| [ ] | Volver a abrirla tras más de 15 minutos sin uso | El primer dato tarda alrededor de un minuto y después funciona |
+| [ ] | Revisar la limitación de News y decidir (D82 ⏳) | — |
+
+---
+
 ## Validación manual durante experimentos (Fase 9)
 
 Para comprobar a la vez la app y los resultados de [[Experimentos y resultados]].
